@@ -12,7 +12,7 @@ export function PHProvider({ children }: { children: React.ReactNode }) {
         api_host: 'https://app.posthog.com',
         capture_pageview: false, // We'll handle this manually
         persistence: 'localStorage',
-        loaded: (posthog) => {
+        loaded: posthog => {
           if (process.env.NODE_ENV === 'development') posthog.debug();
         },
       });
