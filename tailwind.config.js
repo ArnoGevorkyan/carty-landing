@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
-import svgToDataUri from "mini-svg-data-uri";
-import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
+const svgToDataUri = require("mini-svg-data-uri");
+const flattenColorPalette = require("tailwindcss/lib/util/flattenColorPalette");
 
 module.exports = {
   darkMode: ["class"],
@@ -220,15 +220,8 @@ module.exports = {
     function ({ matchUtilities, theme }) {
       matchUtilities(
         {
-          "bg-dot-light": (value) => ({
-            backgroundImage: `url("${svgToDataUri(
-              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="25" height="25" fill="none"><circle fill="rgb(0 0 0 / 0.1)" id="pattern-circle" cx="10" cy="10" r="1.6257413380501518"></circle></svg>`,
-            )}")`,
-          }),
-          "bg-dot-dark": (value) => ({
-            backgroundImage: `url("${svgToDataUri(
-              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="25" height="25" fill="none"><circle fill="rgb(255 255 255 / 0.2)" id="pattern-circle" cx="10" cy="10" r="1.6257413380501518"></circle></svg>`,
-            )}")`,
+          "bg-grid": (value) => ({
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='25' height='25' fill='none'%3E%3Ccircle fill='rgb(0 0 0 / 0.1)' id='pattern-circle' cx='10' cy='10' r='1.6257413380501518'%3E%3C/circle%3E%3C/svg%3E")`,
           }),
         },
         {
@@ -239,6 +232,7 @@ module.exports = {
     },
   ],
 };
+
 // Function to add CSS variables for colors
 function addVariablesForColors({ addBase, theme }) {
   let allColors = flattenColorPalette(theme("colors"));
