@@ -72,10 +72,27 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${GeistSans.variable} ${GeistMono.variable}`}
+      className={`${GeistSans.variable} ${GeistMono.variable} light`}
+      data-theme="light"
+      style={{ colorScheme: 'light' }}
       suppressHydrationWarning
     >
-      <body className={`bg-background font-sans tracking-tight antialiased`}>
+      <head>
+        <meta name="color-scheme" content="light" />
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            try {
+              if (localStorage.getItem('theme') !== 'light') {
+                localStorage.setItem('theme', 'light');
+              }
+              document.documentElement.classList.add('light');
+              document.documentElement.classList.remove('dark');
+              document.documentElement.style.colorScheme = 'light';
+            } catch (e) {}
+          `
+        }} />
+      </head>
+      <body className="bg-background font-sans tracking-tight antialiased light">
         <PHProvider>
           <ThemeProvider
             attribute="class"
@@ -83,6 +100,8 @@ export default function RootLayout({
             forcedTheme="light"
             enableSystem={false}
             disableTransitionOnChange
+            storageKey="theme"
+            themes={['light']}
           >
             <div className="flex min-h-screen flex-col overflow-hidden">
               <Header />

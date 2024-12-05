@@ -17,8 +17,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { useTheme } from 'next-themes';
-import { MoonStar, Sun } from 'lucide-react';
 import { User } from '@supabase/supabase-js';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
@@ -30,7 +28,6 @@ export default function MobileMenu({
   handleSignOut: () => Promise<void>;
 }) {
   const [isOpen, setIsOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -207,19 +204,8 @@ export default function MobileMenu({
               <Button
                 variant="outline"
                 className="w-full justify-center"
-                onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
               >
-                {theme === 'light' ? (
-                  <>
-                    <Sun strokeWidth={1} className="h-5 w-5" />
-                    Light
-                  </>
-                ) : (
-                  <>
-                    <MoonStar strokeWidth={1} className="h-5 w-5" />
-                    Dark
-                  </>
-                )}
+                {/* Remove theme toggle */}
               </Button>
             ) : null}
           </div>
