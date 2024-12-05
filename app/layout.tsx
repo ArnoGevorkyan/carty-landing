@@ -10,12 +10,12 @@ import { ThemeProvider } from 'next-themes';
 
 // Dynamically import analytics components
 const Analytics = dynamic(
-  () => import('@vercel/analytics/react').then((mod) => mod.Analytics),
+  () => import('@vercel/analytics/react').then(mod => mod.Analytics),
   { ssr: false }
 );
 
 const SpeedInsights = dynamic(
-  () => import('@vercel/speed-insights/next').then((mod) => mod.SpeedInsights),
+  () => import('@vercel/speed-insights/next').then(mod => mod.SpeedInsights),
   { ssr: false }
 );
 
