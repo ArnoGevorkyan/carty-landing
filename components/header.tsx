@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import CartyLogo from './ui/CartyLogo.svg';
 
-export default async function Header() {
+export default function Header() {
   return (
-    <header className=" p-4">
+    <header className="p-4">
       <div className="flex justify-center">
         <Link href="/" aria-label="Carty Home">
           <CartyLogo />

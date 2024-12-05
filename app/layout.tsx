@@ -15,13 +15,15 @@ const PostHogPageView = dynamic(() => import('./PostHogPageView'), {
   ssr: false,
 });
 
+export const runtime = 'edge';
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarnings>
       <head>
         <Script
           defer
@@ -35,20 +37,19 @@ export default function RootLayout({
         <body className={`bg-background font-sans tracking-tight antialiased`}>
           <ThemeProvider
             attribute="class"
-            enableSystem
+            defaultTheme="light"
+            enableSystem={false}
             disableTransitionOnChange
-            enableColorScheme
           >
             <PostHogPageView />
             <div className="flex min-h-screen flex-col overflow-hidden">
               <Header />
               {children}
               <Toaster position="bottom-right" richColors />
-              <Analytics />
-              <SpeedInsights />
             </div>
           </ThemeProvider>
           <Analytics />
+          <SpeedInsights />
         </body>
       </PHProvider>
     </html>
