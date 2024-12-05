@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 
 const svgToDataUri = require("mini-svg-data-uri");
-const { flattenColorPalette } = require("tailwindcss/lib/util/flattenColorPalette");
+const colors = require("tailwindcss/colors");
+const plugin = require("tailwindcss/plugin");
 
 module.exports = {
   darkMode: ["class"],
@@ -216,31 +217,29 @@ module.exports = {
   	}
   },
   plugins: [
-    addVariablesForColors,
-    function ({ matchUtilities, theme }) {
+    plugin(function({ addBase, theme }) {
+      let allColors = {};
+      const themeColors = theme('colors');
+      for (let color in themeColors) {
+        if (typeof themeColors[color] === 'object') {
+          allColors = { ...allColors, [color]: themeColors[color] };
+        }
+      }
+      addBase({
+        ':root': Object.fromEntries(
+          Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+        ),
+      });
+    }),
+    plugin(function ({ matchUtilities, theme }) {
       matchUtilities(
         {
           "bg-grid": (value) => ({
             backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='25' height='25' fill='none'%3E%3Ccircle fill='rgb(0 0 0 / 0.1)' id='pattern-circle' cx='10' cy='10' r='1.6257413380501518'%3E%3C/circle%3E%3C/svg%3E")`,
           }),
         },
-        {
-          values: flattenColorPalette(theme("backgroundColor")),
-          type: "color",
-        },
+        { values: theme("backgroundColor"), type: "color" }
       );
-    },
+    }),
   ],
 };
-
-// Function to add CSS variables for colors
-function addVariablesForColors({ addBase, theme }) {
-  let allColors = flattenColorPalette(theme("colors"));
-  let newVars = Object.fromEntries(
-    Object.entries(allColors).map(([key, val]) => [`--${key}`, val]),
-  );
-
-  addBase({
-    ":root": newVars,
-  });
-}
