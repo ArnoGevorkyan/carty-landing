@@ -172,7 +172,7 @@ const PricingTier: React.FC<ExtendedPricingTierProps> = ({
 
   return (
     <Card
-      className={`flex h-full w-full flex-col ${index === 1 && 'from-primary-600/5 ring-primary-900/40 dark:from-primary-600/5 dark:ring-primary-600/20'}`}
+      className={`flex h-full w-full flex-col ${index === 1 && 'from-primary-600/5 ring-primary-900/40'}`}
     >
       <div className="flex h-full w-full flex-col">
         <CardHeader className="flex-grow-0 px-6 py-6 pb-0">
@@ -416,7 +416,7 @@ const PricingPage: React.FC<PricingPageProps> = ({ user }) => {
             defaultValue="standard"
             className="mt-[20px] flex w-full flex-col items-center"
           >
-            <TabsList className="h-full rounded-full bg-gray-300/20 px-2 py-2 ring-1 ring-gray-300/60 dark:bg-gray-100/10 dark:ring-gray-100/40">
+            <TabsList className="h-full rounded-full bg-gray-300/20 px-2 py-2 ring-1 ring-gray-300/60">
               <TabsTrigger
                 value="standard"
                 className="w-[135px] rounded-full px-4 py-2 text-secondary-main data-[state=active]:bg-primary-800 dark:text-white-main"
@@ -434,24 +434,24 @@ const PricingPage: React.FC<PricingPageProps> = ({ user }) => {
               value="standard"
               className="w-full space-y-6 sm:space-y-8 md:space-y-6 lg:space-y-6"
             >
-              <div className="mt-[20px] flex w-full items-center justify-center rounded-md bg-gray-300/20 bg-gradient-to-l from-primary-800/[0.15] via-gray-100/10 to-transparent to-60% px-6 py-3.5 ring-1 ring-gray-300/60 dark:bg-gray-100/10 dark:ring-gray-100/40">
+              <div className="mt-[20px] flex w-full items-center justify-center rounded-md bg-gray-300/20 bg-gradient-to-l from-primary-800/[0.15] via-gray-100/10 to-transparent to-60% px-6 py-3.5 ring-1 ring-gray-300/60">
                 <div className="flex w-full items-center justify-between rounded-md">
                   <p className="block w-max items-center justify-start md:flex">
-                    <span className="text-primary-700 dark:text-primary-800">
+                    <span className="text-primary-700">
                       Be the early bird and get a discount
                     </span>
                     &nbsp;
-                    <span className="text-primary-900 dark:text-primary-700">
+                    <span className="text-primary-900">
                       forever
                     </span>
                   </p>
 
                   <p className="block w-max items-center justify-end text-right md:flex">
-                    <strong className="text-lg text-primary-900 dark:text-gray-900">
+                    <strong className="text-lg text-primary-900">
                       20-30% off
                     </strong>
                     &nbsp;
-                    <span className="font-normal text-primary-700 dark:text-primary-300">
+                    <span className="font-normal text-primary-700">
                       &#40;forever&#41;
                     </span>
                   </p>
@@ -474,24 +474,24 @@ const PricingPage: React.FC<PricingPageProps> = ({ user }) => {
               value="enterprise"
               className="w-full space-y-6 sm:space-y-8 md:space-y-6 lg:space-y-6"
             >
-              <div className="mt-[20px] flex w-full items-center justify-center rounded-md bg-gray-300/20 bg-gradient-to-l from-primary-800/[0.15] via-gray-100/10 to-transparent to-60% px-6 py-3.5 ring-1 ring-gray-300/60 dark:bg-gray-100/10 dark:ring-gray-100/40">
+              <div className="mt-[20px] flex w-full items-center justify-center rounded-md bg-gray-300/20 bg-gradient-to-l from-primary-800/[0.15] via-gray-100/10 to-transparent to-60% px-6 py-3.5 ring-1 ring-gray-300/60">
                 <div className="flex w-full items-center justify-between rounded-md">
                   <p className="block w-max items-center justify-start md:flex">
-                    <span className="text-primary-700 dark:text-primary-800">
+                    <span className="text-primary-700">
                       Be the early bird and get a discount
                     </span>
                     &nbsp;
-                    <span className="text-primary-900 dark:text-primary-700">
+                    <span className="text-primary-900">
                       forever
                     </span>
                   </p>
 
                   <p className="block w-max items-center justify-end text-right md:flex">
-                    <strong className="text-lg text-primary-900 dark:text-gray-900">
+                    <strong className="text-lg text-primary-900">
                       20-30% off
                     </strong>
                     &nbsp;
-                    <span className="font-normal text-primary-700 dark:text-primary-300">
+                    <span className="font-normal text-primary-700">
                       &#40;forever&#41;
                     </span>
                   </p>
