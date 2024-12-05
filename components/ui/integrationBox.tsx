@@ -20,13 +20,13 @@ const IntegrationItem = ({
   Icon,
 }: IntegrationItemProps) => (
   <div
-    className={`bg-white-50 dark:bg-gray-800 ${margin} w-fit rounded-lg border border-gray-200 px-3 py-2 dark:border-black/50`}
+    className={`bg-white-50 ${margin} w-fit rounded-lg border border-gray-200 px-3 py-2`}
   >
     <div className="flex items-center gap-2">
       <Icon className="h-8 w-8" />
       <div className="flex flex-col text-xs">
-        <span className="text-gray-400 dark:text-gray-500">{label}</span>
-        <span className="dark:text-white font-medium text-black/60">
+        <span className="text-gray-400">{label}</span>
+        <span className="font-medium text-black/60">
           {product}
           <sup>*</sup>
         </span>
@@ -134,17 +134,17 @@ export default function IntegrationBox() {
 
           {/* Bottom Card */}
           <div
-            className={`-ml-[78px] mt-16 w-fit rounded-lg border border-gray-200 bg-white-50 px-3 py-2 dark:border-black/50 dark:bg-gray-800`}
+            className={`-ml-[78px] mt-16 w-fit rounded-lg border border-gray-200 bg-white-50 px-3 py-2`}
           >
             <div className="flex items-center gap-2">
               <div className="flex h-7 w-7 items-center justify-center rounded-sm bg-primary-700 text-xs font-bold text-white-50 shadow-[0_0_12px_1px] shadow-primary-700/50">
                 V1
               </div>
               <div className="flex flex-col text-xs">
-                <span className="text-gray-500 dark:text-gray-400">
+                <span className="text-gray-500">
                   11/12 Launch
                 </span>
-                <span className="dark:text-white font-medium text-black/60">
+                <span className="font-medium text-black/60">
                   More coming soon
                 </span>
               </div>
@@ -206,16 +206,16 @@ export default function IntegrationBox() {
 
           {/* Bottom Card */}
           <div className="mt-20 flex w-full translate-y-2 justify-center hidden">
-            <div className="w-fit rounded-lg border border-gray-200 bg-white-50 px-3 py-2 dark:border-black/50 dark:bg-gray-800">
+            <div className="w-fit rounded-lg border border-gray-200 bg-white-50 px-3 py-2">
               <div className="flex items-center gap-2">
                 <div className="flex h-7 w-7 items-center justify-center rounded-sm bg-primary-700 text-xs font-bold text-white-50 shadow-[0_0_12px_1px] shadow-primary-700/50">
                   V1
                 </div>
                 <div className="flex flex-col text-xs">
-                  <span className="text-gray-500 dark:text-gray-400">
+                  <span className="text-gray-500">
                     11/12 Launch
                   </span>
-                  <span className="dark:text-white font-medium text-black/60">
+                  <span className="font-medium text-black/60">
                     More coming soon
                   </span>
                 </div>

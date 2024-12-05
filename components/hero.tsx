@@ -38,16 +38,16 @@ export default function Hero() {
                 duration: 0.5,
               }}
             >
-              <div className="rounded-lg border border-gray-200 bg-white-50 px-3 py-2 dark:border-black/50 dark:bg-gray-800">
+              <div className="rounded-lg border border-gray-200 bg-white-50 px-3 py-2">
                 <div className="flex items-center gap-2">
                   <div className="flex h-7 w-7 items-center justify-center rounded-sm bg-primary-700 text-xs font-bold text-white-50 shadow-[0_0_12px_1px] shadow-primary-700/50">
                     <TelegramLogo className="h-5 w-5" />
                   </div>
                   <div className="flex flex-col text-xs">
-                    <span className="text-gray-500 dark:text-gray-400">
+                    <span className="text-gray-500">
                       5 Minute Setup
                     </span>
-                    <span className="dark:text-white font-medium text-black/60">
+                    <span className="font-medium text-black/60">
                       For Digital Products
                     </span>
                   </div>
@@ -67,7 +67,7 @@ export default function Hero() {
               className="relative mb-6 text-center"
             >
               <h1 className="text-4xl font-bold sm:text-5xl md:text-6xl">
-                <div className="bg-gradient-to-b from-black via-black/80 to-black/40 bg-clip-text text-transparent dark:from-white dark:via-white/80 dark:to-white/40">
+                <div className="bg-gradient-to-b from-black via-black/80 to-black/40 bg-clip-text text-transparent">
                   Sell where users chat daily
                   <br />— on Telegram
                 </div>
@@ -82,7 +82,7 @@ export default function Hero() {
                 duration: 0.5,
                 delay: 0.8,
               }}
-              className="mb-8 max-w-2xl text-center text-lg text-neutral-700 dark:text-neutral-300"
+              className="mb-8 max-w-2xl text-center text-lg text-neutral-700"
             >
               Bring the power of Shopify to Telegram with Carty. Set up in
               minutes and start selling where your customers are most active —
@@ -114,7 +114,7 @@ export default function Hero() {
                 delay: 1.0,
               }}
             >
-              <p className="mb-6 text-center text-lg font-medium text-neutral-800 dark:text-neutral-200">
+              <p className="mb-6 text-center text-lg font-medium text-neutral-800">
                 Convert chats into sales: make your Telegram Mini App a Digital
                 Shop
               </p>
@@ -127,7 +127,7 @@ export default function Hero() {
                   priority
                 />
               </div>
-              <p className="mt-4 text-center text-sm text-neutral-600 dark:text-neutral-400">
+              <p className="mt-4 text-center text-sm text-neutral-600">
                 Same seamless web experience, right in Telegram Mini App
               </p>
             </motion.div>
