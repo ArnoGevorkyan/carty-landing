@@ -29,6 +29,39 @@ const PostHogPageView = dynamic(() => import('./PostHogPageView'), {
 export const metadata = {
   title: 'Carty - Create Your Telegram Shop',
   description: 'Launch your Telegram shop in minutes. No coding required.',
+  metadataBase: new URL('https://carty.cc'),
+  openGraph: {
+    title: 'Carty - Create Your Telegram Shop',
+    description: 'Launch your Telegram shop in minutes. No coding required.',
+    url: 'https://carty.cc',
+    siteName: 'Carty',
+    images: [
+      {
+        url: 'https://carty.cc/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Carty - Telegram Shop Creator',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Carty - Create Your Telegram Shop',
+    description: 'Launch your Telegram shop in minutes. No coding required.',
+    images: ['https://carty.cc/og-image.jpg'],
+    creator: '@cartyapp',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon-16x16.png',
+    apple: '/apple-touch-icon.png',
+  },
 };
 
 export default function RootLayout({
