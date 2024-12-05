@@ -44,9 +44,7 @@ export default function Hero() {
                     <TelegramLogo className="h-5 w-5" />
                   </div>
                   <div className="flex flex-col text-xs">
-                    <span className="text-gray-500">
-                      5 Minute Setup
-                    </span>
+                    <span className="text-gray-500">5 Minute Setup</span>
                     <span className="font-medium text-black/60">
                       For Digital Products
                     </span>
