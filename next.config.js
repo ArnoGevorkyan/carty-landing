@@ -13,6 +13,7 @@ const nextConfig = {
     });
     return config;
   },
+  // Only handle the /home route, redirecting it to root
   async rewrites() {
     return [
       {
