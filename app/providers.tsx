@@ -20,7 +20,7 @@ export function PHProvider({ children }: { children: React.ReactNode }) {
         autocapture: true,
         session_recording: {
           maskAllInputs: true,
-          maskNetworkRequests: false,
+          maskNetworkRequestFn: () => false,
         },
         loaded: posthog => {
           if (process.env.NODE_ENV === 'development') posthog.debug();
