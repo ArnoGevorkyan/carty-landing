@@ -6,16 +6,24 @@ import { PHProvider } from './providers';
 import Header from '@/components/header';
 import { Toaster } from '@/components/ui/sonner';
 import dynamic from 'next/dynamic';
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/next';
 import { ThemeProvider } from 'next-themes';
-import Script from 'next/script';
+
+// Dynamically import analytics components
+const Analytics = dynamic(
+  () => import('@vercel/analytics/react').then((mod) => mod.Analytics),
+  { ssr: false }
+);
+
+const SpeedInsights = dynamic(
+  () => import('@vercel/speed-insights/next').then((mod) => mod.SpeedInsights),
+  { ssr: false }
+);
 
 const PostHogPageView = dynamic(() => import('./PostHogPageView'), {
   ssr: false,
 });
 
-export const runtime = 'edge';
+const Script = dynamic(() => import('next/script'), { ssr: false });
 
 export default function RootLayout({
   children,
@@ -28,7 +36,7 @@ export default function RootLayout({
       className={`${GeistSans.variable} ${GeistMono.variable}`}
       suppressHydrationWarning
     >
-      <head>
+      <body className={`bg-background font-sans tracking-tight antialiased`}>
         <Script
           defer
           data-website-id="6750bc32b549dc0c44960a61"
@@ -36,26 +44,24 @@ export default function RootLayout({
           src="https://datafa.st/js/script.js"
           strategy="afterInteractive"
         />
-      </head>
-      <PHProvider>
-        <body className={`bg-background font-sans tracking-tight antialiased`}>
+        <PHProvider>
           <ThemeProvider
             attribute="class"
             defaultTheme="light"
             enableSystem={false}
             disableTransitionOnChange
           >
-            <PostHogPageView />
+            {process.env.NEXT_PUBLIC_POSTHOG_KEY && <PostHogPageView />}
             <div className="flex min-h-screen flex-col overflow-hidden">
               <Header />
               {children}
               <Toaster position="bottom-right" richColors />
             </div>
           </ThemeProvider>
-          <Analytics />
-          <SpeedInsights />
-        </body>
-      </PHProvider>
+        </PHProvider>
+        <Analytics />
+        <SpeedInsights />
+      </body>
     </html>
   );
 }
