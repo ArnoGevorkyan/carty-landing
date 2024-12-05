@@ -10,7 +10,7 @@ export function PHProvider({ children }: { children: React.ReactNode }) {
     if (typeof window !== 'undefined') {
       posthog.init('phc_sZdbmKIdH2qCqiGFHy079fD7766qcgFCLD9bkKeZLDA', {
         api_host: 'https://us.i.posthog.com',
-        person_profiles: 'identified_only'
+        person_profiles: 'identified_only',
       });
     }
   }, []);
