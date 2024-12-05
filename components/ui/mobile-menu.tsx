@@ -201,10 +201,7 @@ export default function MobileMenu({
         <div className="width-full space-y-4 pb-6">
           <div className="width-full">
             {mounted ? (
-              <Button
-                variant="outline"
-                className="w-full justify-center"
-              >
+              <Button variant="outline" className="w-full justify-center">
                 {/* Remove theme toggle */}
               </Button>
             ) : null}

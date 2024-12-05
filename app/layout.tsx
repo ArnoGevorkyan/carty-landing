@@ -79,8 +79,9 @@ export default function RootLayout({
     >
       <head>
         <meta name="color-scheme" content="light" />
-        <script dangerouslySetInnerHTML={{
-          __html: `
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
             try {
               if (localStorage.getItem('theme') !== 'light') {
                 localStorage.setItem('theme', 'light');
@@ -89,8 +90,9 @@ export default function RootLayout({
               document.documentElement.classList.remove('dark');
               document.documentElement.style.colorScheme = 'light';
             } catch (e) {}
-          `
-        }} />
+          `,
+          }}
+        />
       </head>
       <body className="bg-background font-sans tracking-tight antialiased light">
         <PHProvider>
