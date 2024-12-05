@@ -14,8 +14,8 @@ import {
 import Image from "next/image";
 
 export const components: TwitterComponents = {
-  AvatarImg: (props) => <Image {...props} />,
-  MediaImg: (props) => <Image {...props} fill unoptimized />,
+  AvatarImg: (props) => <Image {...props} alt="Twitter profile avatar" />,
+  MediaImg: (props) => <Image {...props} fill unoptimized alt="Tweet media content" />,
 };
 
 type Props = {
