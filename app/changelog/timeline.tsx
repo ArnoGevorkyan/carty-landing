@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import { cn } from "@/lib/utils";
-import { getTimePassed } from "@/utils/dateUtils";
+import React from 'react';
+import Image from 'next/image';
+import { cn } from '@/lib/utils';
+import { getTimePassed } from '@/utils/dateUtils';
 
 type TimelineItemProps = {
   date: string;
@@ -49,7 +49,7 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({
         </div>
         {/* <!-- Right Content --> */}
         <div className="grow">
-          <div className={cn("justify-between gap-10 md:flex")}>
+          <div className={cn('justify-between gap-10 md:flex')}>
             <div>
               <h3 className="dark:text-white flex items-baseline gap-x-1.5 text-lg font-bold text-gray-900 md:text-3xl lg:mb-5">
                 {version} &nbsp;&nbsp;{title}

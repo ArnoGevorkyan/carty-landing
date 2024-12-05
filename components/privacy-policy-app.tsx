@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { CONTACT_EMAIL } from "@/utils/constants";
+import Link from 'next/link';
+import { CONTACT_EMAIL } from '@/utils/constants';
 
 export default function PrivacyPolicyComponent() {
   return (
@@ -83,7 +83,7 @@ export default function PrivacyPolicyComponent() {
               us improve the product. All data collected by PearAI is anonymized
               and stripped of any personally identifiable information (PII)
               before being processed by Telemetry. For full transparency, you
-              can review the code for this{" "}
+              can review the code for this{' '}
               <a
                 href="https://github.com/trypear/pearai-submodule/pull/16/files#diff-13a0c1fe9c6c6ddec4347498077a92020ff2d64ebc3f70b56e45a8413a8ce0fbR7"
                 target="_blank"
@@ -141,13 +141,13 @@ export default function PrivacyPolicyComponent() {
             <h2 className="mb-4 text-2xl font-bold text-gray-900">Reach Out</h2>
             <p className="mb-6 leading-relaxed text-gray-600">
               If you have any questions or concerns about this Privacy Policy or
-              other privacy-related matters, please send an email to{" "}
+              other privacy-related matters, please send an email to{' '}
               <Link
                 href={`mailto:${CONTACT_EMAIL}`}
                 className="text-blue-600 hover:text-blue-800"
               >
                 {CONTACT_EMAIL}
-              </Link>{" "}
+              </Link>{' '}
               and we will get back to you promptly!
             </p>
           </div>

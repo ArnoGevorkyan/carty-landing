@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React from 'react';
+import { motion } from 'framer-motion';
 
 export const HeaderBadge = () => {
   return (
@@ -12,7 +12,7 @@ export const HeaderBadge = () => {
       <div className="relative z-10 flex items-center rounded-full bg-primary-700/10 py-0 pl-2.5 pr-1 ring-1 ring-primary-500/80 dark:bg-primary-1000 dark:ring-primary-900/90 sm:py-0.5 sm:pl-4 sm:pr-2">
         <span>
           Backed by
-          <span className="pl-2 text-[#f26625]">YCombinator</span>{" "}
+          <span className="pl-2 text-[#f26625]">YCombinator</span>{' '}
         </span>
         <svg
           width="16"

@@ -1,11 +1,11 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function CreatorTroubleshooting() {
   return (
     <main className="min-h-screen">
       <div className="container mx-auto max-w-4xl px-6 pb-16 pt-32">
         <h1 className="mb-4 text-4xl font-bold">
-          PearAI Creator (Powered by{" "}
+          PearAI Creator (Powered by{' '}
           <a
             href="https://aider.chat/2024/06/02/main-swe-bench.html"
             target="_blank"
@@ -70,7 +70,7 @@ export default function CreatorTroubleshooting() {
                 <strong>Open a new terminal window</strong>
               </li>
               <li className="mb-2">
-                <strong>Install Homebrew (if not already installed) - </strong>{" "}
+                <strong>Install Homebrew (if not already installed) - </strong>{' '}
                 Run:
                 <pre className="bg-secondary mt-1 rounded-lg border-2 border-solid border-input p-2">
                   <span className="block overflow-x-auto whitespace-nowrap font-mono">
@@ -80,7 +80,7 @@ export default function CreatorTroubleshooting() {
                 </pre>
               </li>
               <li className="mb-2">
-                <strong>Install Python (if not already installed) - </strong>{" "}
+                <strong>Install Python (if not already installed) - </strong>{' '}
                 Run:
                 <pre className="bg-secondary mt-1 rounded-lg border-2 border-solid border-input p-2">
                   <span className="font-mono">brew install python@3</span>
@@ -120,7 +120,7 @@ export default function CreatorTroubleshooting() {
                 <strong>Open a Command Prompt or PowerShell window</strong>
               </li>
               <li className="mb-2">
-                <strong>Install Python (if not already installed) - </strong>{" "}
+                <strong>Install Python (if not already installed) - </strong>{' '}
                 Run:
                 <pre className="bg-secondary mt-1 rounded-lg border-2 border-solid border-input p-2">
                   <span className="font-mono">
@@ -159,7 +159,7 @@ export default function CreatorTroubleshooting() {
             PearAI, then PearAI Creator should work!
             <br />
             If you&apos;re still experiencing issues, please contact PearAI
-            Support on{" "}
+            Support on{' '}
             <a
               className="text-blue-500 hover:underline"
               href="https://discord.gg/avc2y2Kqsa"
@@ -173,7 +173,7 @@ export default function CreatorTroubleshooting() {
         </div>
 
         <p className="mx-2 mt-8 text-center text-sm text-gray-500">
-          *View PearAI{" "}
+          *View PearAI{' '}
           <Link
             href="/disclaimer"
             className="text-primary-700 underline hover:text-primary-700/90"

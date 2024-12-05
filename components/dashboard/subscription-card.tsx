@@ -1,16 +1,16 @@
-import Link from "next/link";
-import { Subscription } from "@/types/subscription";
-import { capitalizeInital } from "@/lib/utils";
+import Link from 'next/link';
+import { Subscription } from '@/types/subscription';
+import { capitalizeInital } from '@/lib/utils';
 import {
   Card,
   CardHeader,
   CardTitle,
   CardContent,
   CardFooter,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
-import { Badge } from "@/components/ui/badge";
+} from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Progress } from '@/components/ui/progress';
+import { Badge } from '@/components/ui/badge';
 import {
   Dialog,
   DialogContent,
@@ -19,21 +19,21 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from '@/components/ui/dialog';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { useState } from "react";
-import { useCancelSubscription } from "@/hooks/useCancelSubscription";
-import { User } from "@supabase/supabase-js";
-import { InfoIcon } from "lucide-react";
-import { UsageType } from "../dashboard";
-import { toast } from "sonner";
-import { useUpgradeSubscription } from "@/hooks/useUpgradeSubscription";
-import TopUpModal from "../topup-modal";
+} from '@/components/ui/tooltip';
+import { useState } from 'react';
+import { useCancelSubscription } from '@/hooks/useCancelSubscription';
+import { User } from '@supabase/supabase-js';
+import { InfoIcon } from 'lucide-react';
+import { UsageType } from '../dashboard';
+import { toast } from 'sonner';
+import { useUpgradeSubscription } from '@/hooks/useUpgradeSubscription';
+import TopUpModal from '../topup-modal';
 
 type SubscriptionCardProps = {
   subscription: Subscription | null;
@@ -43,7 +43,7 @@ type SubscriptionCardProps = {
   loading: boolean;
 };
 
-const DEFAULT_OPEN_APP_CALLBACK = "pearai://pearai.pearai/auth";
+const DEFAULT_OPEN_APP_CALLBACK = 'pearai://pearai.pearai/auth';
 
 export default function SubscriptionCard({
   subscription,
@@ -58,12 +58,12 @@ export default function SubscriptionCard({
     useCancelSubscription(user, subscription);
   const { handleUpgradeSubscription, isUpgrading } = useUpgradeSubscription(
     user,
-    subscription,
+    subscription
   );
 
   const handleCancelClick = () => {
     if (isCanceled) {
-      window.location.href = "/pricing";
+      window.location.href = '/pricing';
     } else {
       setIsDialogOpen(true);
     }
@@ -83,10 +83,10 @@ export default function SubscriptionCard({
         await handleUpgradeSubscription();
         return;
       }
-      toast.error("Failed to upgrade subscription. Subscription ID not found.");
+      toast.error('Failed to upgrade subscription. Subscription ID not found.');
     } catch (error) {
-      console.error("Error upgrading subscription:", error);
-      toast.error("Failed to upgrade subscription.");
+      console.error('Error upgrading subscription:', error);
+      toast.error('Failed to upgrade subscription.');
     } finally {
       setIsUpgradeDialogOpen(false);
     }
@@ -143,12 +143,12 @@ export default function SubscriptionCard({
                 <p className="font-medium">Requests</p>
                 <p className="text-sm text-muted-foreground">
                   {loading ? (
-                    "-"
+                    '-'
                   ) : (
                     <strong>
                       {usage?.percent_credit_used != null
                         ? `${Math.min(usage.percent_credit_used, 100)}%`
-                        : "Usage info not found. Contact PearAI support"}
+                        : 'Usage info not found. Contact PearAI support'}
                     </strong>
                   )}
                 </p>
@@ -161,7 +161,7 @@ export default function SubscriptionCard({
               <div className="flex justify-between">
                 <p className="text-sm text-muted-foreground">
                   {loading
-                    ? "-"
+                    ? '-'
                     : `${Math.min(usage?.percent_credit_used ?? 0, 100)}% of PearAI Credits used`}
                 </p>
                 <p className="text-right text-sm text-muted-foreground">
@@ -189,7 +189,7 @@ export default function SubscriptionCard({
                     </div>
                     <p className="text-sm text-muted-foreground">
                       {loading
-                        ? "-"
+                        ? '-'
                         : `$${Math.floor(usage.remaining_topup_credits! * 100) / 100} remaining`}
                     </p>
                   </div>
@@ -203,7 +203,7 @@ export default function SubscriptionCard({
                 <p className="text-sm text-muted-foreground">
                   {capitalizeInital(subscription.pricing_tier)}
                 </p>
-                {subscription.pricing_tier == "monthly" && (
+                {subscription.pricing_tier == 'monthly' && (
                   <Dialog
                     open={isUpgradeDialogOpen}
                     onOpenChange={setIsUpgradeDialogOpen}
@@ -222,7 +222,7 @@ export default function SubscriptionCard({
                           <br />
                           This will bring you to the checkout page to upgrade
                           your plan from monthly to yearly. For the details of
-                          the yearly plan, see the{" "}
+                          the yearly plan, see the{' '}
                           <a
                             href="/pricing"
                             target="_blank"
@@ -247,7 +247,7 @@ export default function SubscriptionCard({
                             handleUpgradeSubscriptionClick();
                           }}
                         >
-                          {isUpgrading ? "Upgrading..." : "Upgrade"}
+                          {isUpgrading ? 'Upgrading...' : 'Upgrade'}
                         </Button>
                       </DialogFooter>
                     </DialogContent>
@@ -261,14 +261,14 @@ export default function SubscriptionCard({
               <p className="font-medium">Current Period</p>
               <p className="text-sm text-muted-foreground">
                 {new Date(
-                  subscription.current_period_start * 1000,
-                ).toLocaleDateString()}{" "}
-                -{" "}
+                  subscription.current_period_start * 1000
+                ).toLocaleDateString()}{' '}
+                -{' '}
                 {subscription.current_period_end
                   ? new Date(
-                      subscription.current_period_end * 1000,
+                      subscription.current_period_end * 1000
                     ).toLocaleDateString()
-                  : "Now"}
+                  : 'Now'}
               </p>
             </div>
           </div>
@@ -276,7 +276,7 @@ export default function SubscriptionCard({
             <div className="hidden space-x-2 sm:block">
               <Button variant="default" asChild>
                 <Link
-                  href={DEFAULT_OPEN_APP_CALLBACK + "?" + openAppQueryParams}
+                  href={DEFAULT_OPEN_APP_CALLBACK + '?' + openAppQueryParams}
                   target="_parent"
                 >
                   Open PearAI App
@@ -292,13 +292,13 @@ export default function SubscriptionCard({
                   onClick={handleCancelClick}
                   disabled={isCanceling || isCanceled}
                   variant="link"
-                  className={`ml-auto px-0 text-muted-foreground ${isCanceled ? "" : "underline"} underline-offset-2`}
+                  className={`ml-auto px-0 text-muted-foreground ${isCanceled ? '' : 'underline'} underline-offset-2`}
                 >
                   {isCanceling
-                    ? "Canceling..."
+                    ? 'Canceling...'
                     : isCanceled
-                      ? "Your subscription has been canceled, and will not be renewed at the end of the current period."
-                      : "Cancel Subscription"}
+                      ? 'Your subscription has been canceled, and will not be renewed at the end of the current period.'
+                      : 'Cancel Subscription'}
                 </Button>
               </DialogTrigger>
               <DialogContent>
@@ -324,7 +324,7 @@ export default function SubscriptionCard({
                     disabled={isCanceling}
                     className="mt-2"
                   >
-                    {isCanceling ? "Canceling..." : "Confirm Cancellation"}
+                    {isCanceling ? 'Canceling...' : 'Confirm Cancellation'}
                   </Button>
                 </DialogFooter>
               </DialogContent>

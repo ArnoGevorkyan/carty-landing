@@ -1,24 +1,24 @@
-"use client";
-import { Button } from "@/components/ui/button";
-import { getOS } from "@/lib/utils";
-import { User } from "@supabase/supabase-js";
-import { ArrowDownToLine } from "lucide-react";
-import { useRouter } from "next/navigation";
-import { toast } from "sonner";
+'use client';
+import { Button } from '@/components/ui/button';
+import { getOS } from '@/lib/utils';
+import { User } from '@supabase/supabase-js';
+import { ArrowDownToLine } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 
 export default function DownloadButton({ user }: { user: User | null }) {
   const router = useRouter();
   const handleDownload = async () => {
     try {
       const os = await getOS();
-      if (os.download === "linux") {
-        router.push("/blog/download-pearai-on-linux");
+      if (os.download === 'linux') {
+        router.push('/blog/download-pearai-on-linux');
         return;
       }
       const res = await fetch(`/api/download?os_type=${os.download}`, {
-        method: "GET",
+        method: 'GET',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
       });
 
@@ -37,12 +37,12 @@ export default function DownloadButton({ user }: { user: User | null }) {
 
   return (
     <Button
-      variant={user ? "outline" : "default"}
-      size={`${user ? "icon" : "default"}`}
-      className={user ? "h-9 px-3" : "h-8 rounded-lg px-3"}
+      variant={user ? 'outline' : 'default'}
+      size={`${user ? 'icon' : 'default'}`}
+      className={user ? 'h-9 px-3' : 'h-8 rounded-lg px-3'}
       onClick={handleDownload}
     >
-      {user ? <ArrowDownToLine /> : "Download"}
+      {user ? <ArrowDownToLine /> : 'Download'}
     </Button>
   );
 }

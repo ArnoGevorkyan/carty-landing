@@ -1,7 +1,7 @@
-import { footerSections, socialMediaLinks } from "@/utils/constants";
-import Link from "next/link";
-import CartyLogo from "./ui/CartyLogo.svg";
-import { Button } from "./ui/button";
+import { footerSections, socialMediaLinks } from '@/utils/constants';
+import Link from 'next/link';
+import CartyLogo from './ui/CartyLogo.svg';
+import { Button } from './ui/button';
 
 export default function Footer() {
   return (
@@ -23,7 +23,7 @@ export default function Footer() {
           <div key={idx}>
             <h5 className="font-semibold">{title}</h5>
             <ul className="mt-4 space-y-2 text-neutral-500 dark:text-neutral-400">
-              {links.map(({ text, href, target = "_self" }, idx) => (
+              {links.map(({ text, href, target = '_self' }, idx) => (
                 <li key={idx}>
                   <Link
                     href={href}

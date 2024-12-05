@@ -1,11 +1,11 @@
-import { Suspense } from "react";
-import { getTweet } from "react-tweet/api";
-import { type TweetProps, TweetSkeleton } from "react-tweet";
-import { MyTweet } from "./ui/my-tweet";
+import { Suspense } from 'react';
+import { getTweet } from 'react-tweet/api';
+import { type TweetProps, TweetSkeleton } from 'react-tweet';
+import { MyTweet } from './ui/my-tweet';
 
 const TweetContent = async ({ id, components, onError }: TweetProps) => {
   const tweet = id
-    ? await getTweet(id).catch((err) => {
+    ? await getTweet(id).catch(err => {
         if (onError) {
           onError(err);
         }
@@ -13,7 +13,7 @@ const TweetContent = async ({ id, components, onError }: TweetProps) => {
     : undefined;
 
   if (!tweet) {
-    return "";
+    return '';
   }
 
   return <MyTweet tweet={tweet} components={components} />;

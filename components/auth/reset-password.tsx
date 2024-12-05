@@ -1,11 +1,11 @@
-"use client";
-import Link from "next/link";
-import { useState } from "react";
-import { resetPassword } from "@/app/(auth)/actions";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { Button } from "@/components/ui/button";
-import { Input } from "../ui/input";
+'use client';
+import Link from 'next/link';
+import { useState } from 'react';
+import { resetPassword } from '@/app/(auth)/actions';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { Button } from '@/components/ui/button';
+import { Input } from '../ui/input';
 import {
   Form,
   FormField,
@@ -13,20 +13,20 @@ import {
   FormLabel,
   FormControl,
   FormMessage,
-} from "@/components/ui/form";
+} from '@/components/ui/form';
 import {
   ResetPasswordFormData,
   resetPasswordSchema,
-} from "@/utils/form-schema";
+} from '@/utils/form-schema';
 
 export default function ResetPassword() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [successMessage, setSuccessMessage] = useState<string>("");
+  const [successMessage, setSuccessMessage] = useState<string>('');
   const form = useForm<ResetPasswordFormData>({
     resolver: zodResolver(resetPasswordSchema),
     defaultValues: {
-      email: "",
+      email: '',
     },
   });
 
@@ -34,23 +34,23 @@ export default function ResetPassword() {
     if (isSubmitting) return;
     setIsSubmitting(true);
     setErrorMessage(null);
-    setSuccessMessage("");
+    setSuccessMessage('');
 
     try {
       const formData = new FormData();
-      formData.append("email", data.email);
+      formData.append('email', data.email);
 
       const response = await resetPassword(formData);
       if (response?.error) {
         setErrorMessage(response.error);
       } else {
         setSuccessMessage(
-          "Password reset instructions have been sent to your email.",
+          'Password reset instructions have been sent to your email.'
         );
         form.reset();
       }
     } catch (error) {
-      setErrorMessage("An unexpected error occurred. Please try again.");
+      setErrorMessage('An unexpected error occurred. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -102,13 +102,13 @@ export default function ResetPassword() {
                   isLoading={isSubmitting}
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Resetting..." : "Reset Password"}
+                  {isSubmitting ? 'Resetting...' : 'Reset Password'}
                 </Button>
 
                 {errorMessage && (
                   <p className="text-center text-red-500">{errorMessage}</p>
                 )}
-                {successMessage !== "" && (
+                {successMessage !== '' && (
                   <p className="text-center text-green-500">{successMessage}</p>
                 )}
               </form>

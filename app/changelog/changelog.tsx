@@ -1,6 +1,6 @@
-import Link from "next/link";
-import React from "react";
-import Image from "next/image";
+import Link from 'next/link';
+import React from 'react';
+import Image from 'next/image';
 
 type ChangelogEntry = {
   date: string;
@@ -18,9 +18,9 @@ type ChangelogEntry = {
 const updates: ChangelogEntry[] = [
   // =================================================================
   {
-    date: "23 November 2024",
-    title: "Major Architecture Overhaul & PearAI Inventory: Creator, Search",
-    version: "v1.5.2",
+    date: '23 November 2024',
+    title: 'Major Architecture Overhaul & PearAI Inventory: Creator, Search',
+    version: 'v1.5.2',
     description: (
       <>
         <h2 className="mt-6 text-xl font-semibold">Architecture Overhaul 🏗️</h2>
@@ -75,9 +75,9 @@ const updates: ChangelogEntry[] = [
   },
   // =================================================================
   {
-    date: "9 October 2024",
-    title: "Open Source Fixes",
-    version: "v1.3.0",
+    date: '9 October 2024',
+    title: 'Open Source Fixes',
+    version: 'v1.3.0',
     description: (
       <>
         <h2 className="mt-6 text-xl font-semibold">Fixes</h2>
@@ -98,9 +98,9 @@ const updates: ChangelogEntry[] = [
   },
   // =================================================================
   {
-    date: "18 September 2024",
-    title: "File Creation + WSL Support",
-    version: "v1.1.0 + v1.2.0",
+    date: '18 September 2024',
+    title: 'File Creation + WSL Support',
+    version: 'v1.1.0 + v1.2.0',
     description: (
       <>
         {/* <div className="relative w-20"> */}
@@ -132,7 +132,7 @@ const updates: ChangelogEntry[] = [
           <li className="">
             <span className="mr-1 rounded-lg bg-green-200 px-1 py-0.5 font-mono text-black">
               /v0
-            </span>{" "}
+            </span>{' '}
             create a <span className="font-mono">v0</span> component link
             directly from pearai
           </li>
@@ -145,14 +145,14 @@ const updates: ChangelogEntry[] = [
           <li className="">
             <span className="mr-1 rounded-lg bg-green-200 px-2 py-0.5 text-black">
               /sensei
-            </span>{" "}
+            </span>{' '}
             slash command which will help you learn by guiding rather than
             providing direct answers
           </li>
           <li className="">
             <span className="mr-1 rounded-lg bg-green-200 px-2 py-0.5 text-black">
               /leetcode
-            </span>{" "}
+            </span>{' '}
             slash command, it will help you learn by guiding like a interviewer
           </li>
           <li className="">Preserve extension state on import from vscode</li>
@@ -163,9 +163,9 @@ const updates: ChangelogEntry[] = [
   },
   // =================================================================
   {
-    date: "30 August 2024",
-    title: "Carty v1.0.0 - The Cupertino v1 Launch",
-    version: "🎉 v1.0.0",
+    date: '30 August 2024',
+    title: 'Carty v1.0.0 - The Cupertino v1 Launch',
+    version: '🎉 v1.0.0',
     description: (
       <>
         <p className="mb-4 text-lg font-semibold text-primary-700">
@@ -179,9 +179,9 @@ const updates: ChangelogEntry[] = [
           sizes="100vw"
           className="h-auto w-full max-w-[300px] rounded-xl border-4 border-green-200 shadow-lg shadow-green-500"
           style={{
-            width: "100%",
-            height: "auto",
-            maxWidth: "850px",
+            width: '100%',
+            height: 'auto',
+            maxWidth: '850px',
           }}
         />
         <ul className="mt-10 list-disc space-y-3 ps-6 text-lg">
@@ -203,9 +203,9 @@ const updates: ChangelogEntry[] = [
   },
   // =================================================================
   {
-    date: "19 August 2024",
-    title: "🚧 Model switch feature & Bug Fixes",
-    version: "v0.0.3",
+    date: '19 August 2024',
+    title: '🚧 Model switch feature & Bug Fixes',
+    version: 'v0.0.3',
     description: (
       <ul className="list-disc space-y-3 ps-6 text-lg">
         <li>
@@ -216,7 +216,7 @@ const updates: ChangelogEntry[] = [
             className="underline-offset-4 hover:underline"
           >
             Huge refactor
-          </Link>{" "}
+          </Link>{' '}
           & Performance improvements
         </li>
         <li>Added Mistral AI support</li>
@@ -227,7 +227,7 @@ const updates: ChangelogEntry[] = [
         <li>
           <span className="mr-1 rounded-lg bg-green-200 px-2 py-1 text-black">
             @codebase
-          </span>{" "}
+          </span>{' '}
           searching enhanced
         </li>
         <li>PearAI token refresh bug fixed</li>
@@ -237,9 +237,9 @@ const updates: ChangelogEntry[] = [
   },
   // =================================================================
   {
-    date: "2 August 2024",
-    title: "🌟 Claude Sonnet Model, UI/UX improvements",
-    version: "v0.0.2",
+    date: '2 August 2024',
+    title: '🌟 Claude Sonnet Model, UI/UX improvements',
+    version: 'v0.0.2',
     description: (
       <div className="flex flex-col gap-y-4">
         <ul className="list-disc space-y-3 ps-6 text-lg">
@@ -253,16 +253,16 @@ const updates: ChangelogEntry[] = [
   },
   // =================================================================
   {
-    date: "15 July 2024",
-    title: "🚀 Initial Launch",
-    version: "v0.0.1",
+    date: '15 July 2024',
+    title: '🚀 Initial Launch',
+    version: 'v0.0.1',
     description: (
       <div className="flex flex-col gap-y-4">
         <ul className="list-disc space-y-3 ps-6 text-lg">
           <li>VSCode Fork - Feel right at home</li>
           <li>Chat with AI models who have full code context</li>
           <li>
-            Tag your files{" "}
+            Tag your files{' '}
             <span className="ml-1 rounded-lg bg-green-200 px-2 py-1 text-black">
               @filename
             </span>
@@ -276,9 +276,9 @@ const updates: ChangelogEntry[] = [
           sizes="100vw"
           className="h-auto w-full max-w-[300px] rounded-2xl" // Added green hue border
           style={{
-            width: "100%",
-            height: "auto",
-            maxWidth: "650px",
+            width: '100%',
+            height: 'auto',
+            maxWidth: '650px',
           }}
         />
       </div>

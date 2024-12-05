@@ -1,16 +1,16 @@
-import Link from "next/link";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
-import { Badge } from "@/components/ui/badge";
-import { InfoIcon } from "lucide-react";
-import { UsageType } from "../dashboard";
+import Link from 'next/link';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Progress } from '@/components/ui/progress';
+import { Badge } from '@/components/ui/badge';
+import { InfoIcon } from 'lucide-react';
+import { UsageType } from '../dashboard';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from '@/components/ui/tooltip';
 
 type FreeTrialCardProps = {
   usage: UsageType;
@@ -18,7 +18,7 @@ type FreeTrialCardProps = {
   loading: boolean;
 };
 
-const DEFAULT_OPEN_APP_CALLBACK = "pearai://pearai.pearai/auth";
+const DEFAULT_OPEN_APP_CALLBACK = 'pearai://pearai.pearai/auth';
 const DEFAULT_FREE_TRIAL_MAX_QUOTA = 50; // Sync with "FREE_TRIAL_MAX_QUOTA" env var from server
 
 export default function FreeTrialCard({
@@ -46,12 +46,12 @@ export default function FreeTrialCard({
               <p className="font-medium">PearAI Credits</p>
               <p className="text-sm text-muted-foreground">
                 {loading ? (
-                  "-"
+                  '-'
                 ) : (
                   <strong>
                     {usage?.percent_credit_used != null
                       ? `${Math.min(usage.percent_credit_used, 100)}%`
-                      : "Usage info not found. Contact PearAI support"}
+                      : 'Usage info not found. Contact PearAI support'}
                   </strong>
                 )}
               </p>
@@ -63,7 +63,7 @@ export default function FreeTrialCard({
             />
             <div className="flex justify-between">
               <p className="text-sm text-muted-foreground">
-                {loading ? "-" : Math.min(usage?.percent_credit_used ?? 0, 100)}
+                {loading ? '-' : Math.min(usage?.percent_credit_used ?? 0, 100)}
                 % of free trial PearAI Credits used
               </p>
             </div>
@@ -90,7 +90,7 @@ export default function FreeTrialCard({
                   </div>
                   <p className="text-sm text-muted-foreground">
                     {loading
-                      ? "-"
+                      ? '-'
                       : `$${Math.floor(usage.remaining_topup_credits! * 100) / 100} remaining`}
                   </p>
                 </div>
@@ -106,7 +106,7 @@ export default function FreeTrialCard({
             <div className="hidden sm:block">
               <Button variant="outline" className="text-primary-800" asChild>
                 <Link
-                  href={DEFAULT_OPEN_APP_CALLBACK + "?" + openAppQueryParams}
+                  href={DEFAULT_OPEN_APP_CALLBACK + '?' + openAppQueryParams}
                   target="_parent"
                 >
                   Open PearAI

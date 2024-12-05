@@ -6,8 +6,8 @@ interface TelegramLogoProps {
 
 const TelegramLogo: React.FC<TelegramLogoProps> = ({ className }) => {
   return (
-    <svg 
-      viewBox="0 0 24 24" 
+    <svg
+      viewBox="0 0 24 24"
       className={className}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
@@ -19,4 +19,4 @@ const TelegramLogo: React.FC<TelegramLogoProps> = ({ className }) => {
   );
 };
 
-export default TelegramLogo; 
+export default TelegramLogo;

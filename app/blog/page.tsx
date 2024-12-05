@@ -1,20 +1,20 @@
-import PostCard from "@/components/blog/PostCard";
-import { constructMetadata } from "@/lib/utils";
-import { compareDesc } from "date-fns";
-import { Metadata } from "next";
-import { posts } from "@/lib/blog/postData";
-import Footer from "@/components/footer";
+import PostCard from '@/components/blog/PostCard';
+import { constructMetadata } from '@/lib/utils';
+import { compareDesc } from 'date-fns';
+import { Metadata } from 'next';
+import { posts } from '@/lib/blog/postData';
+import Footer from '@/components/footer';
 
 export const metadata: Metadata = constructMetadata({
-  title: "Blog",
+  title: 'Blog',
   description:
-    "Discover insightful articles and the latest updates on PearAI. Stay informed, inspired, and ahead with expert tips, trends, and guides.",
-  canonical: "/blog",
+    'Discover insightful articles and the latest updates on PearAI. Stay informed, inspired, and ahead with expert tips, trends, and guides.',
+  canonical: '/blog',
 });
 
 export default function Blog() {
   const sortedPosts = posts.sort((a, b) =>
-    compareDesc(new Date(a.date), new Date(b.date)),
+    compareDesc(new Date(a.date), new Date(b.date))
   );
 
   return (

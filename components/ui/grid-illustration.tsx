@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export default function GridIllustration() {
   return (
@@ -6,9 +6,9 @@ export default function GridIllustration() {
       className="relative hidden opacity-40 md:block"
       style={{
         WebkitMaskImage:
-          "linear-gradient(0deg, rgba(255,255,255,0) 10%, rgba(255,255,255,.7) 50%, rgba(255,255,255,0.1) 100%)",
+          'linear-gradient(0deg, rgba(255,255,255,0) 10%, rgba(255,255,255,.7) 50%, rgba(255,255,255,0.1) 100%)',
         maskImage:
-          "linear-gradient(0deg, rgba(255,255,255,0) 10%, rgba(255,255,255,.7) 50%, rgba(255,255,255,0.1) 100%)",
+          'linear-gradient(0deg, rgba(255,255,255,0) 10%, rgba(255,255,255,.7) 50%, rgba(255,255,255,0.1) 100%)',
       }}
     >
       <svg

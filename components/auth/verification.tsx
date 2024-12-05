@@ -1,20 +1,20 @@
-"use client";
+'use client';
 
-import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
-import { resendConfirmationEmail } from "@/app/(auth)/actions";
-import { useSearchParams } from "next/navigation";
-import { toast } from "sonner";
-import { useState } from "react";
+import { Button } from '@/components/ui/button';
+import { useRouter } from 'next/navigation';
+import { resendConfirmationEmail } from '@/app/(auth)/actions';
+import { useSearchParams } from 'next/navigation';
+import { toast } from 'sonner';
+import { useState } from 'react';
 
 export default function Verification() {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const searchParams = useSearchParams();
-  const email = searchParams?.get("email");
+  const email = searchParams?.get('email');
 
   const handleClick = () => {
-    router.push("/signin");
+    router.push('/signin');
   };
 
   const handleResendEmail = async () => {
@@ -24,7 +24,7 @@ export default function Verification() {
     if (response?.error) {
       toast.error(response.error);
     } else {
-      toast.success("Email sent successfully");
+      toast.success('Email sent successfully');
     }
     setIsSubmitting(false);
   };
@@ -57,7 +57,7 @@ export default function Verification() {
             <div className="-mx-3 mt-11 flex flex-wrap">
               <div className="w-full px-3 text-center">
                 <Button
-                  size={"lg"}
+                  size={'lg'}
                   onClick={handleClick}
                   className="w-full bg-primary-700 text-white-main hover:bg-primary-800 hover:shadow-sm"
                 >
@@ -68,14 +68,14 @@ export default function Verification() {
                 </div>
                 {email && (
                   <div className="mt-2 text-gray-400">
-                    Didn&apos;t receive an email?{" "}
+                    Didn&apos;t receive an email?{' '}
                     <Button
                       onClick={() => handleResendEmail()}
-                      variant={"link"}
+                      variant={'link'}
                       className="p-0 text-gray-700 hover:text-primary-800"
                       disabled={isSubmitting}
                     >
-                      {isSubmitting ? "Resending..." : "Resend email"}
+                      {isSubmitting ? 'Resending...' : 'Resend email'}
                     </Button>
                   </div>
                 )}

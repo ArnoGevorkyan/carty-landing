@@ -1,15 +1,15 @@
-"use client";
-import Link from "next/link";
-import { useState } from "react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { signin, signinWithOAuth } from "@/app/(auth)/actions";
-import { Provider } from "@supabase/supabase-js";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
-import { GitHubLogo, GoogleLogoColored } from "@/components/ui/icons";
+'use client';
+import Link from 'next/link';
+import { useState } from 'react';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { signin, signinWithOAuth } from '@/app/(auth)/actions';
+import { Provider } from '@supabase/supabase-js';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Checkbox } from '@/components/ui/checkbox';
+import { GitHubLogo, GoogleLogoColored } from '@/components/ui/icons';
 import {
   Form,
   FormField,
@@ -17,22 +17,22 @@ import {
   FormLabel,
   FormControl,
   FormMessage,
-} from "@/components/ui/form";
-import { SignInFormData, signInSchema } from "@/utils/form-schema";
-import { useSearchParams } from "next/navigation";
-import { useToggle } from "@/hooks/useToggle";
+} from '@/components/ui/form';
+import { SignInFormData, signInSchema } from '@/utils/form-schema';
+import { useSearchParams } from 'next/navigation';
+import { useToggle } from '@/hooks/useToggle';
 
 export default function SignIn() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const searchParams = useSearchParams();
-  const callbackForDesktopApp = searchParams?.get("callback") ?? "";
+  const callbackForDesktopApp = searchParams?.get('callback') ?? '';
 
   const form = useForm<SignInFormData>({
     resolver: zodResolver(signInSchema),
     defaultValues: {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
     },
   });
 
@@ -43,8 +43,8 @@ export default function SignIn() {
 
     try {
       const formData = new FormData();
-      formData.append("email", data.email);
-      formData.append("password", data.password);
+      formData.append('email', data.email);
+      formData.append('password', data.password);
 
       const response = await signin(formData, callbackForDesktopApp);
       if (response?.error) {
@@ -53,7 +53,7 @@ export default function SignIn() {
         form.reset();
       }
     } catch (error) {
-      setErrorMessage("An unexpected error occurred. Please try again.");
+      setErrorMessage('An unexpected error occurred. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -64,7 +64,7 @@ export default function SignIn() {
     try {
       await signinWithOAuth(provider, callbackForDesktopApp);
     } catch (error) {
-      setErrorMessage("An unexpected error occurred. Please try again.");
+      setErrorMessage('An unexpected error occurred. Please try again.');
     }
   };
 
@@ -80,9 +80,9 @@ export default function SignIn() {
 
           <div className="mx-auto max-w-sm">
             <form
-              onSubmit={(e) => {
+              onSubmit={e => {
                 e.preventDefault();
-                handleOAuthSignIn("google");
+                handleOAuthSignIn('google');
               }}
             >
               <Button
@@ -96,9 +96,9 @@ export default function SignIn() {
               </Button>
             </form>
             <form
-              onSubmit={(e) => {
+              onSubmit={e => {
                 e.preventDefault();
-                handleOAuthSignIn("github");
+                handleOAuthSignIn('github');
               }}
             >
               <div className="-mx-3 flex flex-wrap">
@@ -160,7 +160,7 @@ export default function SignIn() {
                       <FormControl>
                         <Input
                           id="password"
-                          type={isPasswordVisible ? "text" : "password"}
+                          type={isPasswordVisible ? 'text' : 'password'}
                           placeholder="********"
                           {...field}
                         />
@@ -200,7 +200,7 @@ export default function SignIn() {
                   disabled={isSubmitting}
                   isLoading={isSubmitting}
                 >
-                  {isSubmitting ? "Signing in..." : "Sign In"}
+                  {isSubmitting ? 'Signing in...' : 'Sign In'}
                 </Button>
 
                 {errorMessage && (
@@ -210,7 +210,7 @@ export default function SignIn() {
             </Form>
 
             <div className="mt-6 text-center text-gray-600">
-              Don&apos;t have an account?{" "}
+              Don&apos;t have an account?{' '}
               <Link
                 href="/signup"
                 className="text-gray-800 transition duration-150 ease-in-out hover:text-primary-800"

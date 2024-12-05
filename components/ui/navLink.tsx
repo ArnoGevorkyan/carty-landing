@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 interface NavLinkProps {
   href: string;
@@ -22,11 +22,11 @@ const NavLink: React.FC<NavLinkProps> = ({
     <Link
       href={href}
       className={`text-nowrap align-middle text-gray-800 transition duration-150 ease-in-out hover:text-primary-800 ${
-        isActive ? "text-primary-800" : ""
+        isActive ? 'text-primary-800' : ''
       }`}
       {...(isExternal && {
-        target: "_blank",
-        rel: "noopener noreferrer",
+        target: '_blank',
+        rel: 'noopener noreferrer',
       })}
     >
       {children}
@@ -37,32 +37,32 @@ const NavLink: React.FC<NavLinkProps> = ({
 // Navigation component to render the list of navigation links
 const Navigation: React.FC = () => {
   const navLinks = [
-    { label: "About", path: "/about", isExternal: false },
+    { label: 'About', path: '/about', isExternal: false },
     {
-      label: "GitHub",
-      path: "https://github.com/trypear/pearai-master",
+      label: 'GitHub',
+      path: 'https://github.com/trypear/pearai-master',
       isExternal: true,
     },
     {
-      label: "Discord",
-      path: "https://discord.gg/AKy5FmqCkF",
+      label: 'Discord',
+      path: 'https://discord.gg/AKy5FmqCkF',
       isExternal: true,
     },
     {
-      label: "Download",
-      path: "/pricing",
+      label: 'Download',
+      path: '/pricing',
       isExternal: false,
       mobile: false,
     },
     {
-      label: "Docs",
-      path: "/docs",
+      label: 'Docs',
+      path: '/docs',
       isExternal: false,
       mobile: false,
     },
     {
-      label: "FAQ",
-      path: "/faq",
+      label: 'FAQ',
+      path: '/faq',
       isExternal: false,
       mobile: false,
     },
@@ -71,9 +71,9 @@ const Navigation: React.FC = () => {
   return (
     <nav className="flex w-full items-center justify-start md:justify-center">
       <ul className="flex w-full items-center justify-start space-x-3.5 sm:space-x-6 md:justify-center">
-        {navLinks.map((link) => (
+        {navLinks.map(link => (
           <li
-            className={`${link.mobile === false && "hidden sm:block"}`}
+            className={`${link.mobile === false && 'hidden sm:block'}`}
             key={link.label}
           >
             <NavLink href={link.path} isExternal={link.isExternal}>

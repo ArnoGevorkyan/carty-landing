@@ -4,13 +4,13 @@ import {
   SupermavenLogo,
   Mem0Logo,
   ContinueLogo,
-} from "./icons";
+} from './icons';
 
 interface IntegrationItemProps {
   margin: string;
   label: string;
   product: string | JSX.Element;
-  Icon: React.FC<React.ComponentProps<"svg">>;
+  Icon: React.FC<React.ComponentProps<'svg'>>;
 }
 
 const IntegrationItem = ({
@@ -37,8 +37,8 @@ const IntegrationItem = ({
 
 const INTEGRATIONS = [
   {
-    margin: "lg:ml-2 mr-1",
-    label: "Sell",
+    margin: 'lg:ml-2 mr-1',
+    label: 'Sell',
     product: (
       <a href="#" className="hover:underline">
         Courses
@@ -47,8 +47,8 @@ const INTEGRATIONS = [
     Icon: AiderLogo,
   },
   {
-    margin: "lg:ml-24 ml-2",
-    label: "Sell",
+    margin: 'lg:ml-24 ml-2',
+    label: 'Sell',
     product: (
       <a href="#" className="hover:underline">
         Templates
@@ -57,8 +57,8 @@ const INTEGRATIONS = [
     Icon: SupermavenLogo,
   },
   {
-    margin: "lg:ml-44",
-    label: "Sell",
+    margin: 'lg:ml-44',
+    label: 'Sell',
     product: (
       <a href="#" className="hover:underline">
         Guides
@@ -67,8 +67,8 @@ const INTEGRATIONS = [
     Icon: Mem0Logo,
   },
   {
-    margin: "lg:ml-56 -ml-3",
-    label: "Accept",
+    margin: 'lg:ml-56 -ml-3',
+    label: 'Accept',
     product: (
       <a href="#" className="hover:underline">
         Stars
@@ -77,8 +77,8 @@ const INTEGRATIONS = [
     Icon: PerplexityLogo,
   },
   {
-    margin: "lg:ml-48 -mr-5 lg:mr-0",
-    label: "Manage",
+    margin: 'lg:ml-48 -mr-5 lg:mr-0',
+    label: 'Manage',
     product: (
       <a href="#" className="hover:underline">
         Customers

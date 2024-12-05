@@ -1,6 +1,6 @@
-import { ComponentProps, FC } from "react";
+import { ComponentProps, FC } from 'react';
 
-export const HamburgerMenuIcon: FC<ComponentProps<"svg">> = (props) => (
+export const HamburgerMenuIcon: FC<ComponentProps<'svg'>> = props => (
   <svg
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
@@ -13,7 +13,7 @@ export const HamburgerMenuIcon: FC<ComponentProps<"svg">> = (props) => (
   </svg>
 );
 
-export const GoogleLogo: FC<ComponentProps<"svg">> = (props) => (
+export const GoogleLogo: FC<ComponentProps<'svg'>> = props => (
   <svg
     viewBox="0 0 16 16"
     xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +24,7 @@ export const GoogleLogo: FC<ComponentProps<"svg">> = (props) => (
   </svg>
 );
 
-export const GoogleLogoColored: FC<ComponentProps<"svg">> = (props) => (
+export const GoogleLogoColored: FC<ComponentProps<'svg'>> = props => (
   <svg
     viewBox="0 0 16 16"
     fill="none"
@@ -57,7 +57,7 @@ export const GoogleLogoColored: FC<ComponentProps<"svg">> = (props) => (
   </svg>
 );
 
-export const GitHubLogo: FC<ComponentProps<"svg">> = (props) => (
+export const GitHubLogo: FC<ComponentProps<'svg'>> = props => (
   <svg
     aria-hidden="true"
     // className="text-white h-4 w-4 shrink-0"
@@ -73,7 +73,7 @@ export const GitHubLogo: FC<ComponentProps<"svg">> = (props) => (
   </svg>
 );
 
-export const BlockquoteIcon: FC<ComponentProps<"svg">> = (props) => (
+export const BlockquoteIcon: FC<ComponentProps<'svg'>> = props => (
   <svg
     viewBox="0 0 24 20"
     xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +84,7 @@ export const BlockquoteIcon: FC<ComponentProps<"svg">> = (props) => (
   </svg>
 );
 
-export const AppleLogo: FC<ComponentProps<"svg">> = (props) => (
+export const AppleLogo: FC<ComponentProps<'svg'>> = props => (
   <svg
     viewBox="0 0 28 28"
     fill="none"
@@ -112,7 +112,7 @@ export const AppleLogo: FC<ComponentProps<"svg">> = (props) => (
   </svg>
 );
 
-export const WindowsLogo: FC<ComponentProps<"svg">> = (props) => (
+export const WindowsLogo: FC<ComponentProps<'svg'>> = props => (
   <svg
     viewBox="0 0 28 28"
     fill="none"
@@ -130,7 +130,7 @@ export const WindowsLogo: FC<ComponentProps<"svg">> = (props) => (
   </svg>
 );
 
-export const DiscordLogo: FC<ComponentProps<"svg">> = (props) => (
+export const DiscordLogo: FC<ComponentProps<'svg'>> = props => (
   <svg
     stroke="currentColor"
     fill="currentColor"
@@ -145,7 +145,7 @@ export const DiscordLogo: FC<ComponentProps<"svg">> = (props) => (
   </svg>
 );
 
-export const LinkedInLogo: FC<ComponentProps<"svg">> = (props) => (
+export const LinkedInLogo: FC<ComponentProps<'svg'>> = props => (
   <svg
     stroke="currentColor"
     fill="currentColor"
@@ -160,7 +160,7 @@ export const LinkedInLogo: FC<ComponentProps<"svg">> = (props) => (
   </svg>
 );
 
-export const TwitterLogo: FC<ComponentProps<"svg">> = (props) => (
+export const TwitterLogo: FC<ComponentProps<'svg'>> = props => (
   <svg
     stroke="currentColor"
     fill="currentColor"
@@ -175,7 +175,7 @@ export const TwitterLogo: FC<ComponentProps<"svg">> = (props) => (
   </svg>
 );
 
-export const LinuxLogo: FC<ComponentProps<"svg">> = (props) => (
+export const LinuxLogo: FC<ComponentProps<'svg'>> = props => (
   <svg
     viewBox="0 0 24 24"
     fill="currentColor"
@@ -186,8 +186,8 @@ export const LinuxLogo: FC<ComponentProps<"svg">> = (props) => (
   </svg>
 );
 
-export const AiderLogo: FC<ComponentProps<"svg"> & { color?: string }> = ({
-  color = "#000000",
+export const AiderLogo: FC<ComponentProps<'svg'> & { color?: string }> = ({
+  color = '#000000',
   ...props
 }) => (
   <svg
@@ -213,8 +213,8 @@ export const AiderLogo: FC<ComponentProps<"svg"> & { color?: string }> = ({
   </svg>
 );
 
-export const PerplexityLogo: FC<ComponentProps<"svg"> & { color?: string }> = ({
-  color = "#000000",
+export const PerplexityLogo: FC<ComponentProps<'svg'> & { color?: string }> = ({
+  color = '#000000',
   ...props
 }) => (
   <svg
@@ -234,8 +234,8 @@ export const PerplexityLogo: FC<ComponentProps<"svg"> & { color?: string }> = ({
   </svg>
 );
 
-export const SupermavenLogo: FC<ComponentProps<"svg"> & { color?: string }> = ({
-  color = "#000000",
+export const SupermavenLogo: FC<ComponentProps<'svg'> & { color?: string }> = ({
+  color = '#000000',
   ...props
 }) => (
   <svg
@@ -279,8 +279,8 @@ export const SupermavenLogo: FC<ComponentProps<"svg"> & { color?: string }> = ({
   </svg>
 );
 
-export const Mem0Logo: FC<ComponentProps<"svg"> & { color?: string }> = ({
-  color = "#000000",
+export const Mem0Logo: FC<ComponentProps<'svg'> & { color?: string }> = ({
+  color = '#000000',
   ...props
 }) => (
   <svg
@@ -362,8 +362,8 @@ export const Mem0Logo: FC<ComponentProps<"svg"> & { color?: string }> = ({
   </svg>
 );
 
-export const ContinueLogo: FC<ComponentProps<"svg"> & { color?: string }> = ({
-  color = "#000000",
+export const ContinueLogo: FC<ComponentProps<'svg'> & { color?: string }> = ({
+  color = '#000000',
   ...props
 }) => (
   <svg

@@ -1,14 +1,14 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { Plus } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Plus } from 'lucide-react';
+import { cn } from '@/lib/utils';
 import {
   AiderLogo,
   PerplexityLogo,
   SupermavenLogo,
   Mem0Logo,
   ContinueLogo,
-} from "./icons";
+} from './icons';
 
 type Card = {
   id: number;
@@ -29,79 +29,84 @@ type Card = {
 const CARDS: Card[] = [
   {
     id: 1,
-    title: "Sell",
+    title: 'Sell',
     company: {
-      name: "Courses*",
-      url: "#",
+      name: 'Courses*',
+      url: '#',
     },
-    description: "Create and sell online courses, tutorials, and educational content. Your customers get instant access after payment through Telegram Stars.",
+    description:
+      'Create and sell online courses, tutorials, and educational content. Your customers get instant access after payment through Telegram Stars.',
     icon: AiderLogo,
-    bgColor: "rgba(201, 255, 226, 1)",
-    iconBgColor: "rgba(4, 40, 26, 1)",
-    iconColor: "#01FFC9",
-    titleColor: "#0A3F37",
-    descriptionColor: "#0A3F37",
+    bgColor: 'rgba(201, 255, 226, 1)',
+    iconBgColor: 'rgba(4, 40, 26, 1)',
+    iconColor: '#01FFC9',
+    titleColor: '#0A3F37',
+    descriptionColor: '#0A3F37',
   },
   {
     id: 2,
-    title: "Sell",
+    title: 'Sell',
     company: {
-      name: "Templates*",
-      url: "#",
+      name: 'Templates*',
+      url: '#',
     },
-    description: "Offer digital templates, design assets, and ready-to-use resources. Customers can instantly download after purchasing with Stars.",
+    description:
+      'Offer digital templates, design assets, and ready-to-use resources. Customers can instantly download after purchasing with Stars.',
     icon: SupermavenLogo,
-    bgColor: "rgba(200, 230, 255, 1)",
-    iconBgColor: "rgba(0, 85, 255, 1)",
-    iconColor: "#FFFFFF",
-    titleColor: "#002957",
-    descriptionColor: "#002957",
+    bgColor: 'rgba(200, 230, 255, 1)',
+    iconBgColor: 'rgba(0, 85, 255, 1)',
+    iconColor: '#FFFFFF',
+    titleColor: '#002957',
+    descriptionColor: '#002957',
   },
   {
     id: 3,
-    title: "Sell",
+    title: 'Sell',
     company: {
-      name: "Guides*",
-      url: "#",
+      name: 'Guides*',
+      url: '#',
     },
-    description: "Share your expertise through comprehensive guides, ebooks, and tutorials. Deliver content directly in Telegram after Stars payment.",
+    description:
+      'Share your expertise through comprehensive guides, ebooks, and tutorials. Deliver content directly in Telegram after Stars payment.',
     icon: ContinueLogo,
-    bgColor: "rgba(229, 225, 248, 1)",
-    iconBgColor: "rgba(255, 255, 255, 1)",
-    iconColor: "#000000",
-    titleColor: "#110D67",
-    descriptionColor: "#110D67",
+    bgColor: 'rgba(229, 225, 248, 1)',
+    iconBgColor: 'rgba(255, 255, 255, 1)',
+    iconColor: '#000000',
+    titleColor: '#110D67',
+    descriptionColor: '#110D67',
   },
   {
     id: 4,
-    title: "Manage",
+    title: 'Manage',
     company: {
-      name: "Customers*",
-      url: "#",
+      name: 'Customers*',
+      url: '#',
     },
-    description: "Keep all your customers in your Telegram chat list forever. Send updates, new content, and maintain direct communication.",
+    description:
+      'Keep all your customers in your Telegram chat list forever. Send updates, new content, and maintain direct communication.',
     icon: Mem0Logo,
-    bgColor: "rgba(225, 253, 175, 1)",
-    iconBgColor: "rgba(0, 0, 0, 1)",
-    iconColor: "#FFFFFF",
-    titleColor: "#005F15",
-    descriptionColor: "#005F15",
+    bgColor: 'rgba(225, 253, 175, 1)',
+    iconBgColor: 'rgba(0, 0, 0, 1)',
+    iconColor: '#FFFFFF',
+    titleColor: '#005F15',
+    descriptionColor: '#005F15',
   },
   {
     id: 5,
-    title: "Accept",
+    title: 'Accept',
     company: {
-      name: "Stars*",
-      url: "#",
+      name: 'Stars*',
+      url: '#',
     },
-    description: "Accept payments in Telegram Stars - the native currency of Telegram. No additional payment processing or setup needed.",
+    description:
+      'Accept payments in Telegram Stars - the native currency of Telegram. No additional payment processing or setup needed.',
     icon: PerplexityLogo,
-    bgColor: "rgba(216, 250, 255, 1)",
-    iconBgColor: "rgba(34, 128, 141, 1)",
-    iconColor: "#FFFFFF",
-    titleColor: "#003F48",
-    descriptionColor: "#003F48",
-  }
+    bgColor: 'rgba(216, 250, 255, 1)',
+    iconBgColor: 'rgba(34, 128, 141, 1)',
+    iconColor: '#FFFFFF',
+    titleColor: '#003F48',
+    descriptionColor: '#003F48',
+  },
 ];
 
 const ANIMATION_DURATION = 0.3;
@@ -116,10 +121,10 @@ export default function ExpandableCards() {
 
   const getCardWidth = (cardId: number) =>
     expandedId === null
-      ? "w-[185px]"
+      ? 'w-[185px]'
       : expandedId === cardId
-        ? "w-[380px]"
-        : "w-[185px]";
+        ? 'w-[380px]'
+        : 'w-[185px]';
 
   return (
     <>
@@ -132,15 +137,15 @@ export default function ExpandableCards() {
             powerful editor.
           </h1>
           <div className="flex gap-5">
-            {CARDS.map((card) => (
+            {CARDS.map(card => (
               <motion.div
                 key={card.id}
                 style={{
                   backgroundColor: card.bgColor,
                 }}
                 className={cn(
-                  "relative h-44 cursor-pointer overflow-hidden rounded-xl",
-                  getCardWidth(card.id),
+                  'relative h-44 cursor-pointer overflow-hidden rounded-xl',
+                  getCardWidth(card.id)
                 )}
                 layout
                 onClick={() => handleCardClick(card.id)}
@@ -156,8 +161,8 @@ export default function ExpandableCards() {
                     <Plus
                       style={{ color: card.bgColor }}
                       className={cn(
-                        "h-4 w-4 stroke-[3.4] transition-transform duration-300",
-                        expandedId === card.id && "rotate-45",
+                        'h-4 w-4 stroke-[3.4] transition-transform duration-300',
+                        expandedId === card.id && 'rotate-45'
                       )}
                     />
                   </motion.div>
@@ -205,14 +210,14 @@ export default function ExpandableCards() {
                         }}
                         className="mb-3 text-xl font-[550] leading-6"
                       >
-                        {card.title}{" "}
+                        {card.title}{' '}
                         <a
                           href={card.company.url}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="hover:underline"
                         >
-                          {" "}
+                          {' '}
                           {card.company.name}
                         </a>
                       </div>
@@ -242,7 +247,7 @@ export default function ExpandableCards() {
             powerful editor.
           </h2>
           <div className="space-y-4">
-            {CARDS.map((card) => (
+            {CARDS.map(card => (
               <div
                 key={card.id}
                 style={{
@@ -266,7 +271,7 @@ export default function ExpandableCards() {
                         style={{ color: card.titleColor }}
                         className="text-base font-semibold sm:text-lg"
                       >
-                        {card.title}{" "}
+                        {card.title}{' '}
                         {expandedId === card.id ? (
                           <a
                             href={card.company.url}
@@ -288,16 +293,16 @@ export default function ExpandableCards() {
                       <Plus
                         style={{ color: card.bgColor }}
                         className={cn(
-                          "h-4 w-4 stroke-[3.4] transition-transform duration-300",
-                          expandedId === card.id && "rotate-45",
+                          'h-4 w-4 stroke-[3.4] transition-transform duration-300',
+                          expandedId === card.id && 'rotate-45'
                         )}
                       />
                     </div>
                   </div>
                   <div
                     className={cn(
-                      "max-h-0 overflow-hidden whitespace-pre-line transition-all duration-300",
-                      expandedId === card.id && "max-h-[200px] pt-4",
+                      'max-h-0 overflow-hidden whitespace-pre-line transition-all duration-300',
+                      expandedId === card.id && 'max-h-[200px] pt-4'
                     )}
                   >
                     <p

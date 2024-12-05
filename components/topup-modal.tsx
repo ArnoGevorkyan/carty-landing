@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -9,23 +9,23 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+} from '@/components/ui/alert-dialog';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
-} from "@/components/ui/tooltip";
+} from '@/components/ui/tooltip';
 import {
   CheckCircle2,
   MessageSquare,
   Sparkles,
   Rocket,
   Crown,
-} from "lucide-react";
-import { useTopUpCheckout } from "@/hooks/useTopUpCheckout";
-import { useUser } from "@/hooks/useUser";
+} from 'lucide-react';
+import { useTopUpCheckout } from '@/hooks/useTopUpCheckout';
+import { useUser } from '@/hooks/useUser';
 
 const REQUEST_OPTIONS = [
   {
@@ -33,22 +33,22 @@ const REQUEST_OPTIONS = [
     requests: 200,
     popular: false,
     icon: MessageSquare,
-    feature: "Juicer",
+    feature: 'Juicer',
   },
   {
     amount: 10,
     requests: 400,
     popular: false,
     icon: Sparkles,
-    feature: "Health Potion",
+    feature: 'Health Potion',
   },
-  { amount: 15, requests: 700, popular: true, icon: Rocket, feature: "2x EXP" },
+  { amount: 15, requests: 700, popular: true, icon: Rocket, feature: '2x EXP' },
   {
     amount: 30,
     requests: 1400,
     popular: false,
     icon: Crown,
-    feature: "Ult",
+    feature: 'Ult',
   },
 ];
 
@@ -67,8 +67,8 @@ export default function TopUpModal() {
     <AlertDialog open={isOpen} onOpenChange={setIsOpen}>
       <AlertDialogTrigger asChild>
         <Button variant="outline" onClick={() => setIsOpen(false)}>
-          {" "}
-          {isSubmitting ? "Processing..." : "Top Up Credits"}
+          {' '}
+          {isSubmitting ? 'Processing...' : 'Top Up Credits'}
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent className="max-w-[400px] select-none sm:max-w-[425px]">
@@ -97,14 +97,14 @@ export default function TopUpModal() {
           </AlertDialogDescription>
         </AlertDialogHeader>
         <div className="grid grid-cols-2 gap-4 pt-1 sm:pb-4 sm:pt-3">
-          {REQUEST_OPTIONS.map((option) => (
+          {REQUEST_OPTIONS.map(option => (
             <Card
               key={option.amount}
               className={`h-[7rem] cursor-pointer transition-all ${
                 selectedAmount === option.amount
-                  ? "bg-tertiary-100 ring-2 ring-secondary-main dark:bg-secondary-main dark:ring-white-50"
-                  : "hover:bg-tertiary-100 hover:shadow-md dark:hover:bg-secondary-main"
-              } ${option.popular ? "relative overflow-hidden" : ""} `}
+                  ? 'bg-tertiary-100 ring-2 ring-secondary-main dark:bg-secondary-main dark:ring-white-50'
+                  : 'hover:bg-tertiary-100 hover:shadow-md dark:hover:bg-secondary-main'
+              } ${option.popular ? 'relative overflow-hidden' : ''} `}
               onClick={() => setSelectedAmount(option.amount)}
             >
               <CardContent className="flex h-4 flex-col justify-between p-4">

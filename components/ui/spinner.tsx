@@ -1,5 +1,5 @@
-import { cn } from "@/lib/utils";
-import { FC } from "react";
+import { cn } from '@/lib/utils';
+import { FC } from 'react';
 
 interface SpinnerProps {
   className?: string;
@@ -8,8 +8,8 @@ interface SpinnerProps {
 const Spinner: FC<SpinnerProps> = ({ className, ...props }) => (
   <div
     className={cn(
-      "h-4 w-4 animate-spin rounded-full border-2 border-white-main border-t-transparent",
-      className,
+      'h-4 w-4 animate-spin rounded-full border-2 border-white-main border-t-transparent',
+      className
     )}
     {...props}
   />

@@ -1,9 +1,9 @@
 ---
-title: "Setting Up Auto-Complete On PearAI"
+title: 'Setting Up Auto-Complete On PearAI'
 date: 2024-08-31
 excerpt: PearAI supports tab autocomplete, and this is how to set this up. Tab autocomplete predicts / suggests what you would type next as you’re coding!
-thumbnail: "/images/og-image.png"
-tags: ["autocomplete", "suggestions"]
+thumbnail: '/images/og-image.png'
+tags: ['autocomplete', 'suggestions']
 ---
 
 PearAI supports tab autocomplete, and this is how to set this up. Tab autocomplete predicts/suggests what you would type next as you’re coding!

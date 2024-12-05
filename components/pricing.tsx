@@ -1,38 +1,38 @@
-"use client";
-import React, { useEffect, useState, useRef, useMemo, Fragment } from "react";
-import { useRouter } from "next/navigation";
+'use client';
+import React, { useEffect, useState, useRef, useMemo, Fragment } from 'react';
+import { useRouter } from 'next/navigation';
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from '@/components/ui/card';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { PricingPageProps, PricingTierProps } from "@/types/pricing";
-import { useCheckout } from "@/hooks/useCheckout";
-import { PRICING_TIERS, CONTACT_EMAIL } from "@/utils/constants";
-import { toast } from "sonner";
-import { Check, ChevronDown } from "lucide-react";
-import { AppleLogo, WindowsLogo, LinuxLogo } from "./ui/icons";
-import { cn } from "@/lib/utils";
+} from '@/components/ui/tooltip';
+import { Button } from '@/components/ui/button';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { PricingPageProps, PricingTierProps } from '@/types/pricing';
+import { useCheckout } from '@/hooks/useCheckout';
+import { PRICING_TIERS, CONTACT_EMAIL } from '@/utils/constants';
+import { toast } from 'sonner';
+import { Check, ChevronDown } from 'lucide-react';
+import { AppleLogo, WindowsLogo, LinuxLogo } from './ui/icons';
+import { cn } from '@/lib/utils';
 import {
   DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
-} from "./ui/dropdown-menu";
-import { Info } from "lucide-react";
-import Spinner from "./ui/spinner";
-import Footer from "./footer";
-import Link from "next/link";
+} from './ui/dropdown-menu';
+import { Info } from 'lucide-react';
+import Spinner from './ui/spinner';
+import Footer from './footer';
+import Link from 'next/link';
 
 interface ExtendedPricingTierProps extends PricingTierProps {
   disabled?: boolean;
@@ -45,20 +45,20 @@ type VersionInfo = {
 
 export const platformVersions: Record<string, VersionInfo> = {
   Windows: {
-    version: "v1.5.3",
-    releaseDate: "Nov 24, 2024",
+    version: 'v1.5.3',
+    releaseDate: 'Nov 24, 2024',
   },
-  "Mac (M chip)": {
-    version: "v1.5.4",
-    releaseDate: "Dec 1, 2024",
+  'Mac (M chip)': {
+    version: 'v1.5.4',
+    releaseDate: 'Dec 1, 2024',
   },
-  "Mac (Intel)": {
-    version: "v1.5.4",
-    releaseDate: "Dec 1, 2024",
+  'Mac (Intel)': {
+    version: 'v1.5.4',
+    releaseDate: 'Dec 1, 2024',
   },
   Linux: {
-    version: "v1.5.4",
-    releaseDate: "Dec 1, 2024",
+    version: 'v1.5.4',
+    releaseDate: 'Dec 1, 2024',
   },
 };
 
@@ -74,7 +74,7 @@ const PricingTier: React.FC<ExtendedPricingTierProps> = ({
   user,
   index,
   disabled,
-  priceUnit = "/month",
+  priceUnit = '/month',
 }) => {
   const { handleCheckout, isSubmitting } = useCheckout(user);
   const [isDownloading, setIsDownloading] = useState(false);
@@ -82,8 +82,8 @@ const PricingTier: React.FC<ExtendedPricingTierProps> = ({
   const router = useRouter();
   const appleContainer = useRef<HTMLDivElement>(null);
   const [appleDownload, setAppleDownload] = useState<
-    "darwin-arm64" | "intel-x64"
-  >("darwin-arm64");
+    'darwin-arm64' | 'intel-x64'
+  >('darwin-arm64');
 
   // used to ensure animations run after mount client-side
   const [mounted, setMounted] = useState(false);
@@ -95,11 +95,11 @@ const PricingTier: React.FC<ExtendedPricingTierProps> = ({
   const gradientStyle = mounted
     ? {
         backgroundImage:
-          "linear-gradient(45deg, #1a237e, #006064, #1b5e20, #006064, #b71c1c)",
-        backgroundSize: "300% 300%",
-        animation: "rainbow-animation 5s ease infinite",
-        color: "white",
-        transition: "all 0.3s ease",
+          'linear-gradient(45deg, #1a237e, #006064, #1b5e20, #006064, #b71c1c)',
+        backgroundSize: '300% 300%',
+        animation: 'rainbow-animation 5s ease infinite',
+        color: 'white',
+        transition: 'all 0.3s ease',
       }
     : {};
 
@@ -107,9 +107,9 @@ const PricingTier: React.FC<ExtendedPricingTierProps> = ({
     setIsDownloading(true);
     try {
       const res = await fetch(`/api/download?os_type=${os_type}`, {
-        method: "GET",
+        method: 'GET',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
       });
 
@@ -130,7 +130,7 @@ const PricingTier: React.FC<ExtendedPricingTierProps> = ({
   };
 
   const featureRowDescription = (feature: string) => {
-    if (feature?.startsWith("custom-standard")) {
+    if (feature?.startsWith('custom-standard')) {
       return (
         <div className="flex items-center">
           <span>
@@ -139,7 +139,7 @@ const PricingTier: React.FC<ExtendedPricingTierProps> = ({
           </span>
         </div>
       );
-    } else if (feature?.startsWith("free")) {
+    } else if (feature?.startsWith('free')) {
       return (
         <div className="flex items-center">
           <span>
@@ -148,11 +148,11 @@ const PricingTier: React.FC<ExtendedPricingTierProps> = ({
           </span>
         </div>
       );
-    } else if (feature?.startsWith("custom-enterprise")) {
+    } else if (feature?.startsWith('custom-enterprise')) {
       return (
         <div className="flex items-center">
           <span>
-            Monthly refill of <span className="underline"> increased</span>{" "}
+            Monthly refill of <span className="underline"> increased</span>{' '}
             PearAI Credits for market-leading AI models
             <PearCreditsTooltip type="enterprise" />
           </span>
@@ -172,15 +172,15 @@ const PricingTier: React.FC<ExtendedPricingTierProps> = ({
 
   return (
     <Card
-      className={`flex h-full w-full flex-col ${index === 1 && "from-primary-600/5 ring-primary-900/40 dark:from-primary-600/5 dark:ring-primary-600/20"}`}
+      className={`flex h-full w-full flex-col ${index === 1 && 'from-primary-600/5 ring-primary-900/40 dark:from-primary-600/5 dark:ring-primary-600/20'}`}
     >
       <div className="flex h-full w-full flex-col">
         <CardHeader className="flex-grow-0 px-6 py-6 pb-0">
           <CardTitle className="text-2xl leading-6 text-primary-700">
             {title}
             &nbsp;
-            {index === 1 && title === "Junior Engineer" && "(Monthly)"}
-            {index === 2 && title === "10x Engineer" && "(Yearly)"}
+            {index === 1 && title === 'Junior Engineer' && '(Monthly)'}
+            {index === 2 && title === '10x Engineer' && '(Yearly)'}
           </CardTitle>
           <p className="text-base font-normal text-gray-600 sm:text-base md:text-sm">
             {index === 0 && isFree && (
@@ -260,7 +260,7 @@ const PricingTier: React.FC<ExtendedPricingTierProps> = ({
             (downloadLink !== undefined ? (
               <p className="text-gray-400">
                 Thanks for trying out PearAI! Your download should have started,
-                if it hasn&apos;t, click{" "}
+                if it hasn&apos;t, click{' '}
                 <a
                   className="cursor-pointer text-primary-700 transition-colors hover:text-primary-800"
                   href={downloadLink}
@@ -294,7 +294,7 @@ const PricingTier: React.FC<ExtendedPricingTierProps> = ({
                                 </div>
                               </div>
                             </Fragment>
-                          ),
+                          )
                         )}
                         <Link
                           href="/changelog"
@@ -308,17 +308,17 @@ const PricingTier: React.FC<ExtendedPricingTierProps> = ({
                 </TooltipProvider>
                 <div className="flex w-full max-w-md gap-2">
                   <Button
-                    className={cn("rainbow-gradient", "font-bold", "flex-1")}
-                    onClick={() => handleDownload("windows")}
+                    className={cn('rainbow-gradient', 'font-bold', 'flex-1')}
+                    onClick={() => handleDownload('windows')}
                   >
                     <WindowsLogo className="h-[18px] w-[18px] fill-white-main" />
                     Windows
                   </Button>
 
                   <Button
-                    className={cn("rainbow-gradient", "font-bold", "flex-1")}
+                    className={cn('rainbow-gradient', 'font-bold', 'flex-1')}
                     onClick={() =>
-                      (window.location.href = "/blog/download-pearai-on-linux")
+                      (window.location.href = '/blog/download-pearai-on-linux')
                     }
                   >
                     <LinuxLogo className="h-[18px] w-[18px] fill-white-main" />
@@ -345,19 +345,19 @@ const PricingTier: React.FC<ExtendedPricingTierProps> = ({
                       align="center"
                       style={{
                         width:
-                          buttonWidth !== null ? `${buttonWidth}px` : "auto",
+                          buttonWidth !== null ? `${buttonWidth}px` : 'auto',
                       }}
                       className="flex flex-col items-center justify-center border border-border/50 bg-background p-1"
                     >
                       <DropdownMenuItem
                         className="flex w-full justify-center rounded px-2 py-1.5 text-sm focus:bg-secondary-300/10"
-                        onSelect={() => handleDownload("darwin-arm64")}
+                        onSelect={() => handleDownload('darwin-arm64')}
                       >
                         Silicon (M chip)
                       </DropdownMenuItem>
                       <DropdownMenuItem
                         className="flex w-full justify-center rounded px-2 py-1.5 text-sm focus:bg-secondary-300/10"
-                        onSelect={() => handleDownload("intel-x64")}
+                        onSelect={() => handleDownload('intel-x64')}
                       >
                         Intel chip
                       </DropdownMenuItem>
@@ -381,7 +381,7 @@ const PricingTier: React.FC<ExtendedPricingTierProps> = ({
                   aria-busy={isSubmitting}
                   aria-label={`Subscribe to ${title} plan`}
                 >
-                  {isSubmitting ? "Processing..." : buttonText}
+                  {isSubmitting ? 'Processing...' : buttonText}
                 </Button>
               )}
             </>
@@ -523,7 +523,7 @@ const PricingPage: React.FC<PricingPageProps> = ({ user }) => {
                     aria-label="Contact us for custom plans"
                     onClick={() => {
                       navigator.clipboard.writeText(CONTACT_EMAIL);
-                      toast.success("Email copied to clipboard!");
+                      toast.success('Email copied to clipboard!');
                     }}
                   >
                     Contact us
@@ -547,12 +547,12 @@ export const PearCreditsTooltip = ({ type }: { type: string }) => {
 
   const pearCreditsCount = useMemo(() => {
     return (type: string) => {
-      if (type === "free") {
-        return "50";
-      } else if (type === "enterprise") {
-        return "1000";
+      if (type === 'free') {
+        return '50';
+      } else if (type === 'enterprise') {
+        return '1000';
       }
-      return "700";
+      return '700';
     };
   }, []);
 
@@ -562,7 +562,7 @@ export const PearCreditsTooltip = ({ type }: { type: string }) => {
         <TooltipTrigger asChild>
           <Info
             className="mb-0.5 ml-1 inline-flex h-4 w-4 flex-shrink-0 cursor-pointer"
-            onClick={() => setIsOpen((prev) => !prev)}
+            onClick={() => setIsOpen(prev => !prev)}
           />
         </TooltipTrigger>
         <TooltipContent sideOffset={5}>
@@ -579,10 +579,10 @@ export const PearCreditsTooltip = ({ type }: { type: string }) => {
             <br />
             Your PearAI Credits usage depend on your prompt input and output
             sizes. On average, this equates to around {pearCreditsCount(
-              type,
-            )}{" "}
-            requests{type === "free" && " for our current free trial"}. For more
-            info on usage. see{" "}
+              type
+            )}{' '}
+            requests{type === 'free' && ' for our current free trial'}. For more
+            info on usage. see{' '}
             <Link
               className="text-primary-700 hover:text-primary-800"
               href="/docs/models-and-usage"
@@ -590,7 +590,7 @@ export const PearCreditsTooltip = ({ type }: { type: string }) => {
               here
             </Link>
             .
-            {type !== "free" && (
+            {type !== 'free' && (
               <>
                 <br /> <br />
                 If you happen to run out of credits, you can top up from your

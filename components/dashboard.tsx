@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { User } from "@supabase/supabase-js";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState, useCallback } from "react";
-import { Subscription } from "@/types/subscription";
-import { toast } from "sonner";
-import ProfileCard from "@/components/dashboard/profile-card";
-import SubscriptionCard from "@/components/dashboard/subscription-card";
-import FreeTrialCard from "@/components/dashboard/freetrial-card";
-import { isAllowedUrl } from "@/lib/utils";
-import { UnsafeUrlError } from "@/types/url";
+import { User } from '@supabase/supabase-js';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { useEffect, useState, useCallback } from 'react';
+import { Subscription } from '@/types/subscription';
+import { toast } from 'sonner';
+import ProfileCard from '@/components/dashboard/profile-card';
+import SubscriptionCard from '@/components/dashboard/subscription-card';
+import FreeTrialCard from '@/components/dashboard/freetrial-card';
+import { isAllowedUrl } from '@/lib/utils';
+import { UnsafeUrlError } from '@/types/url';
 
 type DashboardPageProps = {
   subscription: Subscription | null;
@@ -36,7 +36,7 @@ export default function DashboardPage({
   });
 
   const handleCallbackForApp = useCallback(async () => {
-    const callback = searchParams?.get("callback");
+    const callback = searchParams?.get('callback');
     if (!callback) return;
 
     try {
@@ -49,7 +49,7 @@ export default function DashboardPage({
 
       const newSearchParams = new URLSearchParams(callbackUrl.search);
       const openAppParams =
-        typeof openAppQueryParams === "string"
+        typeof openAppQueryParams === 'string'
           ? new URLSearchParams(openAppQueryParams)
           : openAppQueryParams;
 
@@ -71,12 +71,12 @@ export default function DashboardPage({
       if (error instanceof UnsafeUrlError) {
         console.error(error.message);
         toast.error(
-          "Unsafe link detected. Navigation blocked for your security.",
+          'Unsafe link detected. Navigation blocked for your security.'
         );
       } else {
-        console.error("Error in handleCallbackForApp:", error);
+        console.error('Error in handleCallbackForApp:', error);
         toast.error(
-          "An error occurred while processing the link. Please try again.",
+          'An error occurred while processing the link. Please try again.'
         );
       }
     }
@@ -84,19 +84,19 @@ export default function DashboardPage({
 
   const getUserRequestsUsage = useCallback(async () => {
     try {
-      const response = await fetch("/api/dashboard-usage", {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
+      const response = await fetch('/api/dashboard-usage', {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
       });
 
       if (!response.ok) {
-        throw new Error("Failed to fetch requests usage.");
+        throw new Error('Failed to fetch requests usage.');
       }
       const usageData: UsageType = await response.json();
       setUsage(usageData);
     } catch (error) {
-      console.error("Error fetching requests usage:", error);
-      toast.error("Failed to fetch usage data. Please try again later.");
+      console.error('Error fetching requests usage:', error);
+      toast.error('Failed to fetch usage data. Please try again later.');
     } finally {
       setLoading(false);
     }
@@ -108,9 +108,9 @@ export default function DashboardPage({
         await handleCallbackForApp();
         await getUserRequestsUsage();
       } catch (error) {
-        console.error("Error in effect:", error);
+        console.error('Error in effect:', error);
         toast.error(
-          "An unexpected error occurred. Please try refreshing the page.",
+          'An unexpected error occurred. Please try refreshing the page.'
         );
       }
     };

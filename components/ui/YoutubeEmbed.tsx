@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 interface YoutubeEmbedProps {
   embedId: string;
@@ -14,7 +14,7 @@ const YoutubeEmbed: React.FC<YoutubeEmbedProps> = ({ embedId }) => (
       src={`https://www.youtube.com/embed/${embedId}`}
       allowFullScreen
       title="PearAI demo"
-      style={{ zIndex: 10, pointerEvents: "auto" }}
+      style={{ zIndex: 10, pointerEvents: 'auto' }}
     />
   </div>
 );

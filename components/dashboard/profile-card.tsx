@@ -1,14 +1,14 @@
-import { User } from "@supabase/supabase-js";
-import Link from "next/link";
+import { User } from '@supabase/supabase-js';
+import Link from 'next/link';
 import {
   Card,
   CardHeader,
   CardTitle,
   CardContent,
   CardFooter,
-} from "@/components/ui/card";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
+} from '@/components/ui/card';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { Button } from '@/components/ui/button';
 
 type ProfileCardProps = {
   user: User;
@@ -24,18 +24,18 @@ export default function ProfileCard({ user }: ProfileCardProps) {
         <Avatar className="h-16 w-16">
           <AvatarImage src={user.user_metadata.avatar_url} alt="User Avatar" />
           <AvatarFallback>
-            {user?.user_metadata.full_name?.[0] || user?.email?.[0] || "U"}
+            {user?.user_metadata.full_name?.[0] || user?.email?.[0] || 'U'}
           </AvatarFallback>
         </Avatar>
         <div>
           <p className="text-lg font-medium">
-            {user?.user_metadata.full_name || "User"}
+            {user?.user_metadata.full_name || 'User'}
           </p>
           <p className="text-muted-foreground">{user?.email}</p>
         </div>
       </CardContent>
       <CardFooter className="mt-auto pt-4">
-        {user?.app_metadata.provider === "email" && (
+        {user?.app_metadata.provider === 'email' && (
           <Button
             variant="link"
             asChild

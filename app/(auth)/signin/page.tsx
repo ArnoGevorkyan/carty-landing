@@ -1,14 +1,14 @@
-import { redirect } from "next/navigation";
-import { createClient } from "@/utils/supabase/server";
-import SignInComponent from "@/components/auth/signin";
-import { constructMetadata } from "@/lib/utils";
-import { Metadata } from "next/types";
-import { toast } from "sonner";
+import { redirect } from 'next/navigation';
+import { createClient } from '@/utils/supabase/server';
+import SignInComponent from '@/components/auth/signin';
+import { constructMetadata } from '@/lib/utils';
+import { Metadata } from 'next/types';
+import { toast } from 'sonner';
 
 export const metadata: Metadata = constructMetadata({
-  title: "Sign In",
-  description: "Sign in to your account",
-  canonical: "/signin",
+  title: 'Sign In',
+  description: 'Sign in to your account',
+  canonical: '/signin',
 });
 
 interface SignInProps {
@@ -23,11 +23,11 @@ export default async function SignIn({ searchParams }: SignInProps) {
   const { data } = await supabase.auth.getUser();
 
   if (data?.user) {
-    if (searchParams.callback?.includes("://pearai.pearai/auth")) {
+    if (searchParams.callback?.includes('://pearai.pearai/auth')) {
       // Redirect to dashboard page with callback for desktop app
-      redirect("/dashboard?callback=" + searchParams.callback);
+      redirect('/dashboard?callback=' + searchParams.callback);
     } else {
-      redirect("/");
+      redirect('/');
     }
   }
   return (

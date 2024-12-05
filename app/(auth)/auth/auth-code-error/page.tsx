@@ -1,5 +1,5 @@
-import AuthCodeErrorComponent from "@/components/auth/auth-error";
-import { Suspense } from "react";
+import AuthCodeErrorComponent from '@/components/auth/auth-error';
+import { Suspense } from 'react';
 
 const AuthCodeError = () => {
   return (

@@ -1,13 +1,13 @@
-"use client";
-import Link from "next/link";
-import { useState } from "react";
-import { signinWithOAuth } from "@/app/(auth)/actions";
-import { AdminUserAttributes, Provider } from "@supabase/supabase-js";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { GitHubLogo, GoogleLogoColored } from "@/components/ui/icons";
+'use client';
+import Link from 'next/link';
+import { useState } from 'react';
+import { signinWithOAuth } from '@/app/(auth)/actions';
+import { AdminUserAttributes, Provider } from '@supabase/supabase-js';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { GitHubLogo, GoogleLogoColored } from '@/components/ui/icons';
 import {
   Form,
   FormField,
@@ -15,24 +15,24 @@ import {
   FormLabel,
   FormControl,
   FormMessage,
-} from "@/components/ui/form";
-import { signUpSchema, SignUpFormData } from "@/utils/form-schema";
-import { toast, Toaster } from "sonner";
-import { useRouter } from "next/navigation";
-import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
-import { useToggle } from "@/hooks/useToggle";
+} from '@/components/ui/form';
+import { signUpSchema, SignUpFormData } from '@/utils/form-schema';
+import { toast, Toaster } from 'sonner';
+import { useRouter } from 'next/navigation';
+import { Label } from '@/components/ui/label';
+import { Checkbox } from '@/components/ui/checkbox';
+import { useToggle } from '@/hooks/useToggle';
 
 export default function SignUp() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const form = useForm<SignUpFormData>({
     resolver: zodResolver(signUpSchema),
     defaultValues: {
-      full_name: "",
-      email: "",
-      company_name: "",
-      password: "",
-      heard_about_us: "",
+      full_name: '',
+      email: '',
+      company_name: '',
+      password: '',
+      heard_about_us: '',
     },
   });
   const router = useRouter();
@@ -51,14 +51,14 @@ export default function SignUp() {
           heard_about_us: data.heard_about_us,
         },
       };
-      const response = await fetch("/api/signup", {
-        method: "POST",
+      const response = await fetch('/api/signup', {
+        method: 'POST',
         body: JSON.stringify(formData),
       });
 
       const result = await response.json();
       if (!response.ok) {
-        toast.error(result.error || "Failed to sign up");
+        toast.error(result.error || 'Failed to sign up');
         return;
       }
       if (result?.error) {
@@ -66,11 +66,11 @@ export default function SignUp() {
         return;
       }
       toast.success(
-        "Account created successfully. Please check your email to verify your account.",
+        'Account created successfully. Please check your email to verify your account.'
       );
       form.reset();
     } catch (error) {
-      toast.error("An unexpected error occurred. Please try again.");
+      toast.error('An unexpected error occurred. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -80,7 +80,7 @@ export default function SignUp() {
     try {
       await signinWithOAuth(provider);
     } catch (error) {
-      toast.error("An unexpected error occurred. Please try again.");
+      toast.error('An unexpected error occurred. Please try again.');
     }
   };
   const [isPasswordVisible, togglePasswordVisibility] = useToggle(false);
@@ -97,9 +97,9 @@ export default function SignUp() {
 
           <div className="mx-auto max-w-sm">
             <form
-              onSubmit={(e) => {
+              onSubmit={e => {
                 e.preventDefault();
-                handleOAuthSignUp("google");
+                handleOAuthSignUp('google');
               }}
             >
               <Button
@@ -113,9 +113,9 @@ export default function SignUp() {
               </Button>
             </form>
             <form
-              onSubmit={(e) => {
+              onSubmit={e => {
                 e.preventDefault();
-                handleOAuthSignUp("github");
+                handleOAuthSignUp('github');
               }}
             >
               <div className="-mx-3 flex flex-wrap">
@@ -213,7 +213,7 @@ export default function SignUp() {
                       <FormControl>
                         <Input
                           id="password"
-                          type={isPasswordVisible ? "text" : "password"}
+                          type={isPasswordVisible ? 'text' : 'password'}
                           placeholder="Password (at least 8 characters)"
                           {...field}
                         />
@@ -270,7 +270,7 @@ export default function SignUp() {
                   disabled={isSubmitting}
                   isLoading={isSubmitting}
                 >
-                  {isSubmitting ? "Signing up..." : "Sign Up"}
+                  {isSubmitting ? 'Signing up...' : 'Sign Up'}
                 </Button>
 
                 <Toaster richColors />
@@ -278,7 +278,7 @@ export default function SignUp() {
             </Form>
 
             <div className="mt-6 text-center text-gray-600">
-              Already have an account?{" "}
+              Already have an account?{' '}
               <Link
                 href="/signin"
                 className="text-gray-800 underline transition duration-150 ease-in-out hover:text-primary-800"

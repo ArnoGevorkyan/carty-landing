@@ -1,38 +1,38 @@
-import { z } from "zod";
-import { isDisposableEmail } from "./disposable-email";
+import { z } from 'zod';
+import { isDisposableEmail } from './disposable-email';
 
 export const emailSchema = z.object({
   email: z
     .string()
-    .email({ message: "Email address is invalid." })
-    .refine(async (email) => !(await isDisposableEmail(email)), {
+    .email({ message: 'Email address is invalid.' })
+    .refine(async email => !(await isDisposableEmail(email)), {
       message:
-        "Disposable email addresses are not allowed. Not using a disposable email? Please contact pear@trypear.ai.",
+        'Disposable email addresses are not allowed. Not using a disposable email? Please contact pear@trypear.ai.',
     }),
 });
 
 export const passwordSchema = z.object({
   password: z
     .string()
-    .min(8, { message: "Password should be at least 8 characters" }),
+    .min(8, { message: 'Password should be at least 8 characters' }),
 });
 
 export const signUpSchema = z.object({
   full_name: z
     .string()
-    .min(1, { message: "Name is required." })
-    .max(100, { message: "Name is too long." }),
+    .min(1, { message: 'Name is required.' })
+    .max(100, { message: 'Name is too long.' }),
   email: emailSchema.shape.email,
   company_name: z
     .string()
-    .max(30, { message: "Company name is too long." })
+    .max(30, { message: 'Company name is too long.' })
     .optional(),
   password: passwordSchema.shape.password,
   heard_about_us: z
     .string({
-      required_error: "Please tell us how you heard about us.",
+      required_error: 'Please tell us how you heard about us.',
     })
-    .max(30, { message: "Message too long" }),
+    .max(30, { message: 'Message too long' }),
 });
 
 export const signInSchema = z.object({
@@ -49,9 +49,9 @@ export const updatePasswordSchema = z
     password: passwordSchema.shape.password,
     confirmPassword: passwordSchema.shape.password,
   })
-  .refine((data) => data.password === data.confirmPassword, {
+  .refine(data => data.password === data.confirmPassword, {
     message: "Passwords don't match",
-    path: ["confirmPassword"],
+    path: ['confirmPassword'],
   });
 
 export type SignUpFormData = z.infer<typeof signUpSchema>;

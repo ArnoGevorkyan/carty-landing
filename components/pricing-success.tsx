@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
-import { CONTACT_EMAIL } from "@/utils/constants";
-import Link from "next/link";
+import { Button } from '@/components/ui/button';
+import { useRouter } from 'next/navigation';
+import { CONTACT_EMAIL } from '@/utils/constants';
+import Link from 'next/link';
 
 export default function PricingSuccess() {
   const router = useRouter();
 
   const handleClick = () => {
-    router.push("/dashboard?checkout=success");
+    router.push('/dashboard?checkout=success');
   };
 
   return (
@@ -30,7 +30,7 @@ export default function PricingSuccess() {
               ></div>
               <div className="text-center text-gray-700">
                 We hope you enjoy using Pear. Feel free to send any suggestions
-                our way at{" "}
+                our way at{' '}
                 <Link
                   href={`mailto:{CONTACT_EMAIL}`}
                   className="font-medium text-gray-900 underline"
@@ -47,7 +47,7 @@ export default function PricingSuccess() {
             <div className="-mx-3 mt-11 flex flex-wrap">
               <div className="w-full px-3 text-center">
                 <Button
-                  size={"lg"}
+                  size={'lg'}
                   onClick={handleClick}
                   className="w-full bg-primary-700 text-white-main hover:bg-primary-800 hover:shadow-sm"
                 >

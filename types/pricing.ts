@@ -1,4 +1,4 @@
-import { User } from "@supabase/supabase-js";
+import { User } from '@supabase/supabase-js';
 
 export interface PricingTierProps {
   title: string;
@@ -18,4 +18,4 @@ export interface PricingPageProps {
   user: User | null;
 }
 
-export type PricingTierData = Omit<PricingTierProps, "user">;
+export type PricingTierData = Omit<PricingTierProps, 'user'>;

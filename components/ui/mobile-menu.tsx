@@ -1,26 +1,26 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import { Button } from "./button";
-import { LogIn, LogOut, Menu, Settings, SquareArrowRight } from "lucide-react";
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { Button } from './button';
+import { LogIn, LogOut, Menu, Settings, SquareArrowRight } from 'lucide-react';
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
+} from '@/components/ui/sheet';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
-import { useTheme } from "next-themes";
-import { MoonStar, Sun } from "lucide-react";
-import { User } from "@supabase/supabase-js";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+} from '@/components/ui/accordion';
+import { useTheme } from 'next-themes';
+import { MoonStar, Sun } from 'lucide-react';
+import { User } from '@supabase/supabase-js';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 export default function MobileMenu({
   user,
@@ -86,10 +86,10 @@ export default function MobileMenu({
                       <Avatar className="h-8 w-8">
                         <AvatarImage
                           src={user.user_metadata.avatar_url}
-                          alt={user.user_metadata.full_name || "User avatar"}
+                          alt={user.user_metadata.full_name || 'User avatar'}
                         />
                         <AvatarFallback>
-                          {user.email?.[0].toUpperCase() || "U"}
+                          {user.email?.[0].toUpperCase() || 'U'}
                         </AvatarFallback>
                       </Avatar>
                       <span className="text-sm font-medium">
@@ -207,9 +207,9 @@ export default function MobileMenu({
               <Button
                 variant="outline"
                 className="w-full justify-center"
-                onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+                onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
               >
-                {theme === "light" ? (
+                {theme === 'light' ? (
                   <>
                     <Sun strokeWidth={1} className="h-5 w-5" />
                     Light

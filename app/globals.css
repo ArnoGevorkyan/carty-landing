@@ -151,12 +151,12 @@
   font-size: 0.75em;
 }
 
-:is([data-theme="light"], .light) .react-tweet-theme {
+:is([data-theme='light'], .light) .react-tweet-theme {
   --tweet-bg-color: --foreground;
   --tweet-bg-color-hover: hsla(var(--gray-200), 100%);
 }
 
-:is([data-theme="dark"], .dark) .react-tweet-theme {
+:is([data-theme='dark'], .dark) .react-tweet-theme {
   --tweet-bg-color: --foreground;
   --tweet-bg-color-hover: hsla(var(--gray-50), 100%);
 }

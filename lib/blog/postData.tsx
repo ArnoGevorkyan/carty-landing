@@ -1,13 +1,13 @@
 export const posts = [
   {
-    title: "How We Designed Our Servers at PearAI",
-    author: "Nang",
-    date: "2024-09-1",
+    title: 'How We Designed Our Servers at PearAI',
+    author: 'Nang',
+    date: '2024-09-1',
     excerpt:
-      "I spent the last 2 months working on PearAI, an Open Sourced AI-Powered Code Editor. It is like having an expert on your codebase right next to you. We achieve this with Retrieval Augmented Generation. This is my new startup after finishing my B.S. & M.S from Carnegie Mellon and working for 1.5 years in High Frequency Trading as a Software Engineer. This is exactly how we designed our server.",
-    thumbnail: "/images/blog/pearai-server-option.png",
-    tags: ["server", "server design", "pearai server"],
-    url: "/blog/how-we-designed-our-servers-end-to-end-for-pearai",
+      'I spent the last 2 months working on PearAI, an Open Sourced AI-Powered Code Editor. It is like having an expert on your codebase right next to you. We achieve this with Retrieval Augmented Generation. This is my new startup after finishing my B.S. & M.S from Carnegie Mellon and working for 1.5 years in High Frequency Trading as a Software Engineer. This is exactly how we designed our server.',
+    thumbnail: '/images/blog/pearai-server-option.png',
+    tags: ['server', 'server design', 'pearai server'],
+    url: '/blog/how-we-designed-our-servers-end-to-end-for-pearai',
     content: `<div
   class="mx-auto max-w-4xl space-y-8 px-4 py-8 text-gray-800 dark:text-gray-200 sm:px-6 lg:px-8"
 >
@@ -220,14 +220,14 @@ export const posts = [
 `,
   },
   {
-    title: "Setting Up Auto-Complete On PearAI",
-    date: "2024-08-31",
+    title: 'Setting Up Auto-Complete On PearAI',
+    date: '2024-08-31',
     excerpt:
       "PearAI supports tab autocomplete, and this is how to set this up. Tab autocomplete predicts / suggests what you would type next as you're coding!",
-    thumbnail: "/images/blog/codestral.jpg",
-    tags: ["autocomplete", "suggestions"],
-    url: "/blog/setting-up-auto-complete-on-pearai",
-    author: "Nang",
+    thumbnail: '/images/blog/codestral.jpg',
+    tags: ['autocomplete', 'suggestions'],
+    url: '/blog/setting-up-auto-complete-on-pearai',
+    author: 'Nang',
     content: `<div
   class="mx-auto max-w-4xl space-y-8 px-4 py-8 text-gray-800 dark:text-gray-200 sm:px-6 lg:px-8"
 >
@@ -334,14 +334,14 @@ export const posts = [
   },
   {
     title: "Enhancing PearAI with Anthropic's Claude 3.5",
-    url: "/blog/enhancing-pearai-with-anthropic-claude-3-5",
+    url: '/blog/enhancing-pearai-with-anthropic-claude-3-5',
     excerpt:
-      "How we leveraged Claude 3.5 to improve code syntax and logic in our open source AI code editor, and the unique challenges we faced in implementation.",
-    date: "2024-08-20",
-    author: "Conor Quinlan",
-    readingTime: "3 min",
-    thumbnail: "/images/blog/claude.png",
-    tags: ["AI", "Claude 3.5", "PearAI", "Code Editor"],
+      'How we leveraged Claude 3.5 to improve code syntax and logic in our open source AI code editor, and the unique challenges we faced in implementation.',
+    date: '2024-08-20',
+    author: 'Conor Quinlan',
+    readingTime: '3 min',
+    thumbnail: '/images/blog/claude.png',
+    tags: ['AI', 'Claude 3.5', 'PearAI', 'Code Editor'],
     content: `<article
   class="mx-auto max-w-4xl space-y-6 px-4 py-8 text-gray-800 dark:text-gray-200 sm:px-6 lg:px-8"
 >
@@ -496,15 +496,15 @@ export const posts = [
   },
 
   {
-    title: "Install PearAI on Linux: Simple Guide for All Distros",
-    url: "/blog/download-pearai-on-linux",
+    title: 'Install PearAI on Linux: Simple Guide for All Distros',
+    url: '/blog/download-pearai-on-linux',
     excerpt:
-      "An easy-to-follow guide for downloading and installing PearAI on a wide range of Linux distributions, ensuring a smooth setup for both beginners and experienced users.",
-    date: "2024-09-11",
-    author: "Maximiliano Farfán",
-    readingTime: "2 min",
-    thumbnail: "/images/blog/linux.jpg",
-    tags: ["Guide", "PearAI", "Linux"],
+      'An easy-to-follow guide for downloading and installing PearAI on a wide range of Linux distributions, ensuring a smooth setup for both beginners and experienced users.',
+    date: '2024-09-11',
+    author: 'Maximiliano Farfán',
+    readingTime: '2 min',
+    thumbnail: '/images/blog/linux.jpg',
+    tags: ['Guide', 'PearAI', 'Linux'],
     content: `<article
   class="mx-auto max-w-4xl space-y-8 px-4 py-8 text-gray-800 dark:text-gray-200 sm:px-6 lg:px-8"
 >
@@ -622,15 +622,15 @@ export const posts = [
   },
 
   {
-    title: "How to use GPT o1-mini and o1-preview in PearAI",
-    url: "/blog/gpt-o1",
+    title: 'How to use GPT o1-mini and o1-preview in PearAI',
+    url: '/blog/gpt-o1',
     excerpt:
-      "Learn how to integrate and effectively use GPT o1-mini and o1-preview models in PearAI, along with important considerations for optimal usage.",
-    date: "2024-09-15",
-    author: "PearAI Team",
-    readingTime: "3 min",
-    thumbnail: "/images/blog/o1-doc-thumbnail.webp",
-    tags: ["Guide", "PearAI", "GPT", "OpenAI", "o1-mini", "o1-preview"],
+      'Learn how to integrate and effectively use GPT o1-mini and o1-preview models in PearAI, along with important considerations for optimal usage.',
+    date: '2024-09-15',
+    author: 'PearAI Team',
+    readingTime: '3 min',
+    thumbnail: '/images/blog/o1-doc-thumbnail.webp',
+    tags: ['Guide', 'PearAI', 'GPT', 'OpenAI', 'o1-mini', 'o1-preview'],
     content: `<article
   class="mx-auto max-w-4xl space-y-8 px-4 py-8 text-gray-800 dark:text-gray-200 sm:px-6 lg:px-8"
 >
@@ -712,20 +712,20 @@ export const posts = [
   },
   {
     title:
-      "New Leetcode Feature in PearAI - Supercharge Your Interview Prep With AI",
-    url: "/blog/introducing-leetcode-feature",
+      'New Leetcode Feature in PearAI - Supercharge Your Interview Prep With AI',
+    url: '/blog/introducing-leetcode-feature',
     excerpt:
       "Improve your coding skills and interview readiness with PearAI's LeetCode integration. A practical tool for efficient technical interview preparation.",
-    date: "2024-09-15",
-    author: "Nang, IcePrey",
-    readingTime: "4 min",
-    thumbnail: "/images/leetcode.png",
+    date: '2024-09-15',
+    author: 'Nang, IcePrey',
+    readingTime: '4 min',
+    thumbnail: '/images/leetcode.png',
     tags: [
-      "leetcode",
-      "interview preparation",
-      "coding challenges",
-      "job hunting",
-      "swe jobs",
+      'leetcode',
+      'interview preparation',
+      'coding challenges',
+      'job hunting',
+      'swe jobs',
     ],
     content: `<article class="mx-auto max-w-4xl space-y-8 px-4 py-8 text-gray-800 dark:text-gray-200 sm:px-6 lg:px-8">
       <section class="space-y-6 mb-4">
@@ -798,15 +798,15 @@ export const posts = [
     </article>`,
   },
   {
-    title: "How to setup WSL in PearAI",
-    url: "/blog/wsl-setup",
+    title: 'How to setup WSL in PearAI',
+    url: '/blog/wsl-setup',
     excerpt:
-      "Easy step by step guide to setup WSL in PearAI, and get started with AI-powered coding in WSL.",
-    date: "2024-09-19",
-    author: "Himanshu and LaansDole",
-    readingTime: "30 seconds",
-    thumbnail: "/images/blog/wsl-blog.png",
-    tags: ["Guide", "WSL", "Linux", "Ubuntu", "Windows Subsystem for Linux"],
+      'Easy step by step guide to setup WSL in PearAI, and get started with AI-powered coding in WSL.',
+    date: '2024-09-19',
+    author: 'Himanshu and LaansDole',
+    readingTime: '30 seconds',
+    thumbnail: '/images/blog/wsl-blog.png',
+    tags: ['Guide', 'WSL', 'Linux', 'Ubuntu', 'Windows Subsystem for Linux'],
     content: `<article
   class="mx-auto max-w-4xl space-y-8 px-4 py-8 text-gray-800 dark:text-gray-200 sm:px-6 lg:px-8"
 >
@@ -882,15 +882,15 @@ export const posts = [
 `,
   },
   {
-    title: "Why Open Source Matters for AI Code Editors",
-    url: "/blog/why-open-source",
+    title: 'Why Open Source Matters for AI Code Editors',
+    url: '/blog/why-open-source',
     excerpt:
-      "Discover why open source is crucial for AI code editors and how PearAI leverages this approach to create a superior product with a thriving community.",
-    date: "2024-09-26",
-    author: "PearAI Team",
-    readingTime: "3 minutes",
-    thumbnail: "/images/og-image.png",
-    tags: ["Open Source"],
+      'Discover why open source is crucial for AI code editors and how PearAI leverages this approach to create a superior product with a thriving community.',
+    date: '2024-09-26',
+    author: 'PearAI Team',
+    readingTime: '3 minutes',
+    thumbnail: '/images/og-image.png',
+    tags: ['Open Source'],
     content: `<article
     class="mx-auto max-w-4xl space-y-8 px-4 py-8 text-gray-800 dark:text-gray-200 sm:px-6 lg:px-8"
   >
@@ -968,20 +968,20 @@ export const posts = [
   `,
   },
   {
-    title: "Open Source Bounties at PearAI",
-    url: "/blog/open-source-bounties",
+    title: 'Open Source Bounties at PearAI',
+    url: '/blog/open-source-bounties',
     excerpt:
-      "PearAI introduces monetary bounties for significant open source contributions. Solve big issues, get paid, and help build the best AI code editor in the world.",
-    date: "2024-09-28",
-    author: "PearAI Team",
-    readingTime: "2 min",
-    thumbnail: "/images/og-image.png",
+      'PearAI introduces monetary bounties for significant open source contributions. Solve big issues, get paid, and help build the best AI code editor in the world.',
+    date: '2024-09-28',
+    author: 'PearAI Team',
+    readingTime: '2 min',
+    thumbnail: '/images/og-image.png',
     tags: [
-      "open source",
-      "bounties",
-      "contributions",
-      "community",
-      "development",
+      'open source',
+      'bounties',
+      'contributions',
+      'community',
+      'development',
     ],
     content: `<article class="mx-auto max-w-4xl space-y-8 px-4 py-8 text-gray-800 dark:text-gray-200 sm:px-6 lg:px-8">
       <section class="space-y-6">
@@ -1023,15 +1023,15 @@ export const posts = [
   },
 
   {
-    title: "PearAI Open Source Fixes",
-    author: "PearAI Team, Jyoutir",
-    readingTime: "4 min",
-    date: "2024-10-12",
+    title: 'PearAI Open Source Fixes',
+    author: 'PearAI Team, Jyoutir',
+    readingTime: '4 min',
+    date: '2024-10-12',
     excerpt:
       "View PearAI's changes to correct past mistakes and ensure compliance with open source standards.",
-    thumbnail: "/images/og-image.png",
-    tags: ["open-source", "Continue.dev", "spreading love", "accountability"],
-    url: "/blog/pearai-open-source-fixes",
+    thumbnail: '/images/og-image.png',
+    tags: ['open-source', 'Continue.dev', 'spreading love', 'accountability'],
+    url: '/blog/pearai-open-source-fixes',
     content: `<article
       class="mx-auto max-w-4xl space-y-8 px-4 py-8 text-gray-800 dark:text-gray-200 sm:px-6 lg:px-8"
     >
@@ -1121,15 +1121,15 @@ export const posts = [
     </article>`,
   },
   {
-    title: "Introducing PearAI Creator (Beta) — Powered By aider*",
-    url: "/blog/introducing-pearai-creator-beta",
+    title: 'Introducing PearAI Creator (Beta) — Powered By aider*',
+    url: '/blog/introducing-pearai-creator-beta',
     excerpt:
-      "PearAI Creator can build apps, fix your bugs, and implement new features for you — all automatically. Learn how to use this powerful new feature powered by aider.",
-    date: "2024-10-23",
-    author: "PearAI Team",
-    readingTime: "2 min",
-    thumbnail: "/images/og-image.png", // Make sure this image exists
-    tags: ["PearAI Creator", "aider", "feature announcement", "beta"],
+      'PearAI Creator can build apps, fix your bugs, and implement new features for you — all automatically. Learn how to use this powerful new feature powered by aider.',
+    date: '2024-10-23',
+    author: 'PearAI Team',
+    readingTime: '2 min',
+    thumbnail: '/images/og-image.png', // Make sure this image exists
+    tags: ['PearAI Creator', 'aider', 'feature announcement', 'beta'],
     content: `<article class="mx-auto max-w-4xl space-y-8 px-4 py-8 text-gray-800 dark:text-gray-200 sm:px-6 lg:px-8">
       <section class="space-y-6">
         <p class="text-base font-light leading-relaxed sm:text-lg md:text-xl">

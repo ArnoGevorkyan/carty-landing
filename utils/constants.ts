@@ -1,44 +1,44 @@
-import { PricingTierData } from "@/types/pricing";
+import { PricingTierData } from '@/types/pricing';
 import {
   DiscordLogo,
   GitHubLogo,
   LinkedInLogo,
   TwitterLogo,
-} from "@/components/ui/icons";
+} from '@/components/ui/icons';
 
-export const TEST_MODE_ENABLED = ["true", "True", "TRUE"].includes(
-  process.env.NEXT_PUBLIC_TEST_MODE_ENABLED ?? "",
+export const TEST_MODE_ENABLED = ['true', 'True', 'TRUE'].includes(
+  process.env.NEXT_PUBLIC_TEST_MODE_ENABLED ?? ''
 );
 
-export const BUNNY_CDN_HOST = "https://pearai.b-cdn.net";
+export const BUNNY_CDN_HOST = 'https://pearai.b-cdn.net';
 
-export const CONTACT_EMAIL = "pear@trypear.ai";
+export const CONTACT_EMAIL = 'pear@trypear.ai';
 
-const NEXT_PUBLIC_STRIPE_WAITLIST_PRICE_ID = "price_1PZ9X608N4O93LU5yqMbGDtu";
+const NEXT_PUBLIC_STRIPE_WAITLIST_PRICE_ID = 'price_1PZ9X608N4O93LU5yqMbGDtu';
 const NEXT_PUBLIC_STRIPE_WAITLIST_PRICE_ID_TEST =
-  "price_1PZUT208N4O93LU5jItKoEYu";
-const NEXT_PUBLIC_STRIPE_MONTHLY_PRICE_ID = "price_1PoZiZ08N4O93LU5kCrdrXvI";
+  'price_1PZUT208N4O93LU5jItKoEYu';
+const NEXT_PUBLIC_STRIPE_MONTHLY_PRICE_ID = 'price_1PoZiZ08N4O93LU5kCrdrXvI';
 const NEXT_PUBLIC_STRIPE_MONTHLY_PRICE_ID_TEST =
-  "price_1Ppa9408N4O93LU5irNxLp5p";
-const NEXT_PUBLIC_STRIPE_ANNUAL_PRICE_ID = "price_1PpZUO08N4O93LU5FYFUyh43";
+  'price_1Ppa9408N4O93LU5irNxLp5p';
+const NEXT_PUBLIC_STRIPE_ANNUAL_PRICE_ID = 'price_1PpZUO08N4O93LU5FYFUyh43';
 const NEXT_PUBLIC_STRIPE_ANNUAL_PRICE_ID_TEST =
-  "price_1PZUSi08N4O93LU5UVdlkfp2";
+  'price_1PZUSi08N4O93LU5UVdlkfp2';
 
-const NEXT_PUBLIC_STRIPE_TOP_UP_5_CREDITS_ID = "price_1Q8xJU08N4O93LU5jvruga2e";
+const NEXT_PUBLIC_STRIPE_TOP_UP_5_CREDITS_ID = 'price_1Q8xJU08N4O93LU5jvruga2e';
 const NEXT_PUBLIC_STRIPE_TOP_UP_5_CREDITS_ID_TEST =
-  "price_1Q8vto08N4O93LU5avr7qtyJ";
+  'price_1Q8vto08N4O93LU5avr7qtyJ';
 const NEXT_PUBLIC_STRIPE_TOP_UP_10_CREDITS_ID =
-  "price_1Q8xKo08N4O93LU5F4dbgrgz";
+  'price_1Q8xKo08N4O93LU5F4dbgrgz';
 const NEXT_PUBLIC_STRIPE_TOP_UP_10_CREDITS_ID_TEST =
-  "price_1Q8vqw08N4O93LU5wHyY1Dqg";
+  'price_1Q8vqw08N4O93LU5wHyY1Dqg';
 const NEXT_PUBLIC_STRIPE_TOP_UP_15_CREDITS_ID =
-  "price_1Q8xKo08N4O93LU5dC9MUfYU";
+  'price_1Q8xKo08N4O93LU5dC9MUfYU';
 const NEXT_PUBLIC_STRIPE_TOP_UP_15_CREDITS_ID_TEST =
-  "price_1Q8AcI08N4O93LU5ALafGrbP";
+  'price_1Q8AcI08N4O93LU5ALafGrbP';
 const NEXT_PUBLIC_STRIPE_TOP_UP_30_CREDITS_ID =
-  "price_1Q8xKo08N4O93LU5CGjikmTp";
+  'price_1Q8xKo08N4O93LU5CGjikmTp';
 const NEXT_PUBLIC_STRIPE_TOP_UP_30_CREDITS_ID_TEST =
-  "price_1Q8vu608N4O93LU5z4DWu82N";
+  'price_1Q8vu608N4O93LU5z4DWu82N';
 
 export const STRIPE_PRICE_IDS = {
   WAITLIST: TEST_MODE_ENABLED
@@ -72,71 +72,71 @@ export const PRICING_TIERS: {
 } = {
   standard: [
     {
-      title: "Intern",
-      price: "0",
+      title: 'Intern',
+      price: '0',
       description:
-        "You can download PearAI directly, and use our free trial, or your own API key 🤓",
+        'You can download PearAI directly, and use our free trial, or your own API key 🤓',
       isFree: true,
       index: 0,
-      features: ["free", "Community Discord server"],
+      features: ['free', 'Community Discord server'],
     },
     {
-      title: "Junior Engineer",
-      price: "15",
-      prevPrice: "18",
+      title: 'Junior Engineer',
+      price: '15',
+      prevPrice: '18',
       description:
         "Get the monthly subscription, and we'll take care of you. 😎",
       features: [
-        "custom-standard",
-        "Full privacy: zero data retention policy with Anthropic",
-        "Direct customer support by the founders and contributors",
-        "Private Discord channel",
+        'custom-standard',
+        'Full privacy: zero data retention policy with Anthropic',
+        'Direct customer support by the founders and contributors',
+        'Private Discord channel',
       ],
-      buttonText: "Get Started",
+      buttonText: 'Get Started',
       priceId: STRIPE_PRICE_IDS.MONTHLY,
       index: 1,
     },
     {
-      title: "10x Engineer",
-      price: "10",
-      prevPrice: "14",
+      title: '10x Engineer',
+      price: '10',
+      prevPrice: '14',
       description:
         "Pay one lump sum yearly, and you'll be treated like our VIP! 🤩",
       features: [
-        "Everything from monthly",
-        "Priority for new feature requests",
-        "Early access to new features",
+        'Everything from monthly',
+        'Priority for new feature requests',
+        'Early access to new features',
       ],
-      buttonText: "Get Started",
+      buttonText: 'Get Started',
       priceId: STRIPE_PRICE_IDS.ANNUAL,
       index: 2,
     },
   ],
   enterprise: [
     {
-      title: "Monthly",
-      price: "32",
-      prevPrice: "35",
+      title: 'Monthly',
+      price: '32',
+      prevPrice: '35',
       description:
-        "Get the best deal for your business and increase the productivity of your team.",
+        'Get the best deal for your business and increase the productivity of your team.',
       features: [
-        "custom-enterprise",
-        "Full privacy: zero data retention policy with Anthropic",
-        "Centralized Billing and Dashboard",
-        "Direct customer support by the founders and contributors",
-        "Private Discord Channel",
+        'custom-enterprise',
+        'Full privacy: zero data retention policy with Anthropic',
+        'Centralized Billing and Dashboard',
+        'Direct customer support by the founders and contributors',
+        'Private Discord Channel',
       ],
-      buttonText: "Get Started",
+      buttonText: 'Get Started',
       priceId: STRIPE_PRICE_IDS.MONTHLY,
       index: 0,
     },
     {
-      title: "Yearly",
-      price: "27",
-      prevPrice: "30",
-      description: "Pay one lump sum yearly for our highest priority tier.",
-      features: ["Everything from monthly", "Priority Customer Support"],
-      buttonText: "Get Started",
+      title: 'Yearly',
+      price: '27',
+      prevPrice: '30',
+      description: 'Pay one lump sum yearly for our highest priority tier.',
+      features: ['Everything from monthly', 'Priority Customer Support'],
+      buttonText: 'Get Started',
       priceId: STRIPE_PRICE_IDS.ANNUAL,
       index: 1,
     },
@@ -145,33 +145,33 @@ export const PRICING_TIERS: {
 
 export const footerSections = [
   {
-    title: "Company",
+    title: 'Company',
     links: [
       {
-        text: "Privacy Policy",
-        href: "/privacy",
+        text: 'Privacy Policy',
+        href: '/privacy',
       },
       {
-        text: "App Privacy Policy",
-        href: "/privacy-app",
+        text: 'App Privacy Policy',
+        href: '/privacy-app',
       },
       {
-        text: "Terms of Service",
-        href: "/terms-of-service",
+        text: 'Terms of Service',
+        href: '/terms-of-service',
       },
     ],
   },
   {
-    title: "Support",
+    title: 'Support',
     links: [
       {
-        text: "Telegram",
-        href: "https://t.me/ArnoGevorkyan",
-        target: "_blank",
+        text: 'Telegram',
+        href: 'https://t.me/ArnoGevorkyan',
+        target: '_blank',
       },
       {
-        text: "Email",
-        href: "mailto:hello@carty.cc",
+        text: 'Email',
+        href: 'mailto:hello@carty.cc',
       },
     ],
   },
@@ -180,24 +180,24 @@ export const footerSections = [
 export const socialMediaLinks = [
   {
     icon: GitHubLogo,
-    link: "https://github.com/carty/carty-master",
+    link: 'https://github.com/carty/carty-master',
   },
   {
     icon: DiscordLogo,
-    link: "https://discord.gg/AKy5FmqCkF",
+    link: 'https://discord.gg/AKy5FmqCkF',
   },
   {
     icon: TwitterLogo,
-    link: "https://x.com/HelloCarty",
+    link: 'https://x.com/HelloCarty',
   },
   {
     icon: LinkedInLogo,
-    link: "https://www.linkedin.com/company/trycarty",
+    link: 'https://www.linkedin.com/company/trycarty',
   },
 ];
 
 export const defaultMetadata = {
-  title: "Carty - The Open Source AI Code Editor",
+  title: 'Carty - The Open Source AI Code Editor',
   description:
-    "Carty is an open-source AI code editor that integrates the best AI tools for each part of the development process.",
+    'Carty is an open-source AI code editor that integrates the best AI tools for each part of the development process.',
 };

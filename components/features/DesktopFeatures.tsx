@@ -1,13 +1,13 @@
-import { useState, useRef, useEffect } from "react";
-import { ChevronDown } from "lucide-react";
-import { AnimatePresence, motion } from "framer-motion";
-import { videoData } from "./data";
+import { useState, useRef, useEffect } from 'react';
+import { ChevronDown } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { videoData } from './data';
 
 export default function DesktopFeatures() {
   const [activeCard, setActiveCard] = useState(1);
   const [progress, setProgress] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const currentVideo = videoData.find((v) => v.id === activeCard);
+  const currentVideo = videoData.find(v => v.id === activeCard);
 
   const handleCardClick = (id: number) => {
     if (id === activeCard) return;
@@ -30,7 +30,7 @@ export default function DesktopFeatures() {
       if (progress < 100) {
         animationFrame = requestAnimationFrame(animate);
       } else {
-        setActiveCard((prev) => {
+        setActiveCard(prev => {
           const nextCard = prev + 1;
           return nextCard > videoData.length ? 1 : nextCard;
         });
@@ -51,15 +51,15 @@ export default function DesktopFeatures() {
       <div className="space-y-4">
         <div className="mb-6 text-[28px] font-semibold">Demos</div>
         <div className="flex flex-col gap-4">
-          {videoData.map((video) => (
+          {videoData.map(video => (
             <motion.div
               key={video.id}
               initial={false}
-              animate={activeCard === video.id ? "expanded" : "collapsed"}
+              animate={activeCard === video.id ? 'expanded' : 'collapsed'}
               className={`relative rounded-lg border border-gray-200 transition-all duration-300 ease-in-out dark:border-gray-50 ${
                 activeCard === video.id
-                  ? "ring-1 ring-black/30 dark:ring-white-50/20"
-                  : ""
+                  ? 'ring-1 ring-black/30 dark:ring-white-50/20'
+                  : ''
               } overflow-hidden`}
             >
               <div className="relative">
@@ -74,7 +74,7 @@ export default function DesktopFeatures() {
                         expanded: { rotate: 180 },
                         collapsed: { rotate: 0 },
                       }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
                     >
                       <ChevronDown className="h-4 w-4" />
                     </motion.div>
@@ -84,9 +84,9 @@ export default function DesktopFeatures() {
                 <motion.div
                   initial={false}
                   animate={{
-                    height: activeCard === video.id ? "auto" : "0px",
+                    height: activeCard === video.id ? 'auto' : '0px',
                   }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  transition={{ duration: 0.3, ease: 'easeInOut' }}
                   className="overflow-hidden"
                 >
                   <div className="px-4 pb-4">
@@ -108,9 +108,9 @@ export default function DesktopFeatures() {
                       <div className="mt-3 h-[4px] rounded-full bg-gray-200">
                         <motion.div
                           className="dark:bg-white h-full rounded-full bg-primary-600"
-                          initial={{ width: "0%" }}
+                          initial={{ width: '0%' }}
                           animate={{ width: `${progress}%` }}
-                          transition={{ duration: 0.3, ease: "easeOut" }}
+                          transition={{ duration: 0.3, ease: 'easeOut' }}
                         />
                       </div>
                     )}
@@ -128,7 +128,7 @@ export default function DesktopFeatures() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="h-full w-full"
           >
             <video

@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { useState, useCallback } from "react";
+import { useState, useCallback } from 'react';
 
 export function useToggle(
-  initialState: boolean = false,
+  initialState: boolean = false
 ): [boolean, () => void] {
   const [state, setState] = useState<boolean>(initialState);
 
   const toggle = useCallback(() => {
-    setState((state) => !state);
+    setState(state => !state);
   }, []);
 
   return [state, toggle];

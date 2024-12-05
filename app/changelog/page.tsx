@@ -1,12 +1,12 @@
-import { Metadata } from "next";
-import updates from "./changelog";
-import { TimelineItem } from "./timeline";
-import { constructMetadata } from "@/lib/utils";
+import { Metadata } from 'next';
+import updates from './changelog';
+import { TimelineItem } from './timeline';
+import { constructMetadata } from '@/lib/utils';
 
 export const metadata: Metadata = constructMetadata({
-  title: "Change Logs",
-  description: "The change logs for PearAI.",
-  canonical: "/changelog",
+  title: 'Change Logs',
+  description: 'The change logs for PearAI.',
+  canonical: '/changelog',
 });
 
 const ChangeLog: React.FC = () => {

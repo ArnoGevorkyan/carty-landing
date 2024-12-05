@@ -1,10 +1,10 @@
-import { constructMetadata } from "@/lib/utils";
-import { Metadata } from "next";
+import { constructMetadata } from '@/lib/utils';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = constructMetadata({
-  title: "Page Not Found",
-  description: "The requested page could not be found.",
-  canonical: "/404",
+  title: 'Page Not Found',
+  description: 'The requested page could not be found.',
+  canonical: '/404',
 });
 export default function Custom404() {
   return (

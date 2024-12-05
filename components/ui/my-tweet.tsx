@@ -1,4 +1,4 @@
-import type { Tweet } from "react-tweet/api";
+import type { Tweet } from 'react-tweet/api';
 import {
   type TwitterComponents,
   TweetContainer,
@@ -10,12 +10,14 @@ import {
   TweetActions,
   QuotedTweet,
   enrichTweet,
-} from "react-tweet";
-import Image from "next/image";
+} from 'react-tweet';
+import Image from 'next/image';
 
 export const components: TwitterComponents = {
-  AvatarImg: (props) => <Image {...props} alt="Twitter profile avatar" />,
-  MediaImg: (props) => <Image {...props} fill unoptimized alt="Tweet media content" />,
+  AvatarImg: props => <Image {...props} alt="Twitter profile avatar" />,
+  MediaImg: props => (
+    <Image {...props} fill unoptimized alt="Tweet media content" />
+  ),
 };
 
 type Props = {

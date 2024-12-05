@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { motion } from "framer-motion";
-import GridIllustration from "./ui/grid-illustration";
-import IntegrationBox from "./ui/integrationBox";
-import { Button } from "./ui/button";
-import ExpandableCards from "./ui/expandable-cards";
-import AnimatedShinyText from "./ui/animated-shiny-text";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
-import TelegramLogo from "./ui/TelegramLogo";
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import GridIllustration from './ui/grid-illustration';
+import IntegrationBox from './ui/integrationBox';
+import { Button } from './ui/button';
+import ExpandableCards from './ui/expandable-cards';
+import AnimatedShinyText from './ui/animated-shiny-text';
+import { cn } from '@/lib/utils';
+import Image from 'next/image';
+import TelegramLogo from './ui/TelegramLogo';
 
 export default function Hero() {
   const textVariants = {
@@ -68,7 +68,8 @@ export default function Hero() {
             >
               <h1 className="text-4xl font-bold sm:text-5xl md:text-6xl">
                 <div className="bg-gradient-to-b from-black via-black/80 to-black/40 bg-clip-text text-transparent dark:from-white dark:via-white/80 dark:to-white/40">
-                  Sell where users chat daily<br />— on Telegram
+                  Sell where users chat daily
+                  <br />— on Telegram
                 </div>
               </h1>
             </motion.div>
@@ -83,7 +84,9 @@ export default function Hero() {
               }}
               className="mb-8 max-w-2xl text-center text-lg text-neutral-700 dark:text-neutral-300"
             >
-              Bring the power of Shopify to Telegram with Carty. Set up in minutes and start selling where your customers are most active — chatting daily.
+              Bring the power of Shopify to Telegram with Carty. Set up in
+              minutes and start selling where your customers are most active —
+              chatting daily.
             </motion.p>
 
             {/* Button */}
@@ -112,7 +115,8 @@ export default function Hero() {
               }}
             >
               <p className="mb-6 text-center text-lg font-medium text-neutral-800 dark:text-neutral-200">
-                Convert chats into sales: make your Telegram Mini App a Digital Shop
+                Convert chats into sales: make your Telegram Mini App a Digital
+                Shop
               </p>
               <div className="relative aspect-[6/5] w-full overflow-hidden rounded-xl shadow-2xl">
                 <Image

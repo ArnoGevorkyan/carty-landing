@@ -1,12 +1,12 @@
-import { Metadata } from "next";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Check } from "lucide-react";
+import { Metadata } from 'next';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { Check } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "Subscription Upgrade Success",
-  description: "Page for successful checkout of annual subscription upgrade",
+  title: 'Subscription Upgrade Success',
+  description: 'Page for successful checkout of annual subscription upgrade',
 };
 
 export default function DashboardSuccess() {

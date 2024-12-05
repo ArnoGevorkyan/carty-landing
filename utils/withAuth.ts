@@ -1,9 +1,9 @@
-import { NextRequest, NextResponse } from "next/server";
-import { createClient } from "@/utils/supabase/server";
-import { User } from "@supabase/supabase-js";
+import { NextRequest, NextResponse } from 'next/server';
+import { createClient } from '@/utils/supabase/server';
+import { User } from '@supabase/supabase-js';
 
 type AuthenticatedHandler = (
-  request: NextRequest & { user: User },
+  request: NextRequest & { user: User }
 ) => Promise<NextResponse>;
 
 export function withAuth(handler: AuthenticatedHandler) {
@@ -14,7 +14,7 @@ export function withAuth(handler: AuthenticatedHandler) {
     } = await supabase.auth.getUser();
 
     if (!user) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
     // add user to request object

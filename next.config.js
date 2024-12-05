@@ -2,14 +2,14 @@
 const nextConfig = {
   images: {
     remotePatterns: [
-      { protocol: "https", hostname: "pbs.twimg.com" },
-      { protocol: "https", hostname: "abs.twimg.com" },
+      { protocol: 'https', hostname: 'pbs.twimg.com' },
+      { protocol: 'https', hostname: 'abs.twimg.com' },
     ],
   },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
-      use: ["@svgr/webpack"],
+      use: ['@svgr/webpack'],
     });
     return config;
   },
@@ -17,10 +17,10 @@ const nextConfig = {
     return [
       {
         source: '/home',
-        destination: '/'
-      }
+        destination: '/',
+      },
     ];
-  }
+  },
 };
 
 module.exports = nextConfig;

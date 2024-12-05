@@ -1,5 +1,5 @@
-import Link from "next/link";
-import CartyLogo from "./ui/CartyLogo.svg";
+import Link from 'next/link';
+import CartyLogo from './ui/CartyLogo.svg';
 
 export default async function Header() {
   return (

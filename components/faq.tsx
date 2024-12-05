@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { FAQItem } from "@/types/faqItems";
+import { FAQItem } from '@/types/faqItems';
 import {
   Accordion,
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
-} from "@/components/ui/accordion";
-import Link from "next/link";
-import Footer from "@/components/footer";
-import { useEffect, useState } from "react";
+} from '@/components/ui/accordion';
+import Link from 'next/link';
+import Footer from '@/components/footer';
+import { useEffect, useState } from 'react';
 
 const FAQComponent: React.FC = () => {
   const [openItem, setOpenItem] = useState<string | undefined>(undefined);
@@ -17,7 +17,7 @@ const FAQComponent: React.FC = () => {
   useEffect(() => {
     const hash = window.location.hash;
     if (hash) {
-      const id = hash.replace("#", "");
+      const id = hash.replace('#', '');
       const element = document.getElementById(id);
       if (element) {
         // Delay the scroll to ensure the page is fully loaded
@@ -29,10 +29,10 @@ const FAQComponent: React.FC = () => {
 
           window.scrollTo({
             top: offsetPosition,
-            behavior: "smooth",
+            behavior: 'smooth',
           });
 
-          const item = faqData.find((item) => item.id === id);
+          const item = faqData.find(item => item.id === id);
           if (item) {
             setOpenItem(id);
           }
@@ -56,15 +56,15 @@ const FAQComponent: React.FC = () => {
             data-aos="fade-up"
           >
             Can&apos;t find the answer you&apos;re looking for? Ask us directly
-            in our{" "}
+            in our{' '}
             <Link
               className="underline"
               target="_blank"
               href="https://discord.gg/AKy5FmqCkF"
             >
               Discord
-            </Link>{" "}
-            or through{" "}
+            </Link>{' '}
+            or through{' '}
             <a href="mailto:pear@trypear.ai" className="underline">
               email
             </a>
@@ -98,7 +98,7 @@ const FAQComponent: React.FC = () => {
           value={openItem}
           onValueChange={setOpenItem}
         >
-          {faqData.map((item) => (
+          {faqData.map(item => (
             <AccordionItem key={item.id} value={item.id} id={item.id}>
               <AccordionTrigger className="text-left text-base font-medium">
                 {item.question}
@@ -124,13 +124,13 @@ export default FAQComponent;
 
 const faqData: FAQItem[] = [
   {
-    id: "name",
-    question: "0. Why is it called PearAI?!",
+    id: 'name',
+    question: '0. Why is it called PearAI?!',
     answer: <p>Pair programming... Pear Programming... PearAI! 🍐💡</p>,
   },
   {
-    id: "competitors",
-    question: "1. Why PearAI over competitors?!",
+    id: 'competitors',
+    question: '1. Why PearAI over competitors?!',
     answer: (
       <div>
         <p>Over using vanilla LLM’s:</p>
@@ -147,7 +147,7 @@ const faqData: FAQItem[] = [
           <li>
             <b>
               No AI model vendor lock-in for higher quality code generation.
-            </b>{" "}
+            </b>{' '}
             We guarantee you we use the best model for your use case based on
             the most up-to-date leaderboards.
           </li>
@@ -177,7 +177,7 @@ const faqData: FAQItem[] = [
           can see, review, and contribute to our code. This allows for a
           community-driven product, mitigates privacy concerns that other
           similar tools face, and provides a faster development cycle thanks to
-          our community. We want PearAI to be a culture. Read more:{" "}
+          our community. We want PearAI to be a culture. Read more:{' '}
           <Link
             href="/blog/why-open-source"
             className="text-primary-600 hover:underline"
@@ -190,8 +190,8 @@ const faqData: FAQItem[] = [
     ),
   },
   {
-    id: "privacy",
-    question: "2. Does PearAI store my code?!",
+    id: 'privacy',
+    question: '2. Does PearAI store my code?!',
     answer: (
       <p>
         No. All codebase indexing occurs and remains strictly local on your
@@ -210,11 +210,11 @@ const faqData: FAQItem[] = [
     ),
   },
   {
-    id: "contribute",
-    question: "3. How can I contribute to PearAI?!",
+    id: 'contribute',
+    question: '3. How can I contribute to PearAI?!',
     answer: (
       <p>
-        See the contributor&apos;s section:{" "}
+        See the contributor&apos;s section:{' '}
         <Link className="underline" target="_blank" href="/docs/contributors">
           Contributing 101
         </Link>
