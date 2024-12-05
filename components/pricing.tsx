@@ -441,9 +441,7 @@ const PricingPage: React.FC<PricingPageProps> = ({ user }) => {
                       Be the early bird and get a discount
                     </span>
                     &nbsp;
-                    <span className="text-primary-900">
-                      forever
-                    </span>
+                    <span className="text-primary-900">forever</span>
                   </p>
 
                   <p className="block w-max items-center justify-end text-right md:flex">
@@ -481,9 +479,7 @@ const PricingPage: React.FC<PricingPageProps> = ({ user }) => {
                       Be the early bird and get a discount
                     </span>
                     &nbsp;
-                    <span className="text-primary-900">
-                      forever
-                    </span>
+                    <span className="text-primary-900">forever</span>
                   </p>
 
                   <p className="block w-max items-center justify-end text-right md:flex">
