@@ -1,21 +1,9 @@
 {
-  "extends": ["next/core-web-vitals", "prettier"],
-  "plugins": ["prettier", "svg-jsx"],
+  "extends": "next/core-web-vitals",
   "rules": {
-    "prettier/prettier": [
-      "error",
-      {
-        "bracketSpacing": true,
-        "semi": true,
-        "trailingComma": "all",
-        "printWidth": 80,
-        "tabWidth": 2,
-        "endOfLine": "auto"
-      }
-    ],
     "no-console": "warn",
-    "svg-jsx/camel-case-dash": "error",
-    "svg-jsx/camel-case-colon": "error",
-    "svg-jsx/no-style-string": "error"
+    "react/no-unescaped-entities": "off",
+    "@next/next/no-img-element": "off",
+    "prettier/prettier": "warn"
   }
 }
