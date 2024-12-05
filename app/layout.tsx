@@ -6,6 +6,19 @@ import { PHProvider } from './providers';
 import Header from '@/components/header';
 import { Toaster } from '@/components/ui/sonner';
 import { ThemeProvider } from 'next-themes';
+import dynamic from 'next/dynamic';
+
+const Analytics = dynamic(() => import('@vercel/analytics/react').then(mod => mod.Analytics), {
+  ssr: false,
+});
+
+const SpeedInsights = dynamic(() => import('@vercel/speed-insights/next').then(mod => mod.SpeedInsights), {
+  ssr: false,
+});
+
+const PostHogPageView = dynamic(() => import('./PostHogPageView'), {
+  ssr: false,
+});
 
 export const metadata = {
   title: 'Carty - Create Your Telegram Shop',
@@ -36,6 +49,9 @@ export default function RootLayout({
               {children}
               <Toaster position="bottom-right" richColors />
             </div>
+            <PostHogPageView />
+            <Analytics />
+            <SpeedInsights />
           </ThemeProvider>
         </PHProvider>
       </body>

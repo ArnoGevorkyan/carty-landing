@@ -2,32 +2,24 @@
 'use client';
 
 import { useEffect } from 'react';
+import posthog from 'posthog-js';
+import { PostHogProvider } from 'posthog-js/react';
 
 export function PHProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    const initPostHog = async () => {
-      if (typeof window !== 'undefined') {
-        try {
-          const posthog = (await import('posthog-js')).default;
-          const { PostHogProvider } = await import('posthog-js/react');
-
-          if (process.env.NEXT_PUBLIC_POSTHOG_KEY) {
-            posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
-              api_host: 'https://app.posthog.com',
-              loaded: posthog => {
-                if (process.env.NODE_ENV === 'development') posthog.debug();
-              },
-              capture_pageview: false,
-            });
-          }
-        } catch (error) {
-          console.warn('PostHog not initialized', error);
-        }
-      }
-    };
-
-    initPostHog();
+    if (typeof window !== 'undefined' && process.env.NEXT_PUBLIC_POSTHOG_KEY) {
+      posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
+        api_host: 'https://app.posthog.com',
+        capture_pageview: false, // We'll handle this manually
+        persistence: 'localStorage',
+        loaded: (posthog) => {
+          if (process.env.NODE_ENV === 'development') posthog.debug();
+        },
+      });
+    }
   }, []);
 
-  return <>{children}</>;
+  if (typeof window === 'undefined') return <>{children}</>;
+
+  return <PostHogProvider client={posthog}>{children}</PostHogProvider>;
 }
