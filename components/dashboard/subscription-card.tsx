@@ -17,7 +17,13 @@ interface SubscriptionCardProps {
   loading: boolean;
 }
 
-export default function SubscriptionCard({ subscription, usage, openAppQueryParams, user, loading }: SubscriptionCardProps) {
+export default function SubscriptionCard({
+  subscription,
+  usage,
+  openAppQueryParams,
+  user,
+  loading,
+}: SubscriptionCardProps) {
   if (!subscription) {
     return (
       <Card className="overflow-auto bg-gray-100/10">
@@ -48,8 +54,8 @@ export default function SubscriptionCard({ subscription, usage, openAppQueryPara
           <div>
             <p className="text-sm font-medium text-muted-foreground">Period</p>
             <p className="text-sm">
-              {new Date(subscription.current_period_start).toLocaleDateString()} -{' '}
-              {new Date(subscription.current_period_end).toLocaleDateString()}
+              {new Date(subscription.current_period_start).toLocaleDateString()}{' '}
+              - {new Date(subscription.current_period_end).toLocaleDateString()}
             </p>
           </div>
           {subscription.cancel_at_period_end && (
@@ -62,12 +68,16 @@ export default function SubscriptionCard({ subscription, usage, openAppQueryPara
           {usage.percent_credit_used !== null && (
             <div>
               <p className="text-sm font-medium text-muted-foreground">Usage</p>
-              <p className="text-sm">{usage.percent_credit_used}% of credits used</p>
+              <p className="text-sm">
+                {usage.percent_credit_used}% of credits used
+              </p>
             </div>
           )}
           {usage.remaining_topup_credits !== null && (
             <div>
-              <p className="text-sm font-medium text-muted-foreground">Remaining Top-up Credits</p>
+              <p className="text-sm font-medium text-muted-foreground">
+                Remaining Top-up Credits
+              </p>
               <p className="text-sm">{usage.remaining_topup_credits} credits</p>
             </div>
           )}
@@ -75,4 +85,4 @@ export default function SubscriptionCard({ subscription, usage, openAppQueryPara
       </CardContent>
     </Card>
   );
-} 
+}

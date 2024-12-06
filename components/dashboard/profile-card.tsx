@@ -32,4 +32,4 @@ export default function ProfileCard({ user }: ProfileCardProps) {
       </CardContent>
     </Card>
   );
-} 
+}
