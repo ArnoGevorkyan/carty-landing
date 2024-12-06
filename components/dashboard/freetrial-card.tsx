@@ -31,9 +31,7 @@ export default function FreeTrialCard({
     <Card className="overflow-auto bg-gray-100/10 text-card-foreground">
       <div className="grid gap-4">
         <CardHeader className="flex-row justify-between pb-4">
-          <CardTitle className="text-xl font-semibold">
-            Usage
-          </CardTitle>
+          <CardTitle className="text-xl font-semibold">Usage</CardTitle>
           <Badge
             variant="secondary"
             className="border-primary-800 bg-primary-800/10 px-2 py-1 text-xs text-primary-800"
@@ -114,7 +112,10 @@ export default function FreeTrialCard({
             <div>
               Make sure PearAI is
               <SignInAlertDialog>
-                <Button variant="link" className="mx-1 h-auto p-0 text-primary-800 hover:underline">
+                <Button
+                  variant="link"
+                  className="mx-1 h-auto p-0 text-primary-800 hover:underline"
+                >
                   installed.
                 </Button>
               </SignInAlertDialog>

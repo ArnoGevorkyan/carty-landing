@@ -19,24 +19,21 @@ interface SignInAlertDialogProps {
 export function SignInAlertDialog({ children }: SignInAlertDialogProps) {
   return (
     <AlertDialog>
-      <AlertDialogTrigger asChild>
-        {children}
-      </AlertDialogTrigger>
+      <AlertDialogTrigger asChild>{children}</AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Update in Progress</AlertDialogTitle>
           <AlertDialogDescription>
-            We are currently updating our systems. Please check back in a while. Thank you for your patience!
+            We are currently updating our systems. Please check back in a while.
+            Thank you for your patience!
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogAction asChild>
-            <Button variant="secondary">
-              Got it
-            </Button>
+            <Button variant="secondary">Got it</Button>
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
   );
-} 
+}

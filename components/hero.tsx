@@ -44,9 +44,9 @@ export default function Hero() {
             }}
             className="mx-auto mb-8 max-w-2xl text-center text-lg text-neutral-700"
           >
-            Bring the power of Shopify to Telegram with Carty. Set up in
-            minutes and start selling where your customers are most active —
-            chatting daily.
+            Bring the power of Shopify to Telegram with Carty. Set up in minutes
+            and start selling where your customers are most active — chatting
+            daily.
           </motion.p>
 
           {/* Button */}
@@ -60,9 +60,7 @@ export default function Hero() {
             }}
           >
             <SignInAlertDialog>
-              <Button
-                className="bg-[#007aff] hover:opacity-90 text-[#fff]"
-              >
+              <Button className="bg-[#007aff] hover:opacity-90 text-[#fff]">
                 Create Free Store
               </Button>
             </SignInAlertDialog>
