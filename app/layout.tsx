@@ -38,7 +38,7 @@ export const metadata = {
     siteName: 'Carty',
     images: [
       {
-        url: 'https://carty.cc/og-image.jpg?v=2',
+        url: 'https://carty.cc/og-image.jpg?v=3',
         width: 1200,
         height: 630,
         alt: 'Carty - Telegram Shop Creator',
@@ -51,7 +51,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Carty - Create Your Telegram Shop',
     description: 'Launch your Telegram shop in minutes. No coding required.',
-    images: ['https://carty.cc/og-image.jpg?v=2'],
+    images: ['https://carty.cc/og-image.jpg?v=3'],
     creator: '@cartyapp',
   },
   robots: {
