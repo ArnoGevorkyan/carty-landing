@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  assetPrefix: '/landing',
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'pbs.twimg.com' },
@@ -14,12 +13,13 @@ const nextConfig = {
     });
     return config;
   },
-  // Only handle the /home route, redirecting it to root
-  async rewrites() {
+  // Redirect /home to root for better SEO
+  async redirects() {
     return [
       {
         source: '/home',
         destination: '/',
+        permanent: true,
       },
     ];
   },
