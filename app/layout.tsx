@@ -7,6 +7,7 @@ import Header from '@/components/header';
 import { Toaster } from '@/components/ui/sonner';
 import { ThemeProvider } from 'next-themes';
 import dynamic from 'next/dynamic';
+import ThemeScript from './components/ThemeScript';
 
 const Analytics = dynamic(
   () => import('@vercel/analytics/react').then(mod => mod.Analytics),
@@ -37,7 +38,7 @@ export const metadata = {
     siteName: 'Carty',
     images: [
       {
-        url: 'https://carty.cc/og-image.jpg',
+        url: 'https://carty.cc/og-image.jpg?v=2',
         width: 1200,
         height: 630,
         alt: 'Carty - Telegram Shop Creator',
@@ -50,7 +51,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Carty - Create Your Telegram Shop',
     description: 'Launch your Telegram shop in minutes. No coding required.',
-    images: ['https://carty.cc/og-image.jpg'],
+    images: ['https://carty.cc/og-image.jpg?v=2'],
     creator: '@cartyapp',
   },
   robots: {
@@ -79,22 +80,9 @@ export default function RootLayout({
     >
       <head>
         <meta name="color-scheme" content="light" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-            try {
-              if (localStorage.getItem('theme') !== 'light') {
-                localStorage.setItem('theme', 'light');
-              }
-              document.documentElement.classList.add('light');
-              document.documentElement.classList.remove('dark');
-              document.documentElement.style.colorScheme = 'light';
-            } catch (e) {}
-          `,
-          }}
-        />
       </head>
       <body className="bg-background font-sans tracking-tight antialiased light">
+        <ThemeScript />
         <PHProvider>
           <ThemeProvider
             attribute="class"

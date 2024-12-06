@@ -98,7 +98,7 @@ export default function Hero() {
               }}
             >
               <Button asChild>
-                <Link href="/pricing">Create Free Store</Link>
+                <Link href="https://carty.cc/signin">Create Free Store</Link>
               </Button>
             </motion.div>
 

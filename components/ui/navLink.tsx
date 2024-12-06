@@ -9,7 +9,6 @@ interface NavLinkProps {
   children: React.ReactNode;
 }
 
-// NavLink component to handle individual navigation links
 const NavLink: React.FC<NavLinkProps> = ({
   href,
   isExternal = false,
@@ -34,37 +33,22 @@ const NavLink: React.FC<NavLinkProps> = ({
   );
 };
 
-// Navigation component to render the list of navigation links
 const Navigation: React.FC = () => {
   const navLinks = [
-    { label: 'About', path: '/about', isExternal: false },
     {
-      label: 'GitHub',
-      path: 'https://github.com/trypear/pearai-master',
+      label: 'Features',
+      path: '#features',
+      isExternal: false,
+    },
+    {
+      label: 'Contact',
+      path: 'https://t.me/ArnoGevorkyan',
       isExternal: true,
     },
     {
-      label: 'Discord',
-      path: 'https://discord.gg/AKy5FmqCkF',
+      label: 'Get Started',
+      path: 'https://carty.cc/signin',
       isExternal: true,
-    },
-    {
-      label: 'Download',
-      path: '/pricing',
-      isExternal: false,
-      mobile: false,
-    },
-    {
-      label: 'Docs',
-      path: '/docs',
-      isExternal: false,
-      mobile: false,
-    },
-    {
-      label: 'FAQ',
-      path: '/faq',
-      isExternal: false,
-      mobile: false,
     },
   ];
 
@@ -72,10 +56,7 @@ const Navigation: React.FC = () => {
     <nav className="flex w-full items-center justify-start md:justify-center">
       <ul className="flex w-full items-center justify-start space-x-3.5 sm:space-x-6 md:justify-center">
         {navLinks.map(link => (
-          <li
-            className={`${link.mobile === false && 'hidden sm:block'}`}
-            key={link.label}
-          >
+          <li key={link.label}>
             <NavLink href={link.path} isExternal={link.isExternal}>
               {link.label}
             </NavLink>

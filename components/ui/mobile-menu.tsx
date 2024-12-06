@@ -1,213 +1,96 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
+import { Menu, X } from 'lucide-react';
 import { Button } from './button';
-import { LogIn, LogOut, Menu, Settings, SquareArrowRight } from 'lucide-react';
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from '@/components/ui/sheet';
+import { cn } from '@/lib/utils';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { User } from '@supabase/supabase-js';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
-export default function MobileMenu({
-  user,
-  handleSignOut,
-}: {
-  user: User | null;
-  handleSignOut: () => Promise<void>;
-}) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
+interface MobileNavItemProps {
+  href: string;
+  children: React.ReactNode;
+  onClick?: () => void;
+}
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const MobileNavItem = ({
-    href,
-    onClick,
-    children,
-  }: {
-    href: string;
-    onClick: () => void;
-    children: React.ReactNode;
-  }) => (
+function MobileNavItem({ href, children, onClick }: MobileNavItemProps) {
+  return (
     <li>
       <Link
         href={href}
-        className="block rounded-md py-4 text-base font-medium text-foreground"
         onClick={onClick}
+        className="block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
       >
         {children}
       </Link>
     </li>
   );
+}
+
+export function MobileMenu() {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Sheet open={isOpen} onOpenChange={setIsOpen}>
-      <SheetTrigger asChild>
-        <Button
-          variant="ghost"
-          size="icon"
-          className="rounded-md hover:bg-secondary-300/10"
-          aria-label="Open menu"
-        >
-          <Menu className="h-6 w-6" />
-        </Button>
-      </SheetTrigger>
-      <SheetContent
-        side="right"
-        className="flex w-[300px] flex-col justify-between sm:w-[400px]"
+    <div className="lg:hidden">
+      <Button
+        variant="ghost"
+        className="relative z-50 -m-2 inline-flex items-center rounded-lg stroke-gray-900 p-2 hover:bg-gray-200/50 hover:stroke-gray-600 active:stroke-gray-900 [&:not(:focus-visible)]:focus:outline-none"
+        aria-label="Toggle Navigation"
+        onClick={() => setIsOpen(!isOpen)}
       >
-        <div>
-          <SheetHeader className="mb-4">
-            <SheetTitle className="text-center">PearAI Menu</SheetTitle>
-          </SheetHeader>
-          <nav aria-label="Mobile menu">
-            <ul className="space-y-1">
-              <div className="mb-4 space-y-4">
-                {user ? (
-                  <>
-                    <div className="hidden items-center space-x-2">
-                      <Avatar className="h-8 w-8">
-                        <AvatarImage
-                          src={user.user_metadata.avatar_url}
-                          alt={user.user_metadata.full_name || 'User avatar'}
-                        />
-                        <AvatarFallback>
-                          {user.email?.[0].toUpperCase() || 'U'}
-                        </AvatarFallback>
-                      </Avatar>
-                      <span className="text-sm font-medium">
-                        {user.user_metadata.full_name || user.email}
-                      </span>
-                    </div>
-                    <Link href="/dashboard" onClick={() => setIsOpen(false)}>
-                      <Button
-                        variant="outline"
-                        className="w-full justify-start"
-                      >
-                        <Settings className="mr-2 h-4 w-4" />
-                        Dashboard
-                      </Button>
-                    </Link>
-                    <Button
-                      variant="outline"
-                      className="w-full justify-start"
-                      onClick={handleSignOut}
-                    >
-                      <LogOut className="mr-2 h-4 w-4" />
-                      Sign out
-                    </Button>
-                  </>
-                ) : (
-                  <>
-                    <Link href="/signin" onClick={() => setIsOpen(false)}>
-                      <Button
-                        variant="outline"
-                        className="w-full justify-start"
-                      >
-                        <LogIn className="mr-2 h-4 w-4" />
-                        Sign in
-                      </Button>
-                    </Link>
-                    <Link href="/signup" onClick={() => setIsOpen(false)}>
-                      <Button
-                        variant="outline"
-                        className="mt-4 w-full justify-start"
-                      >
-                        <SquareArrowRight className="mr-2 h-4 w-4" />
-                        Try Carty
-                      </Button>
-                    </Link>
-                  </>
-                )}
-              </div>
-              <MobileNavItem href="/" onClick={() => setIsOpen(false)}>
-                Home
-              </MobileNavItem>
-              <div className="mt-4">
-                {user ? (
-                  <>
-                    <Button
-                      variant="outline"
-                      className="w-full justify-start"
-                      onClick={handleSignOut}
-                    >
-                      <LogOut className="mr-2 h-4 w-4" />
-                      Sign out
-                    </Button>
-                  </>
-                ) : (
-                  <>
-                    <Link href="/signin" onClick={() => setIsOpen(false)}>
-                      <Button
-                        variant="outline"
-                        className="w-full justify-start"
-                      >
-                        <LogIn className="mr-2 h-4 w-4" />
-                        Sign in
-                      </Button>
-                    </Link>
-                    <Link href="/signup" onClick={() => setIsOpen(false)}>
-                      <Button
-                        variant="outline"
-                        className="mt-4 w-full justify-start"
-                      >
-                        <SquareArrowRight className="mr-2 h-4 w-4" />
-                        Try Carty
-                      </Button>
-                    </Link>
-                  </>
-                )}
-              </div>
-              <MobileNavItem href="/" onClick={() => setIsOpen(false)}>
-                Home
-              </MobileNavItem>
-              {/* Temporarily hidden navigation items
-              <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="resources">
-                  <AccordionTrigger>Resources</AccordionTrigger>
-                  <AccordionContent>
-                    <div className="flex flex-col space-y-2">
-                      <MobileNavItem href="/about">About</MobileNavItem>
-                      <MobileNavItem href="/blog">Blog</MobileNavItem>
-                      <MobileNavItem href="/faq">FAQ</MobileNavItem>
-                      <MobileNavItem href="/changelog">Changelog</MobileNavItem>
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-              <MobileNavItem href="/pricing">Pricing</MobileNavItem>
-              <MobileNavItem href="/docs">Documentation</MobileNavItem>
-              <MobileNavItem href="https://github.com/trypear/pearai-master">
-                GitHub
-              </MobileNavItem>
-              */}
-            </ul>
-          </nav>
+        <Menu
+          className={cn(
+            'h-6 w-6',
+            isOpen && 'hidden'
+          )}
+        />
+        <X
+          className={cn(
+            'h-6 w-6',
+            !isOpen && 'hidden'
+          )}
+        />
+      </Button>
+      {isOpen && (
+        <div className="fixed inset-0 z-40 bg-gray-100/50 backdrop-blur-sm" />
+      )}
+      <div
+        className={cn(
+          'fixed inset-x-0 top-0 z-40 origin-top rounded-b-2xl bg-white px-6 pb-8 pt-24 shadow-2xl shadow-gray-900/20',
+          !isOpen && 'hidden'
+        )}
+      >
+        <div className="space-y-4">
+          <Accordion type="single" collapsible>
+            <AccordionItem value="features">
+              <AccordionTrigger>Features</AccordionTrigger>
+              <AccordionContent>
+                <div className="mt-2 space-y-2">
+                  <Link
+                    href="https://carty.cc/signin"
+                    onClick={() => setIsOpen(false)}
+                    className="group flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50"
+                  >
+                    Create Store
+                  </Link>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+          <MobileNavItem href="https://carty.cc/signin" onClick={() => setIsOpen(false)}>
+            Get Started
+          </MobileNavItem>
+          <MobileNavItem href="/docs" onClick={() => setIsOpen(false)}>Documentation</MobileNavItem>
+          <MobileNavItem href="https://t.me/ArnoGevorkyan" onClick={() => setIsOpen(false)}>
+            Contact
+          </MobileNavItem>
         </div>
-        <div className="width-full space-y-4 pb-6">
-          <div className="width-full">
-            {mounted ? (
-              <Button variant="outline" className="w-full justify-center">
-                {/* Remove theme toggle */}
-              </Button>
-            ) : null}
-          </div>
-        </div>
-      </SheetContent>
-    </Sheet>
+      </div>
+    </div>
   );
 }

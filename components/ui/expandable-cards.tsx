@@ -31,11 +31,11 @@ const CARDS: Card[] = [
     id: 1,
     title: 'Sell',
     company: {
-      name: 'Courses*',
+      name: 'Digital Products',
       url: '#',
     },
     description:
-      'Create and sell online courses, tutorials, and educational content. Your customers get instant access after payment through Telegram Stars.',
+      'Offer any type of digital content—no limits. Deliver instantly right in Telegram.',
     icon: AiderLogo,
     bgColor: 'rgba(201, 255, 226, 1)',
     iconBgColor: 'rgba(4, 40, 26, 1)',
@@ -45,13 +45,13 @@ const CARDS: Card[] = [
   },
   {
     id: 2,
-    title: 'Sell',
+    title: 'Instant',
     company: {
-      name: 'Templates*',
+      name: 'Setup',
       url: '#',
     },
     description:
-      'Offer digital templates, design assets, and ready-to-use resources. Customers can instantly download after purchasing with Stars.',
+      'Get your store live within minutes. No design or coding required—just add products and start selling.',
     icon: SupermavenLogo,
     bgColor: 'rgba(200, 230, 255, 1)',
     iconBgColor: 'rgba(0, 85, 255, 1)',
@@ -61,13 +61,13 @@ const CARDS: Card[] = [
   },
   {
     id: 3,
-    title: 'Sell',
+    title: 'Engage',
     company: {
-      name: 'Guides*',
+      name: 'in Chats',
       url: '#',
     },
     description:
-      'Share your expertise through comprehensive guides, ebooks, and tutorials. Deliver content directly in Telegram after Stars payment.',
+      'Meet customers where they already are. Turn everyday Telegram chats into a direct sales channel.',
     icon: ContinueLogo,
     bgColor: 'rgba(229, 225, 248, 1)',
     iconBgColor: 'rgba(255, 255, 255, 1)',
@@ -77,13 +77,13 @@ const CARDS: Card[] = [
   },
   {
     id: 4,
-    title: 'Manage',
+    title: 'Simple',
     company: {
-      name: 'Customers*',
+      name: 'Payments',
       url: '#',
     },
     description:
-      'Keep all your customers in your Telegram chat list forever. Send updates, new content, and maintain direct communication.',
+      'Accept Telegram Stars for seamless, on-platform payments. No extra gateways or fees—just quick, easy transactions.',
     icon: Mem0Logo,
     bgColor: 'rgba(225, 253, 175, 1)',
     iconBgColor: 'rgba(0, 0, 0, 1)',
@@ -93,13 +93,13 @@ const CARDS: Card[] = [
   },
   {
     id: 5,
-    title: 'Accept',
+    title: 'Stripe',
     company: {
-      name: 'Stars*',
+      name: 'Coming Soon',
       url: '#',
     },
     description:
-      'Accept payments in Telegram Stars - the native currency of Telegram. No additional payment processing or setup needed.',
+      'More payment flexibility is on the way. Stripe support is coming soon, giving you even more ways to get paid.',
     icon: PerplexityLogo,
     bgColor: 'rgba(216, 250, 255, 1)',
     iconBgColor: 'rgba(34, 128, 141, 1)',
@@ -131,10 +131,8 @@ export default function ExpandableCards() {
       {/* Desktop Layout */}
       <div className="hidden items-center justify-center px-6 py-4 lg:flex">
         <div className="w-full max-w-[1049px] rounded-xl border-2 border-gray-200 p-5 dark:border-gray-50">
-          <h1 className="pb-5 text-[28px] font-semibold leading-tight dark:text-gray-900">
-            The AI space changes fast- PearAI Inventory curates the best AI
-            tools on the market at any given time, and integrates them into a
-            powerful editor.
+          <h1 className="pb-5 text-center text-[28px] font-semibold leading-tight dark:text-gray-900">
+            Skip the website. Sell directly where customers chat. Carty turns Telegram into your digital store.
           </h1>
           <div className="flex gap-5">
             {CARDS.map(card => (
@@ -241,10 +239,8 @@ export default function ExpandableCards() {
       {/* Mobile Layout */}
       <div className="block w-full px-6 py-6 lg:hidden">
         <div className="mx-auto w-full max-w-3xl rounded-xl border-2 border-gray-200 px-5 py-5 dark:border-gray-50">
-          <h2 className="mb-5 text-2xl font-semibold dark:text-gray-900 md:text-[28px]">
-            The AI space changes fast— PearAI Inventory curates the best AI
-            tools on the market at any given time, and integrates them into a
-            powerful editor.
+          <h2 className="mb-5 text-center text-2xl font-semibold dark:text-gray-900 md:text-[28px]">
+            Skip the website. Sell directly where customers chat. Carty turns Telegram into your digital store.
           </h2>
           <div className="space-y-4">
             {CARDS.map(card => (

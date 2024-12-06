@@ -42,7 +42,7 @@ export default function Showcase() {
             No Coding • No Setup • Just Sales
           </p>
           <Button className="mt-10 bg-black px-20 py-4 text-sm hover:bg-black dark:hover:bg-black sm:text-base">
-            <Link href="/pricing">Create Free Store</Link>
+            <Link href="https://carty.cc/signin">Create Free Store</Link>
           </Button>
           <a
             href="/docs/contributors"

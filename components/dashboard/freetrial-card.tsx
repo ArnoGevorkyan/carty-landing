@@ -114,14 +114,14 @@ export default function FreeTrialCard({
               </Button>
             </div>
             <Button variant="default" asChild>
-              <Link href="/pricing">Subscribe Now</Link>
+              <Link href="/signin">Subscribe Now</Link>
             </Button>
           </div>
           <div className="mt-4 flex items-start text-xs text-muted-foreground">
             <InfoIcon className="mr-1 mt-0.5 h-3 w-3 flex-shrink-0" />
             <div>
               Make sure PearAI is
-              <Link href="/pricing" className="mx-1">
+              <Link href="/signin" className="mx-1">
                 <span className="text-primary-800 hover:underline">
                   installed.
                 </span>
