@@ -1,4 +1,4 @@
-import { footerSections, socialMediaLinks } from '@/utils/constants';
+import { footerSections } from '@/utils/constants';
 import Link from 'next/link';
 import CartyLogo from './ui/CartyLogo.svg';
 import { Button } from './ui/button';
@@ -13,49 +13,40 @@ export default function Footer() {
             <CartyLogo />
           </Link>
           <p className="mt-5 text-sm leading-[1.75] text-neutral-500 dark:text-neutral-400">
-            Speed up your development process by seamlessly integrating AI into
-            your workflow.
+            Launch your Telegram shop in minutes and start selling where your customers are most active.
           </p>
         </div>
 
         {/* Sections with links */}
-        {footerSections.map(({ title, links }, idx) => (
-          <div key={idx}>
-            <h5 className="font-semibold">{title}</h5>
-            <ul className="mt-4 space-y-2 text-neutral-500 dark:text-neutral-400">
-              {links.map(({ text, href, target = '_self' }, idx) => (
-                <li key={idx}>
-                  <Link
-                    href={href}
-                    target={target}
-                    className="text-sm hover:text-primary-600"
-                  >
-                    {text}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        {footerSections.map(({ title, links }, idx) => {
+          // Filter out GitHub, Discord, and LinkedIn links
+          const filteredLinks = links.filter(
+            link => !['GitHub', 'Discord', 'LinkedIn'].includes(link.text)
+          );
+          if (filteredLinks.length === 0) return null;
+          
+          return (
+            <div key={idx}>
+              <h5 className="font-semibold">{title}</h5>
+              <ul className="mt-4 space-y-2 text-neutral-500 dark:text-neutral-400">
+                {filteredLinks.map(({ text, href, target = '_self' }, idx) => (
+                  <li key={idx}>
+                    <Link
+                      href={href}
+                      target={target}
+                      className="text-sm hover:text-primary-600"
+                    >
+                      {text}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        })}
       </div>
 
       <div className="flex flex-col items-center justify-between gap-2.5 border-t py-3.5 text-neutral-500 dark:text-neutral-400 sm:flex-row-reverse">
-        {/* Social media links */}
-        <div className="-mr-2 flex items-center gap-1">
-          {socialMediaLinks.map(({ icon: Icon, link }) => (
-            <Button
-              key={link}
-              variant="ghost"
-              size="icon"
-              className="rounded-full"
-            >
-              <Link href={link} target="_blank" rel="noopener noreferrer">
-                <Icon className="h-5 w-5" />
-              </Link>
-            </Button>
-          ))}
-        </div>
-
         {/* Copyright */}
         <span className="text-sm">
           &copy; {new Date().getFullYear()} Carty - All rights reserved.
