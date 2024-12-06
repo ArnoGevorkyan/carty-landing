@@ -85,7 +85,7 @@ const CARDS: Card[] = [
     iconBgColor: '#5AC8FA',
     iconColor: '#FFFFFF',
     titleColor: '#358CB4',
-    descriptionColor: '#005F15',
+    descriptionColor: '#358CB4',
   },
   {
     id: 5,
