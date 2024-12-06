@@ -73,7 +73,7 @@ export const PRICING_TIERS: {
   standard: [
     {
       title: 'Intern',
-      price: '0',
+      price: 0,
       description:
         'You can download PearAI directly, and use our free trial, or your own API key 🤓',
       isFree: true,
@@ -82,8 +82,8 @@ export const PRICING_TIERS: {
     },
     {
       title: 'Junior Engineer',
-      price: '15',
-      prevPrice: '18',
+      price: 15,
+      prevPrice: 18,
       description:
         "Get the monthly subscription, and we'll take care of you. 😎",
       features: [
@@ -98,8 +98,8 @@ export const PRICING_TIERS: {
     },
     {
       title: '10x Engineer',
-      price: '10',
-      prevPrice: '14',
+      price: 10,
+      prevPrice: 14,
       description:
         "Pay one lump sum yearly, and you'll be treated like our VIP! 🤩",
       features: [
@@ -115,8 +115,8 @@ export const PRICING_TIERS: {
   enterprise: [
     {
       title: 'Monthly',
-      price: '32',
-      prevPrice: '35',
+      price: 32,
+      prevPrice: 35,
       description:
         'Get the best deal for your business and increase the productivity of your team.',
       features: [
@@ -132,8 +132,8 @@ export const PRICING_TIERS: {
     },
     {
       title: 'Yearly',
-      price: '27',
-      prevPrice: '30',
+      price: 27,
+      prevPrice: 30,
       description: 'Pay one lump sum yearly for our highest priority tier.',
       features: ['Everything from monthly', 'Priority Customer Support'],
       buttonText: 'Get Started',
