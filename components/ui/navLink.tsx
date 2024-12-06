@@ -2,20 +2,27 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { MaintenanceAlert } from './maintenance-alert';
 
 interface NavLinkProps {
   href: string;
   isExternal?: boolean;
+  isButton?: boolean;
   children: React.ReactNode;
 }
 
 const NavLink: React.FC<NavLinkProps> = ({
   href,
   isExternal = false,
+  isButton = false,
   children,
 }) => {
   const pathname = usePathname();
   const isActive = pathname === href;
+
+  if (isButton) {
+    return <MaintenanceAlert>{children}</MaintenanceAlert>;
+  }
 
   return (
     <Link
@@ -49,6 +56,7 @@ const Navigation: React.FC = () => {
       label: 'Get Started',
       path: 'https://carty.cc/signin',
       isExternal: true,
+      isButton: true,
     },
   ];
 
@@ -57,7 +65,7 @@ const Navigation: React.FC = () => {
       <ul className="flex w-full items-center justify-start space-x-3.5 sm:space-x-6 md:justify-center">
         {navLinks.map(link => (
           <li key={link.label}>
-            <NavLink href={link.path} isExternal={link.isExternal}>
+            <NavLink href={link.path} isExternal={link.isExternal} isButton={link.isButton}>
               {link.label}
             </NavLink>
           </li>

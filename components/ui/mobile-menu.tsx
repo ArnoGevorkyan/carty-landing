@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { Button } from './button';
 import { cn } from '@/lib/utils';
+import { MaintenanceAlert } from './maintenance-alert';
 import {
   Accordion,
   AccordionContent,
@@ -16,9 +17,20 @@ interface MobileNavItemProps {
   href: string;
   children: React.ReactNode;
   onClick?: () => void;
+  isButton?: boolean;
 }
 
-function MobileNavItem({ href, children, onClick }: MobileNavItemProps) {
+function MobileNavItem({ href, children, onClick, isButton }: MobileNavItemProps) {
+  if (isButton) {
+    return (
+      <li>
+        <MaintenanceAlert className="w-full justify-start rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+          {children}
+        </MaintenanceAlert>
+      </li>
+    );
+  }
+
   return (
     <li>
       <Link
@@ -61,13 +73,9 @@ export function MobileMenu() {
               <AccordionTrigger>Features</AccordionTrigger>
               <AccordionContent>
                 <div className="mt-2 space-y-2">
-                  <Link
-                    href="https://carty.cc/signin"
-                    onClick={() => setIsOpen(false)}
-                    className="group flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50"
-                  >
+                  <MaintenanceAlert className="group flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50">
                     Create Store
-                  </Link>
+                  </MaintenanceAlert>
                 </div>
               </AccordionContent>
             </AccordionItem>
@@ -75,6 +83,7 @@ export function MobileMenu() {
           <MobileNavItem
             href="https://carty.cc/signin"
             onClick={() => setIsOpen(false)}
+            isButton
           >
             Get Started
           </MobileNavItem>

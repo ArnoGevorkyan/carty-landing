@@ -1,5 +1,5 @@
-import './css/style.css';
 import './globals.css';
+import './css/style.css';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import { PHProvider } from './providers';
