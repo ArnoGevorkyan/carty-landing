@@ -43,18 +43,8 @@ export function MobileMenu() {
         aria-label="Toggle Navigation"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <Menu
-          className={cn(
-            'h-6 w-6',
-            isOpen && 'hidden'
-          )}
-        />
-        <X
-          className={cn(
-            'h-6 w-6',
-            !isOpen && 'hidden'
-          )}
-        />
+        <Menu className={cn('h-6 w-6', isOpen && 'hidden')} />
+        <X className={cn('h-6 w-6', !isOpen && 'hidden')} />
       </Button>
       {isOpen && (
         <div className="fixed inset-0 z-40 bg-gray-100/50 backdrop-blur-sm" />
@@ -82,11 +72,19 @@ export function MobileMenu() {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
-          <MobileNavItem href="https://carty.cc/signin" onClick={() => setIsOpen(false)}>
+          <MobileNavItem
+            href="https://carty.cc/signin"
+            onClick={() => setIsOpen(false)}
+          >
             Get Started
           </MobileNavItem>
-          <MobileNavItem href="/docs" onClick={() => setIsOpen(false)}>Documentation</MobileNavItem>
-          <MobileNavItem href="https://t.me/ArnoGevorkyan" onClick={() => setIsOpen(false)}>
+          <MobileNavItem href="/docs" onClick={() => setIsOpen(false)}>
+            Documentation
+          </MobileNavItem>
+          <MobileNavItem
+            href="https://t.me/ArnoGevorkyan"
+            onClick={() => setIsOpen(false)}
+          >
             Contact
           </MobileNavItem>
         </div>

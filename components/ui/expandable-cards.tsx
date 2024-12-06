@@ -132,7 +132,8 @@ export default function ExpandableCards() {
       <div className="hidden items-center justify-center px-6 py-4 lg:flex">
         <div className="w-full max-w-[1049px] rounded-xl border-2 border-gray-200 p-5 dark:border-gray-50">
           <h1 className="pb-5 text-center text-[28px] font-semibold leading-tight dark:text-gray-900">
-            Skip the website. Sell directly where customers chat. Carty turns Telegram into your digital store.
+            Skip the website. Sell directly where customers chat. Carty turns
+            Telegram into your digital store.
           </h1>
           <div className="flex gap-5">
             {CARDS.map(card => (
@@ -240,7 +241,8 @@ export default function ExpandableCards() {
       <div className="block w-full px-6 py-6 lg:hidden">
         <div className="mx-auto w-full max-w-3xl rounded-xl border-2 border-gray-200 px-5 py-5 dark:border-gray-50">
           <h2 className="mb-5 text-center text-2xl font-semibold dark:text-gray-900 md:text-[28px]">
-            Skip the website. Sell directly where customers chat. Carty turns Telegram into your digital store.
+            Skip the website. Sell directly where customers chat. Carty turns
+            Telegram into your digital store.
           </h2>
           <div className="space-y-4">
             {CARDS.map(card => (
