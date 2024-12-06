@@ -30,4 +30,4 @@ export const metadata: Metadata = {
   },
 };
 
-export default Home; 
+export default Home;

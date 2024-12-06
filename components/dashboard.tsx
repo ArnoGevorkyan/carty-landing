@@ -3,16 +3,13 @@
 import { User } from '@supabase/supabase-js';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState, useCallback } from 'react';
-import { Subscription } from '@/types/subscription';
 import { toast } from 'sonner';
 import ProfileCard from '@/components/dashboard/profile-card';
-import SubscriptionCard from '@/components/dashboard/subscription-card';
 import FreeTrialCard from '@/components/dashboard/freetrial-card';
 import { isAllowedUrl } from '@/lib/utils';
 import { UnsafeUrlError } from '@/types/url';
 
 type DashboardPageProps = {
-  subscription: Subscription | null;
   openAppQueryParams: string | URLSearchParams;
   user: User;
 };
@@ -23,7 +20,6 @@ export type UsageType = {
 };
 
 export default function DashboardPage({
-  subscription,
   openAppQueryParams,
   user,
 }: DashboardPageProps) {
@@ -125,26 +121,16 @@ export default function DashboardPage({
           <div className="mb-6">
             <h1 className="text-4xl font-bold">Dashboard</h1>
             <p className="text-muted-foreground">
-              Manage your account, billing, and preferences.
+              Manage your account and preferences.
             </p>
           </div>
           <div className="grid gap-6 lg:grid-cols-2">
             <ProfileCard user={user} />
-            {subscription ? (
-              <SubscriptionCard
-                subscription={subscription}
-                usage={usage}
-                openAppQueryParams={openAppQueryParams}
-                user={user}
-                loading={loading}
-              />
-            ) : (
-              <FreeTrialCard
-                loading={loading}
-                usage={usage}
-                openAppQueryParams={openAppQueryParams}
-              />
-            )}
+            <FreeTrialCard
+              loading={loading}
+              usage={usage}
+              openAppQueryParams={openAppQueryParams}
+            />
           </div>
         </div>
       </div>

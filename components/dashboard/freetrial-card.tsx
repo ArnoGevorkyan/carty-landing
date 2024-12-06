@@ -31,7 +31,7 @@ export default function FreeTrialCard({
       <div className="grid gap-4">
         <CardHeader className="flex-row justify-between pb-4">
           <CardTitle className="text-xl font-semibold">
-            Subscription & Usage
+            Usage
           </CardTitle>
           <Badge
             variant="secondary"
@@ -96,12 +96,6 @@ export default function FreeTrialCard({
                 </div>
               </div>
             )}
-          <div className="mb-4">
-            <div className="flex justify-between">
-              <p className="font-medium">Current Plan</p>
-              <p className="text-sm text-muted-foreground">Free Trial</p>
-            </div>
-          </div>
           <div className="mt-8 flex justify-between space-x-4">
             <div className="hidden sm:block">
               <Button variant="outline" className="text-primary-800" asChild>
@@ -113,9 +107,6 @@ export default function FreeTrialCard({
                 </Link>
               </Button>
             </div>
-            <Button variant="default" asChild>
-              <Link href="/signin">Subscribe Now</Link>
-            </Button>
           </div>
           <div className="mt-4 flex items-start text-xs text-muted-foreground">
             <InfoIcon className="mr-1 mt-0.5 h-3 w-3 flex-shrink-0" />
