@@ -1,5 +1,5 @@
-import { Subscription } from '@/types/subscription';
-import { createClient } from '@/utils/supabase/server';
+import type { Subscription } from '../types/subscription';
+import { createClient } from '../utils/supabase/server';
 import { User } from '@supabase/auth-js';
 
 type GetUserSubscriptionResult = {
