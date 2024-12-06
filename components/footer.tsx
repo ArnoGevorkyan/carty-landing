@@ -13,7 +13,8 @@ export default function Footer() {
             <CartyLogo />
           </Link>
           <p className="mt-5 text-sm leading-[1.75] text-neutral-500 dark:text-neutral-400">
-            Launch your Telegram shop in minutes and start selling where your customers are most active.
+            Launch your Telegram shop in minutes and start selling where your
+            customers are most active.
           </p>
         </div>
 
@@ -24,7 +25,7 @@ export default function Footer() {
             link => !['GitHub', 'Discord', 'LinkedIn'].includes(link.text)
           );
           if (filteredLinks.length === 0) return null;
-          
+
           return (
             <div key={idx}>
               <h5 className="font-semibold">{title}</h5>

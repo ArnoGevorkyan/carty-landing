@@ -25,10 +25,7 @@ export default function Showcase() {
             delay: 0.6,
           }}
         >
-          <Button
-            asChild
-            className="bg-[#007aff] hover:opacity-90 text-[#fff]"
-          >
+          <Button asChild className="bg-[#007aff] hover:opacity-90 text-[#fff]">
             <Link href="https://carty.cc/signin">Create Free Store</Link>
           </Button>
         </motion.div>

@@ -1,4 +1,4 @@
-import { BUNNY_CDN_HOST } from "@/utils/constants";
+import { BUNNY_CDN_HOST } from '@/utils/constants';
 
 export const videoData = [
   {
