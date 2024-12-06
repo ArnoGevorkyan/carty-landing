@@ -247,7 +247,7 @@ export default function ExpandableCards() {
                 style={{
                   backgroundColor: card.bgColor,
                 }}
-                className="overflow-hidden rounded-xl border border-gray-200 transition-all duration-200 dark:border-gray-700 dark:bg-opacity-90"
+                className="overflow-hidden rounded-xl transition-all duration-200 dark:bg-opacity-90"
                 onClick={() => handleCardClick(card.id)}
               >
                 <div className="px-4 py-4">
