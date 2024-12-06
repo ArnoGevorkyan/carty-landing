@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  assetPrefix: '/landing',
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'pbs.twimg.com' },

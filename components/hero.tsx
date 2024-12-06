@@ -97,7 +97,10 @@ export default function Hero() {
                 delay: 0.6,
               }}
             >
-              <Button asChild>
+              <Button 
+                asChild 
+                className="bg-[#007aff] hover:opacity-90 text-[#fff] text-lg rounded-lg h-12 px-8"
+              >
                 <Link href="https://carty.cc/signin">Create Free Store</Link>
               </Button>
             </motion.div>
