@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState, useCallback } from 'react';
 import { toast } from 'sonner';
 import ProfileCard from '@/components/dashboard/profile-card';
-import FreeTrialCard from '@/components/dashboard/freetrial-card';
+import UsageCard from '@/components/dashboard/usage-card';
 import { isAllowedUrl } from '@/lib/utils';
 import { UnsafeUrlError } from '@/types/url';
 
@@ -126,7 +126,7 @@ export default function DashboardPage({
           </div>
           <div className="grid gap-6 lg:grid-cols-2">
             <ProfileCard user={user} />
-            <FreeTrialCard
+            <UsageCard
               loading={loading}
               usage={usage}
               openAppQueryParams={openAppQueryParams}

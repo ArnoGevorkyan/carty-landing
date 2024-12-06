@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { Badge } from '@/components/ui/badge';
 import { InfoIcon } from 'lucide-react';
 import { UsageType } from '../dashboard';
 import {
@@ -13,36 +12,30 @@ import {
 } from '@/components/ui/tooltip';
 import { SignInAlertDialog } from '@/components/ui/signin-alert-dialog';
 
-type FreeTrialCardProps = {
+type UsageCardProps = {
   usage: UsageType;
   openAppQueryParams: string | URLSearchParams;
   loading: boolean;
 };
 
-const DEFAULT_OPEN_APP_CALLBACK = 'pearai://pearai.pearai/auth';
+const DEFAULT_OPEN_APP_CALLBACK = 'carty://carty.carty/auth';
 const DEFAULT_FREE_TRIAL_MAX_QUOTA = 50; // Sync with "FREE_TRIAL_MAX_QUOTA" env var from server
 
-export default function FreeTrialCard({
+export default function UsageCard({
   usage,
   openAppQueryParams,
   loading,
-}: FreeTrialCardProps) {
+}: UsageCardProps) {
   return (
     <Card className="overflow-auto bg-gray-100/10 text-card-foreground">
       <div className="grid gap-4">
         <CardHeader className="flex-row justify-between pb-4">
           <CardTitle className="text-xl font-semibold">Usage</CardTitle>
-          <Badge
-            variant="secondary"
-            className="border-primary-800 bg-primary-800/10 px-2 py-1 text-xs text-primary-800"
-          >
-            Free Trial
-          </Badge>
         </CardHeader>
         <CardContent>
           <div className="mb-4">
             <div className="flex justify-between">
-              <p className="font-medium">PearAI Credits</p>
+              <p className="font-medium">Carty Credits</p>
               <p className="text-sm text-muted-foreground">
                 {loading ? (
                   '-'
@@ -50,7 +43,7 @@ export default function FreeTrialCard({
                   <strong>
                     {usage?.percent_credit_used != null
                       ? `${Math.min(usage.percent_credit_used, 100)}%`
-                      : 'Usage info not found. Contact PearAI support'}
+                      : 'Usage info not found. Contact Carty support'}
                   </strong>
                 )}
               </p>
@@ -63,7 +56,7 @@ export default function FreeTrialCard({
             <div className="flex justify-between">
               <p className="text-sm text-muted-foreground">
                 {loading ? '-' : Math.min(usage?.percent_credit_used ?? 0, 100)}
-                % of free trial PearAI Credits used
+                % of Carty Credits used
               </p>
             </div>
           </div>
@@ -102,7 +95,7 @@ export default function FreeTrialCard({
                   href={DEFAULT_OPEN_APP_CALLBACK + '?' + openAppQueryParams}
                   target="_parent"
                 >
-                  Open PearAI
+                  Open Carty
                 </Link>
               </Button>
             </div>
@@ -110,7 +103,7 @@ export default function FreeTrialCard({
           <div className="mt-4 flex items-start text-xs text-muted-foreground">
             <InfoIcon className="mr-1 mt-0.5 h-3 w-3 flex-shrink-0" />
             <div>
-              Make sure PearAI is
+              Make sure Carty is
               <SignInAlertDialog>
                 <Button
                   variant="link"
@@ -126,4 +119,4 @@ export default function FreeTrialCard({
       </div>
     </Card>
   );
-}
+} 
