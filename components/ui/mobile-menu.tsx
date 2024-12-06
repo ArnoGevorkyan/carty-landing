@@ -20,7 +20,12 @@ interface MobileNavItemProps {
   isButton?: boolean;
 }
 
-function MobileNavItem({ href, children, onClick, isButton }: MobileNavItemProps) {
+function MobileNavItem({
+  href,
+  children,
+  onClick,
+  isButton,
+}: MobileNavItemProps) {
   if (isButton) {
     return (
       <li>

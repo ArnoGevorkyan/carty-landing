@@ -12,11 +12,21 @@ import { Button } from '@/components/ui/button';
 
 interface MaintenanceAlertProps {
   children: React.ReactNode;
-  variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
+  variant?:
+    | 'default'
+    | 'destructive'
+    | 'outline'
+    | 'secondary'
+    | 'ghost'
+    | 'link';
   className?: string;
 }
 
-export function MaintenanceAlert({ children, variant = 'default', className }: MaintenanceAlertProps) {
+export function MaintenanceAlert({
+  children,
+  variant = 'default',
+  className,
+}: MaintenanceAlertProps) {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
@@ -28,7 +38,8 @@ export function MaintenanceAlert({ children, variant = 'default', className }: M
         <AlertDialogHeader>
           <AlertDialogTitle>🚧 Update in Progress</AlertDialogTitle>
           <AlertDialogDescription>
-            We're currently updating our systems to serve you better. Please check back later!
+            We're currently updating our systems to serve you better. Please
+            check back later!
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
@@ -37,4 +48,4 @@ export function MaintenanceAlert({ children, variant = 'default', className }: M
       </AlertDialogContent>
     </AlertDialog>
   );
-} 
+}

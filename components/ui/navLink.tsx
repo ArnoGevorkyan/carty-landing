@@ -65,7 +65,11 @@ const Navigation: React.FC = () => {
       <ul className="flex w-full items-center justify-start space-x-3.5 sm:space-x-6 md:justify-center">
         {navLinks.map(link => (
           <li key={link.label}>
-            <NavLink href={link.path} isExternal={link.isExternal} isButton={link.isButton}>
+            <NavLink
+              href={link.path}
+              isExternal={link.isExternal}
+              isButton={link.isButton}
+            >
               {link.label}
             </NavLink>
           </li>
