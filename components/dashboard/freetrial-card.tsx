@@ -11,6 +11,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
+import { SignInAlertDialog } from '@/components/ui/signin-alert-dialog';
 
 type FreeTrialCardProps = {
   usage: UsageType;
@@ -30,7 +31,9 @@ export default function FreeTrialCard({
     <Card className="overflow-auto bg-gray-100/10 text-card-foreground">
       <div className="grid gap-4">
         <CardHeader className="flex-row justify-between pb-4">
-          <CardTitle className="text-xl font-semibold">Usage</CardTitle>
+          <CardTitle className="text-xl font-semibold">
+            Usage
+          </CardTitle>
           <Badge
             variant="secondary"
             className="border-primary-800 bg-primary-800/10 px-2 py-1 text-xs text-primary-800"
@@ -110,11 +113,11 @@ export default function FreeTrialCard({
             <InfoIcon className="mr-1 mt-0.5 h-3 w-3 flex-shrink-0" />
             <div>
               Make sure PearAI is
-              <Link href="/signin" className="mx-1">
-                <span className="text-primary-800 hover:underline">
+              <SignInAlertDialog>
+                <Button variant="link" className="mx-1 h-auto p-0 text-primary-800 hover:underline">
                   installed.
-                </span>
-              </Link>
+                </Button>
+              </SignInAlertDialog>
               Use this button to open app and login directly.
             </div>
           </div>

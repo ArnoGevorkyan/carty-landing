@@ -8,8 +8,9 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from './dropdown-menu';
-import { AuthError, User } from '@supabase/supabase-js';
+import { User } from '@supabase/supabase-js';
 import Link from 'next/link';
+import { SignInAlertDialog } from './signin-alert-dialog';
 
 export default function AuthButton({
   handleSignOut,
@@ -22,20 +23,20 @@ export default function AuthButton({
     <div className="flex items-center space-x-4">
       {!user ? (
         <div className="m-0 inline-flex rounded-lg border border-gray-300 p-0 dark:border-gray-100">
-          <Link href="/signin">
+          <SignInAlertDialog>
             <Button variant="ghost" className="h-8 rounded-r-none px-3">
               Sign in
             </Button>
-          </Link>
+          </SignInAlertDialog>
           <div className="w-[1px] self-stretch bg-gray-300 dark:bg-gray-100" />
-          <Link href="/signup">
+          <SignInAlertDialog>
             <Button
               variant="ghost"
               className="h-8 rounded-l-none border-0 px-3"
             >
               Sign up
             </Button>
-          </Link>
+          </SignInAlertDialog>
         </div>
       ) : (
         <>

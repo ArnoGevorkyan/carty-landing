@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Button } from './ui/button';
 import Link from 'next/link';
+import { SignInAlertDialog } from './ui/signin-alert-dialog';
 
 export default function Showcase() {
   return (
@@ -25,9 +26,11 @@ export default function Showcase() {
             delay: 0.6,
           }}
         >
-          <Button asChild className="bg-[#007aff] hover:opacity-90 text-[#fff]">
-            <Link href="https://carty.cc/signin">Create Free Store</Link>
-          </Button>
+          <SignInAlertDialog>
+            <Button className="bg-[#007aff] hover:opacity-90 text-[#fff]">
+              Create Free Store
+            </Button>
+          </SignInAlertDialog>
         </motion.div>
       </div>
     </div>
