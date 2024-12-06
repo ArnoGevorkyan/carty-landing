@@ -36,7 +36,7 @@ const CARDS: Card[] = [
     bgColor: '#EDF2FF',
     iconBgColor: '#007aff',
     iconColor: '#FFFFFF',
-    titleColor: '#007aff',  
+    titleColor: '#007aff',
     descriptionColor: '#0A3F37',
   },
   {

@@ -85,10 +85,34 @@ export const SetupLogo: FC<ComponentProps<'svg'> & { color?: string }> = ({
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
-    <rect width="80" height="80" rx="22" fill="#2BB3FF"/>
-    <rect x="12" y="12" width="25" height="25" rx="8" fill="white"/>
-    <rect opacity="0.25" x="12" y="43" width="25" height="25" rx="8" fill="white"/>
-    <rect opacity="0.5" x="43" y="12" width="25" height="25" rx="8" fill="white"/>
-    <rect opacity="0.1" x="43" y="43" width="25" height="25" rx="8" fill="white"/>
+    <rect width="80" height="80" rx="22" fill="#2BB3FF" />
+    <rect x="12" y="12" width="25" height="25" rx="8" fill="white" />
+    <rect
+      opacity="0.25"
+      x="12"
+      y="43"
+      width="25"
+      height="25"
+      rx="8"
+      fill="white"
+    />
+    <rect
+      opacity="0.5"
+      x="43"
+      y="12"
+      width="25"
+      height="25"
+      rx="8"
+      fill="white"
+    />
+    <rect
+      opacity="0.1"
+      x="43"
+      y="43"
+      width="25"
+      height="25"
+      rx="8"
+      fill="white"
+    />
   </svg>
-); 
+);

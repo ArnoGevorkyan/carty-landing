@@ -5,7 +5,10 @@ interface TelegramLogoProps {
   color?: string;
 }
 
-const TelegramLogo: React.FC<TelegramLogoProps> = ({ className, color = 'currentColor' }) => {
+const TelegramLogo: React.FC<TelegramLogoProps> = ({
+  className,
+  color = 'currentColor',
+}) => {
   return (
     <svg
       viewBox="0 0 24 24"

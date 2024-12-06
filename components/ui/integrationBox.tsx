@@ -1,8 +1,4 @@
-import {
-  AiderLogo,
-  SupermavenLogo,
-  ContinueLogo,
-} from './icons';
+import { AiderLogo, SupermavenLogo, ContinueLogo } from './icons';
 import { StripeLogo, WalletLogo } from './payment-icons';
 
 interface IntegrationItemProps {
