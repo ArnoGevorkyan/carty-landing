@@ -1,10 +1,9 @@
 import {
   AiderLogo,
-  PerplexityLogo,
   SupermavenLogo,
-  Mem0Logo,
   ContinueLogo,
 } from './icons';
+import { StripeLogo, WalletLogo } from './payment-icons';
 
 interface IntegrationItemProps {
   margin: string;
@@ -41,44 +40,44 @@ const INTEGRATIONS = [
     label: 'Sell',
     product: (
       <a href="#" className="hover:underline">
-        Courses
+        Digital Products
       </a>
     ),
     Icon: AiderLogo,
   },
   {
     margin: 'lg:ml-24 ml-2',
-    label: 'Sell',
+    label: 'Accept',
     product: (
       <a href="#" className="hover:underline">
-        Templates
+        Payments
+      </a>
+    ),
+    Icon: StripeLogo,
+  },
+  {
+    margin: 'lg:ml-44',
+    label: 'Manage',
+    product: (
+      <a href="#" className="hover:underline">
+        Orders
+      </a>
+    ),
+    Icon: WalletLogo,
+  },
+  {
+    margin: 'lg:ml-56 -ml-3',
+    label: 'Track',
+    product: (
+      <a href="#" className="hover:underline">
+        Analytics
       </a>
     ),
     Icon: SupermavenLogo,
   },
   {
-    margin: 'lg:ml-44',
-    label: 'Sell',
-    product: (
-      <a href="#" className="hover:underline">
-        Guides
-      </a>
-    ),
-    Icon: Mem0Logo,
-  },
-  {
-    margin: 'lg:ml-56 -ml-3',
-    label: 'Accept',
-    product: (
-      <a href="#" className="hover:underline">
-        Stars
-      </a>
-    ),
-    Icon: PerplexityLogo,
-  },
-  {
     margin: 'lg:ml-48 -mr-5 lg:mr-0',
-    label: 'Manage',
+    label: 'Engage',
     product: (
       <a href="#" className="hover:underline">
         Customers

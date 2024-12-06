@@ -2,13 +2,9 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Plus } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import {
-  AiderLogo,
-  PerplexityLogo,
-  SupermavenLogo,
-  Mem0Logo,
-  ContinueLogo,
-} from './icons';
+import { PerplexityLogo } from './icons';
+import { WalletLogo, ChatLogo, SetupLogo } from './payment-icons';
+import TelegramLogo from './TelegramLogo';
 
 type Card = {
   id: number;
@@ -36,11 +32,11 @@ const CARDS: Card[] = [
     },
     description:
       'Offer any type of digital content—no limits. Deliver instantly right in Telegram.',
-    icon: AiderLogo,
-    bgColor: 'rgba(201, 255, 226, 1)',
-    iconBgColor: 'rgba(4, 40, 26, 1)',
-    iconColor: '#01FFC9',
-    titleColor: '#0A3F37',
+    icon: TelegramLogo,
+    bgColor: '#EDF2FF',
+    iconBgColor: '#007aff',
+    iconColor: '#FFFFFF',
+    titleColor: '#007aff',  
     descriptionColor: '#0A3F37',
   },
   {
@@ -52,9 +48,9 @@ const CARDS: Card[] = [
     },
     description:
       'Get your store live within minutes. No design or coding required—just add products and start selling.',
-    icon: SupermavenLogo,
+    icon: SetupLogo,
     bgColor: 'rgba(200, 230, 255, 1)',
-    iconBgColor: 'rgba(0, 85, 255, 1)',
+    iconBgColor: '#2BB3FF',
     iconColor: '#FFFFFF',
     titleColor: '#002957',
     descriptionColor: '#002957',
@@ -68,7 +64,7 @@ const CARDS: Card[] = [
     },
     description:
       'Meet customers where they already are. Turn everyday Telegram chats into a direct sales channel.',
-    icon: ContinueLogo,
+    icon: ChatLogo,
     bgColor: 'rgba(229, 225, 248, 1)',
     iconBgColor: 'rgba(255, 255, 255, 1)',
     iconColor: '#000000',
@@ -84,11 +80,11 @@ const CARDS: Card[] = [
     },
     description:
       'Accept Telegram Stars for seamless, on-platform payments. No extra gateways or fees—just quick, easy transactions.',
-    icon: Mem0Logo,
-    bgColor: 'rgba(225, 253, 175, 1)',
-    iconBgColor: 'rgba(0, 0, 0, 1)',
+    icon: WalletLogo,
+    bgColor: '#AAE4FF',
+    iconBgColor: '#5AC8FA',
     iconColor: '#FFFFFF',
-    titleColor: '#005F15',
+    titleColor: '#358CB4',
     descriptionColor: '#005F15',
   },
   {
@@ -101,10 +97,10 @@ const CARDS: Card[] = [
     description:
       'More payment flexibility is on the way. Stripe support is coming soon, giving you even more ways to get paid.',
     icon: PerplexityLogo,
-    bgColor: 'rgba(216, 250, 255, 1)',
-    iconBgColor: 'rgba(34, 128, 141, 1)',
+    bgColor: '#DEE1FF',
+    iconBgColor: '#6772E5',
     iconColor: '#FFFFFF',
-    titleColor: '#003F48',
+    titleColor: '#6772E5',
     descriptionColor: '#003F48',
   },
 ];
