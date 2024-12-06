@@ -1,15 +1,14 @@
 'use client';
 
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import GridIllustration from './ui/grid-illustration';
 import IntegrationBox from './ui/integrationBox';
-import { Button } from './ui/button';
 import ExpandableCards from './ui/expandable-cards';
 import AnimatedShinyText from './ui/animated-shiny-text';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import TelegramLogo from './ui/TelegramLogo';
+import { MaintenanceAlert } from './ui/maintenance-alert';
 
 export default function Hero() {
   const textVariants = {
@@ -97,12 +96,9 @@ export default function Hero() {
                 delay: 0.6,
               }}
             >
-              <Button
-                asChild
-                className="bg-[#007aff] hover:opacity-90 text-[#fff]"
-              >
-                <Link href="https://carty.cc/signin">Create Free Store</Link>
-              </Button>
+              <MaintenanceAlert className="bg-[#007aff] hover:opacity-90 text-[#fff]">
+                Create Free Store
+              </MaintenanceAlert>
             </motion.div>
 
             {/* Cover Image */}
