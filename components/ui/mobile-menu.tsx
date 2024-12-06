@@ -1,9 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { Menu, X } from 'lucide-react';
+import { Button } from './button';
 import { cn } from '@/lib/utils';
 import {
   Accordion,
@@ -11,25 +11,24 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { SignInAlertDialog } from './signin-alert-dialog';
 
-function MobileNavItem({
-  href,
-  children,
-  onClick,
-}: {
+interface MobileNavItemProps {
   href: string;
   children: React.ReactNode;
   onClick?: () => void;
-}) {
+}
+
+function MobileNavItem({ href, children, onClick }: MobileNavItemProps) {
   return (
-    <Link
-      href={href}
-      onClick={onClick}
-      className="block rounded-lg px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
-    >
-      {children}
-    </Link>
+    <li>
+      <Link
+        href={href}
+        onClick={onClick}
+        className="block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+      >
+        {children}
+      </Link>
+    </li>
   );
 }
 
@@ -62,26 +61,23 @@ export function MobileMenu() {
               <AccordionTrigger>Features</AccordionTrigger>
               <AccordionContent>
                 <div className="mt-2 space-y-2">
-                  <SignInAlertDialog>
-                    <button
-                      onClick={() => setIsOpen(false)}
-                      className="group flex w-full items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50"
-                    >
-                      Create Store
-                    </button>
-                  </SignInAlertDialog>
+                  <Link
+                    href="https://carty.cc/signin"
+                    onClick={() => setIsOpen(false)}
+                    className="group flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50"
+                  >
+                    Create Store
+                  </Link>
                 </div>
               </AccordionContent>
             </AccordionItem>
           </Accordion>
-          <SignInAlertDialog>
-            <button
-              onClick={() => setIsOpen(false)}
-              className="block w-full rounded-lg px-3 py-2 text-left text-base font-medium text-gray-900 hover:bg-gray-50"
-            >
-              Get Started
-            </button>
-          </SignInAlertDialog>
+          <MobileNavItem
+            href="https://carty.cc/signin"
+            onClick={() => setIsOpen(false)}
+          >
+            Get Started
+          </MobileNavItem>
           <MobileNavItem href="/docs" onClick={() => setIsOpen(false)}>
             Documentation
           </MobileNavItem>
