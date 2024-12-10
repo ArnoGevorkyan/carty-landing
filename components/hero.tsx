@@ -88,7 +88,7 @@ export default function Hero() {
 
             {/* Button */}
             <motion.div
-              className="z-10 rounded-xl p-[2px]"
+              className="z-10 rounded-md p-[2px]"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{
@@ -96,7 +96,10 @@ export default function Hero() {
                 delay: 0.6,
               }}
             >
-              <MaintenanceAlert className="bg-[#007aff] hover:opacity-90 text-[#fff]">
+              <MaintenanceAlert 
+                size="lg"
+                className="rounded-md bg-[#007aff] hover:opacity-90 text-[#fff] h-12 px-10"
+              >
                 Create Free Store
               </MaintenanceAlert>
             </motion.div>

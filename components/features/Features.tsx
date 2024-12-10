@@ -1,12 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import dynamic from 'next/dynamic';
+import React from "react";
+import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 
-const MobileFeatures = dynamic(() => import('./MobileFeatures'), {
+const MobileFeatures = dynamic(() => import("./MobileFeatures"), {
   ssr: false,
 });
-const DesktopFeatures = dynamic(() => import('./DesktopFeatures'), {
+const DesktopFeatures = dynamic(() => import("./DesktopFeatures"), {
   ssr: false,
 });
 
@@ -19,15 +20,15 @@ export default function Features() {
     };
 
     checkIsMobile();
-    window.addEventListener('resize', checkIsMobile);
+    window.addEventListener("resize", checkIsMobile);
 
-    return () => window.removeEventListener('resize', checkIsMobile);
+    return () => window.removeEventListener("resize", checkIsMobile);
   }, []);
 
   return (
     <div className="mx-6">
       <div className="mx-auto w-full max-w-3xl py-6 lg:max-w-[1049px]">
-        <div className="bg-white rounded-xl border-2 border-gray-200 p-5 dark:border-gray-50">
+        <div className="features-container rounded-xl bg-white p-5">
           {isMobile ? <MobileFeatures /> : <DesktopFeatures />}
         </div>
       </div>
