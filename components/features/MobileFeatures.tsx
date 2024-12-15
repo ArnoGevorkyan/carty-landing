@@ -2,7 +2,7 @@ import { videoData } from './data';
 
 export default function MobileFeatures() {
   const currentVideo = videoData[0];
-  
+
   return (
     <div className="px-2 py-2">
       <div className="rounded-lg bg-white p-2">
