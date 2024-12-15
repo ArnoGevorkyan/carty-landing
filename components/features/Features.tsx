@@ -1,13 +1,13 @@
 'use client';
 
-import React from "react";
-import { useEffect, useState } from "react";
-import dynamic from "next/dynamic";
+import React from 'react';
+import { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 
-const MobileFeatures = dynamic(() => import("./MobileFeatures"), {
+const MobileFeatures = dynamic(() => import('./MobileFeatures'), {
   ssr: false,
 });
-const DesktopFeatures = dynamic(() => import("./DesktopFeatures"), {
+const DesktopFeatures = dynamic(() => import('./DesktopFeatures'), {
   ssr: false,
 });
 
@@ -20,9 +20,9 @@ export default function Features() {
     };
 
     checkIsMobile();
-    window.addEventListener("resize", checkIsMobile);
+    window.addEventListener('resize', checkIsMobile);
 
-    return () => window.removeEventListener("resize", checkIsMobile);
+    return () => window.removeEventListener('resize', checkIsMobile);
   }, []);
 
   return (

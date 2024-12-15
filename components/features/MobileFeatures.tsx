@@ -1,33 +1,28 @@
 import { videoData } from './data';
 
 export default function MobileFeatures() {
+  const currentVideo = videoData[0];
+  
   return (
-    <div className="space-y-5">
-      <div className="mb-6 text-2xl font-semibold">Demos</div>
-      {videoData.map(video => (
-        <div
-          key={video.id}
-          className="space-y-4 rounded-lg border border-gray-200 p-4 dark:border-gray-50"
+    <div className="px-2 py-2">
+      <div className="rounded-lg bg-white p-2">
+        <div className="mb-2 text-2xl font-semibold">{currentVideo.title}</div>
+        <p className="mb-2 text-sm text-black/60 dark:text-gray-500">
+          {currentVideo.description}
+        </p>
+        <video
+          className="aspect-video w-full object-cover"
+          muted
+          playsInline
+          autoPlay
+          loop
+          controls
+          controlsList="nodownload"
+          disablePictureInPicture
         >
-          <h3 className="text-lg font-medium">{video.title}</h3>
-          <p className="text-sm text-black/60 dark:text-gray-500">
-            {video.description}
-          </p>
-          <div className="relative aspect-[16/12] w-full overflow-hidden rounded-lg">
-            <video
-              className="h-full w-full object-cover"
-              muted
-              playsInline
-              autoPlay
-              loop
-              controlsList="nodownload nofullscreen noremoteplayback"
-              disablePictureInPicture
-            >
-              <source src={video.videoUrl} type="video/mp4" />
-            </video>
-          </div>
-        </div>
-      ))}
+          <source src={currentVideo.videoUrl} type="video/mp4" />
+        </video>
+      </div>
     </div>
   );
 }

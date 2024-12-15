@@ -17,14 +17,12 @@ export default function Custom404() {
           404
         </h1>
         <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-          Sorry, we couldn't find the page you're looking for. The page might have been
-          moved or deleted.
+          Sorry, we couldn't find the page you're looking for. The page might
+          have been moved or deleted.
         </p>
         <div className="flex gap-4">
           <Button asChild>
-            <Link href="/">
-              Return Home
-            </Link>
+            <Link href="/">Return Home</Link>
           </Button>
         </div>
       </div>

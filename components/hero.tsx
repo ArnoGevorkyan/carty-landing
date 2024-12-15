@@ -96,7 +96,7 @@ export default function Hero() {
                 delay: 0.6,
               }}
             >
-              <MaintenanceAlert 
+              <MaintenanceAlert
                 size="lg"
                 className="rounded-md bg-[#007aff] hover:opacity-90 text-[#fff] h-12 px-10"
               >
