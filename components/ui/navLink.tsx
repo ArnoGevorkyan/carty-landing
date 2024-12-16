@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { MaintenanceAlert } from './maintenance-alert';
 
 interface NavLinkProps {
   href: string;
@@ -21,7 +20,14 @@ const NavLink: React.FC<NavLinkProps> = ({
   const isActive = pathname === href;
 
   if (isButton) {
-    return <MaintenanceAlert>{children}</MaintenanceAlert>;
+    return (
+      <Link
+        href="https://carty.cc/signin"
+        className="text-nowrap align-middle text-gray-800 transition duration-150 ease-in-out hover:text-primary-800"
+      >
+        {children}
+      </Link>
+    );
   }
 
   return (

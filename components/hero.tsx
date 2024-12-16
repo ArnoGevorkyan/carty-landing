@@ -8,7 +8,8 @@ import AnimatedShinyText from './ui/animated-shiny-text';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import TelegramLogo from './ui/TelegramLogo';
-import { MaintenanceAlert } from './ui/maintenance-alert';
+import Link from 'next/link';
+import { Button } from './ui/button';
 
 export default function Hero() {
   const textVariants = {
@@ -96,12 +97,11 @@ export default function Hero() {
                 delay: 0.6,
               }}
             >
-              <MaintenanceAlert
-                size="lg"
-                className="rounded-md bg-[#007aff] hover:opacity-90 text-[#fff] h-12 px-10"
-              >
-                Create Free Store
-              </MaintenanceAlert>
+              <Link href="https://carty.cc/signin">
+                <Button className="rounded-md bg-[#007aff] hover:opacity-90 text-[#fff] h-12 px-10">
+                  Create Free Store
+                </Button>
+              </Link>
             </motion.div>
 
             {/* Cover Image */}
