@@ -32,7 +32,7 @@ export function PHProvider({ children }: { children: React.ReactNode }) {
       typeof window !== 'undefined' &&
       !window.location.host.includes('localhost')
     ) {
-      posthog.init('phc_sZdbmKIdH2qCqiGFHy079fD7766qcgFCLD9bkKeZLDA', {
+      posthog.init('phc_JWrphikJSKKTTJEaVgZHMQbUYiVNZ2BasoZMyKfqTb5', {
         api_host: 'https://us.i.posthog.com',
         person_profiles: 'identified_only',
         capture_pageview: false, // We'll handle pageviews manually
