@@ -12,13 +12,16 @@ function PostHogPageViewTracker() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    if (pathname && typeof window !== 'undefined') {
+    // Check if PostHog is initialized
+    if (pathname && posthog.__loaded) {
       let url = window.origin + pathname;
       if (searchParams?.toString()) {
         url = url + `?${searchParams.toString()}`;
       }
+      // Ensure we're capturing the pageview
       posthog.capture('$pageview', {
         $current_url: url,
+        $pathname: pathname,
       });
     }
   }, [pathname, searchParams]);
@@ -28,14 +31,20 @@ function PostHogPageViewTracker() {
 
 export function PHProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    if (
-      typeof window !== 'undefined' &&
-      !window.location.host.includes('localhost')
-    ) {
+    if (typeof window !== 'undefined') {
       posthog.init('phc_JWrphikJSKKTTJEaVgZHMQbUYiVNZ2BasoZMyKfqTb5', {
         api_host: 'https://us.i.posthog.com',
-        person_profiles: 'identified_only',
-        capture_pageview: false, // We'll handle pageviews manually
+        loaded: (posthog) => {
+          if (process.env.NODE_ENV === 'development') {
+            posthog.debug();
+          }
+          // Capture initial pageview
+          posthog.capture('$pageview', {
+            $current_url: window.location.href,
+            $pathname: window.location.pathname,
+          });
+        },
+        capture_pageview: false,
         capture_pageleave: true,
         persistence: 'localStorage+cookie',
         autocapture: true,
@@ -43,14 +52,9 @@ export function PHProvider({ children }: { children: React.ReactNode }) {
           maskAllInputs: true,
           maskNetworkRequestFn: data => data,
         },
-        loaded: posthog => {
-          if (process.env.NODE_ENV === 'development') posthog.debug();
-        },
       });
     }
   }, []);
-
-  if (typeof window === 'undefined') return <>{children}</>;
 
   return (
     <PostHogProvider client={posthog}>

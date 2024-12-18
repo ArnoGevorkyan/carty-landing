@@ -7,18 +7,14 @@ import dynamic from 'next/dynamic';
 const MobileFeatures = dynamic(() => import('./MobileFeatures'), {
   ssr: false,
   loading: () => (
-    <div className="flex items-center justify-center p-8">
-      Loading...
-    </div>
+    <div className="flex items-center justify-center p-8">Loading...</div>
   ),
 });
 
 const DesktopFeatures = dynamic(() => import('./DesktopFeatures'), {
   ssr: false,
   loading: () => (
-    <div className="flex items-center justify-center p-8">
-      Loading...
-    </div>
+    <div className="flex items-center justify-center p-8">Loading...</div>
   ),
 });
 
