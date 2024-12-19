@@ -123,8 +123,8 @@
 
 /* Features section borders */
 .features-container {
-  border: 1px solid #e5e7eb !important;
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1) !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 .feature-card {

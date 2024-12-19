@@ -34,7 +34,7 @@ export function PHProvider({ children }: { children: React.ReactNode }) {
     if (typeof window !== 'undefined') {
       posthog.init('phc_JWrphikJSKKTTJEaVgZHMQbUYiVNZ2BasoZMyKfqTb5', {
         api_host: 'https://us.i.posthog.com',
-        loaded: (posthog) => {
+        loaded: posthog => {
           if (process.env.NODE_ENV === 'development') {
             posthog.debug();
           }

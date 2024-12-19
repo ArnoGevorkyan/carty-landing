@@ -10,7 +10,7 @@ export const TEST_MODE_ENABLED = ['true', 'True', 'TRUE'].includes(
   process.env.NEXT_PUBLIC_TEST_MODE_ENABLED ?? ''
 );
 
-export const BUNNY_CDN_HOST = 'https://pearai.b-cdn.net';
+export const BUNNY_CDN_HOST = 'https://vz-bdb49161-783.b-cdn.net';
 
 export const CONTACT_EMAIL = 'pear@trypear.ai';
 
