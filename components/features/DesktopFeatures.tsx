@@ -1,45 +1,13 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { videoData } from './data';
+import VideoEmbed from './VideoEmbed';
 
 export default function DesktopFeatures() {
-  const [activeCard, setActiveCard] = useState(1);
-  const [progress, setProgress] = useState(0);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const [activeCard] = useState(1);
   const currentVideo = videoData.find(v => v.id === activeCard);
-
-  useEffect(() => {
-    const duration = currentVideo?.duration || 5000;
-    let startTime: number;
-    let animationFrame: number;
-
-    const animate = (currentTime: number) => {
-      if (!startTime) startTime = currentTime;
-      const elapsedTime = currentTime - startTime;
-      const progress = Math.min((elapsedTime / duration) * 100, 100);
-
-      setProgress(progress);
-
-      if (progress < 100) {
-        animationFrame = requestAnimationFrame(animate);
-      } else {
-        setActiveCard(prev => {
-          const nextCard = prev + 1;
-          return nextCard > videoData.length ? 1 : nextCard;
-        });
-      }
-    };
-
-    animationFrame = requestAnimationFrame(animate);
-
-    return () => {
-      if (animationFrame) {
-        cancelAnimationFrame(animationFrame);
-      }
-    };
-  }, [activeCard, currentVideo?.duration]);
 
   return (
     <div className="flex flex-col items-center gap-8 px-4">
@@ -51,7 +19,7 @@ export default function DesktopFeatures() {
           {currentVideo?.description}
         </p>
       </div>
-      <div className="relative aspect-[16/9] w-full max-w-4xl">
+      <div className="relative w-full max-w-4xl">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentVideo?.id}
@@ -61,17 +29,7 @@ export default function DesktopFeatures() {
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="h-full w-full"
           >
-            <video
-              ref={videoRef}
-              className="h-full w-full object-cover"
-              muted
-              playsInline
-              autoPlay
-              controlsList="nodownload nofullscreen noremoteplayback"
-              disablePictureInPicture
-            >
-              <source src={currentVideo?.videoUrl} type="video/mp4" />
-            </video>
+            <VideoEmbed videoUrl={currentVideo?.videoUrl || ''} />
           </motion.div>
         </AnimatePresence>
       </div>
