@@ -11,11 +11,13 @@ export default function VideoEmbed({ videoUrl }: VideoEmbedProps) {
     <div className="relative h-0 overflow-hidden pb-[56.25%]">
       <video
         className="absolute left-0 top-0 h-full w-full rounded-lg"
-        controls
+        controls={true}
+        autoPlay={false}
         playsInline
         controlsList="nodownload"
-        preload="metadata"
+        preload="auto"
         muted={false}
+        loop={false}
       >
         <source src={videoUrl} type="video/mp4" />
         Your browser does not support the video tag.
