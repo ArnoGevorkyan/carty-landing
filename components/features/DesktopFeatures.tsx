@@ -19,7 +19,7 @@ export default function DesktopFeatures() {
           {currentVideo?.description}
         </p>
       </div>
-      <div className="relative w-full max-w-4xl">
+      <div className="relative w-full max-w-6xl">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentVideo?.id}

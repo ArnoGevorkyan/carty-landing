@@ -10,7 +10,7 @@ export default function MobileFeatures() {
   const currentVideo = videoData.find(v => v.id === activeCard);
 
   return (
-    <div className="flex flex-col items-center w-screen">
+    <div className="flex flex-col items-center w-full overflow-hidden">
       <div className="text-center w-full px-4">
         <h2 className="mb-2 text-center text-2xl font-semibold">
           {currentVideo?.title}
@@ -19,7 +19,7 @@ export default function MobileFeatures() {
           {currentVideo?.description}
         </p>
       </div>
-      <div className="relative w-screen">
+      <div className="relative w-full">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentVideo?.id}
