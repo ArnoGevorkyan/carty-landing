@@ -10,8 +10,8 @@ export default function MobileFeatures() {
   const currentVideo = videoData.find(v => v.id === activeCard);
 
   return (
-    <div className="flex flex-col items-center gap-6 px-4">
-      <div className="text-center">
+    <div className="flex flex-col items-center gap-6 px-2 w-full">
+      <div className="text-center w-full">
         <h2 className="mb-2 text-center text-2xl font-semibold">
           {currentVideo?.title}
         </h2>
