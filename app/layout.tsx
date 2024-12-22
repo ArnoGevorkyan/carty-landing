@@ -84,7 +84,7 @@ export default function RootLayout({
           defer
           data-website-id="676012611b96f3224c234592"
           data-domain="carty-landing.vercel.app"
-          src="https://datafa.st/js/script.js"
+          src="/js/script.js"
         />
       </head>
       <body className="bg-background font-sans tracking-tight antialiased light">

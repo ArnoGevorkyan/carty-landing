@@ -1,14 +1,14 @@
 'use client';
 
-import { useState, useRef, useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { videoData } from "./data";
+import { useState, useRef, useEffect } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { videoData } from './data';
 
 export default function MobileFeatures() {
   const [activeCard, setActiveCard] = useState(1);
   const [progress, setProgress] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const currentVideo = videoData.find((v) => v.id === activeCard);
+  const currentVideo = videoData.find(v => v.id === activeCard);
 
   useEffect(() => {
     const duration = currentVideo?.duration || 5000;
@@ -25,7 +25,7 @@ export default function MobileFeatures() {
       if (progress < 100) {
         animationFrame = requestAnimationFrame(animate);
       } else {
-        setActiveCard((prev) => {
+        setActiveCard(prev => {
           const nextCard = prev + 1;
           return nextCard > videoData.length ? 1 : nextCard;
         });
@@ -58,7 +58,7 @@ export default function MobileFeatures() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="h-full w-full"
           >
             <video
