@@ -20,7 +20,7 @@ export default function VideoEmbed({ videoUrl }: VideoEmbedProps) {
         loop={false}
       >
         <source src={videoUrl} type="video/mp4" />
-        Your browser does not support the video tagg.
+        Your browser does not support the videeo tagg.
       </video>
     </div>
   );
